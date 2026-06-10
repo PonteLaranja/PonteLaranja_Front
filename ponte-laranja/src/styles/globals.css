@@ -3,3 +3,9 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+
+h1{
+  font-family: var(--font-texto-titulo);
+  font-size: 4.1rem;
+}
