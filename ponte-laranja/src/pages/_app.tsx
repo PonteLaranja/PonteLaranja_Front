@@ -1,4 +1,4 @@
-import "@/styles/globals.css";
+import "../styles/globals.css";
 import type { AppProps } from "next/app";
 
 import Head from "next/head";
@@ -20,6 +20,8 @@ const jakarta = Plus_Jakarta_Sans({
 
 export default function App({ Component, pageProps }: AppProps) {
   return(
-    <main className={`${jakarta.variable} ${montserrat.variable}`}></main>
+    <main className={`${jakarta.variable} ${montserrat.variable}`}>
+      <Component {...pageProps}/>
+    </main>
   )
 }
