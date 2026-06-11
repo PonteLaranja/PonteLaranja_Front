@@ -1,0 +1,103 @@
+.paginaDoacao{
+    min-height: 100vh;
+}
+
+.bannerPrincipal{
+    background-image: url('@/public/imgs/banner1.png');
+    width: 100%;
+    height: 90vh;
+    display: grid;
+    padding: 2%;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.texto_banner{
+    display: grid;
+    gap: 15px;
+    color: var(--cor-branca);
+}
+
+.bannerTitulo{
+    text-align: justify;
+    width: 21%;
+}
+
+.bannerBotao{
+    text-decoration: none;
+    background-color: var(--cor-principal);
+    text-align: center;
+    border-radius: 10px;
+    height: 100%;
+    padding: 1%;
+    width: 40%;
+    color: var(--cor-branca);
+    font-size: var(--tamanho-texto-btn);
+}
+
+.secaoSobreDoacao{
+    display: grid;
+    gap: 30px;
+    height: 20vh;
+}
+
+.textoSobreDoacao{
+    display: grid;
+    gap: 5px;
+}
+
+.conteudoSuperior{
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+.estatisticasDoacao{
+    display: flex;
+    justify-content: space-between;
+}
+
+.estatisticaItem{
+    display: flex;
+    text-align: justify;
+}
+
+.secaoRelatos{
+    background-color: var(--cor-principal);
+    padding: 2%;
+    height: 67vh;
+}
+
+
+.imagemRelato{
+    width: 20%;
+    height: 20%;
+    border-radius: 10px;
+    border: 1px solid var(--cor-secundaria);
+    position: relative;
+    top: -60px;
+}
+
+.galeriaRelatos{
+    display: flex;
+    justify-content: space-between;
+}
+
+.listaRelatos{
+    display: flex;
+    justify-content: space-between;
+}
+
+.cardRelato{
+    display: grid;
+    color: var(--cor-branca);
+    width: 25%;
+    padding: 1%;
+    gap: 10px;
+    height: 23vh;
+    text-align: center;
+    border-radius: 15px;
+    background-color: var(--cor-secundaria);
+}
+

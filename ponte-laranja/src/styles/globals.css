@@ -1,5 +1,32 @@
-*{
+:root {
+  --cor-principal: #FF6600;
+  --cor-secundaria: #55BAFD;
+  --cor-branca: #FFFFFF;
+  --fonte-preta: #000000;
+
+  --tamanho-titulo: 50px;
+  --tamanho-texto-btn: 20px;
+}
+
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-texto-titulo);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+p {
+  font-family: var(--font-texto-padrao);
+  text-align: justify;
 }
