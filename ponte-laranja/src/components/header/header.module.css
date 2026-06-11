@@ -1,0 +1,119 @@
+.cabecalho {
+
+    background: linear-gradient(to bottom right, #0D8BDF 0%, #045BA1 34%) bottom right / 50% 50% no-repeat, linear-gradient(to bottom left, #0D8BDF 0%, #045BA1 34%) bottom left / 50% 50% no-repeat, linear-gradient(to top left, #0D8BDF 0%, #045BA1 34%) top left / 50% 50% no-repeat, linear-gradient(to top right, #0D8BDF 0%, #045BA1 34%) top right / 50% 50% no-repeat;
+    width: 100%;
+    height: clamp(1vh, 136px, 15vh);
+    display: inline-flex;
+    padding: 0 5%;
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+.cabecalho img {
+    width: 10%;
+}
+
+.cabecalho nav {
+    display: inline-flex;
+    width: fit-content;
+    justify-content: space-bet;
+    width: 50%;
+
+
+}
+
+.cabecalho nav ul {
+    display: inline-flex;
+    justify-content: space-around;
+    list-style-type: none;
+    white-space: nowrap;
+    justify-content: space-between;
+    gap: 10%;
+    width: 100%;
+    /* border: 1px solid black; */
+}
+
+.cabecalho li {
+
+    font-size: 25px;
+    background: linear-gradient(180deg, #FFF1F1 29.81%, #CDE1FE 76.92%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: 2.5s ease-in-out;
+    /* width: 50%; */
+}
+
+.cabecalho button {
+    width: 8%;
+    border-radius: .5vw;
+    border: none;
+    background-color: var(--laranja);
+    color: white;
+    font-size: clamp(.4vw, 30px, 2vw);
+    height: clamp(37%, 42%, 43%);
+}
+
+.cabecalho li:hover {
+    text-decoration: underline;
+}
+
+.cabecalho button:hover {
+    transition: .1s ease-in-out;
+    /* color: #DEDEDE; */
+    background-color: #FF8636;
+}
+
+@media (max-width:1000px) {
+
+    .cabecalho img{
+        width: 15%;
+    }
+
+    .cabecalho nav {
+        display: inline-flex;
+        width: fit-content;
+        width: 50%;
+        /* align-self: center; */
+        margin-right: 10%;
+    }
+
+    .cabecalho nav ul {
+        display: inline-flex;
+        justify-content: space-around;
+        list-style-type: none;
+        white-space: nowrap;
+        justify-content: space-between;
+        gap: 10%;
+        width: 100%;
+        /* border: 1px solid black; */
+    }
+
+    .cabecalho li {
+
+        font-size: 25px;
+        background: linear-gradient(180deg, #FFF1F1 29.81%, #CDE1FE 76.92%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transition: 2.5s ease-in-out;
+        /* width: 50%; */
+    }
+
+
+    .cabecalho button {
+        font-size: 1.1rem;
+        width: 10%;
+        height: 28%;
+    }
+}
+
+@media (max-width:768px) {
+    .cabecalho button {
+        font-size: .9rem;
+        width: 9%;
+        height: 22%;
+    }
+}
