@@ -93,23 +93,23 @@ const Home = () => {
                     <div className={styles.listaDoacoes}>
 
                         <div className={styles.cardDoacao}>
-                            <img className={styles.imagemDoacao} src="" alt="" />
+                            <img className={styles.imagemDoacao} src="./imgs/roupas.png" alt="" />
                             <h2>Roupa</h2>
-                            <a className={styles.linkDoacao} href=""></a>
+                            <a className={styles.linkDoacao} href="">Doar</a>
                         </div>
 
 
                         <div className={styles.cardDoacao}>
-                            <img className={styles.imagemDoacao} src="" alt="" />
+                            <img className={styles.imagemDoacao} src="./imgs/comidas.png" alt="" />
                             <h2>Alimento</h2>
-                            <a className={styles.linkDoacao} href=""></a>
+                            <a className={styles.linkDoacao} href="">Doar</a>
                         </div>
 
 
                         <div className={styles.cardDoacao}>
-                            <img className={styles.imagemDoacao} src="" alt="" />
+                            <img className={styles.imagemDoacao} src="./imgs/brinquedos.png" alt="" />
                             <h2>Brinquedo</h2>
-                            <a className={styles.linkDoacao} href=""></a>
+                            <a className={styles.linkDoacao} href="">Doar</a>
                         </div>
 
                     </div>
@@ -170,16 +170,16 @@ const Home = () => {
 
                         <div className={styles.categoriasDoacao}>
 
-                            <div className={styles.categoriaDoacao}>
-                                Alimentos doados
+                            <div className={styles.categoriaDoacaoAlimento}>
+                                <h3 className={styles.tituloCategoriaDoacao}>Alimentos doados</h3>
                             </div>
 
-                            <div className={styles.categoriaDoacao}>
-                                Roupas doadas
+                            <div className={styles.categoriaDoacaoRoupa}>
+                                 <h3 className={styles.tituloCategoriaDoacao}>Roupas doadas</h3>
                             </div>
 
-                            <div className={styles.categoriaDoacao}>
-                                Brinquedos doados
+                            <div className={styles.categoriaDoacaoBrinquedo}>
+                                 <h3 className={styles.tituloCategoriaDoacao}>Brinquedos doados</h3>
                             </div>
 
                         </div>
@@ -195,22 +195,22 @@ const Home = () => {
                         <div className={styles.cardsDoadores}>
 
                             <div className={styles.cardDoador}>
-                                <img src="" alt="" />
+                                <img src="./imgs/diego.png" alt="" />
                                 <h3>Diego Castro da Rocha</h3>
                             </div>
 
                             <div className={styles.cardDoador}>
-                                <img src="" alt="" />
+                                <img src="./imgs/luigi.png" alt="" />
                                 <h3>Luigi Santi Luberlato</h3>
                             </div>
 
                             <div className={styles.cardDoador}>
-                                <img src="" alt="" />
+                                <img src="./imgs/nicollas.png" alt="" />
                                 <h3>Nicollas Oliveira Rufino</h3>
                             </div>
 
                             <div className={styles.cardDoador}>
-                                <img src="" alt="" />
+                                <img src="./imgs/guinas.png" alt="" />
                                 <h3>Guilherme Ribeiro dos Santos</h3>
                             </div>
 
@@ -234,9 +234,9 @@ const Home = () => {
 
                 <section id={styles.causas} className={styles.secaoCausas}>
 
-                    <h2 className={styles.tituloCausas}>
+                    <h1 className={styles.tituloCausas}>
                         Causas que lutamos
-                    </h2>
+                    </h1>
 
 
                     <div className={styles.listaCausas}>
@@ -244,8 +244,8 @@ const Home = () => {
 
                         <div className={styles.cardCausa}>
 
-                            <img className={styles.imagemCausa} src="" alt="" />
-
+                            <img className={styles.imagemCausa} src="./imgs/fome.png" alt="" />
+                            <div className={styles.textoCausa}>
                             <h2>
                                 Contra à fome
                             </h2>
@@ -253,14 +253,16 @@ const Home = () => {
                             <p>
                                 Combater a fome é alimentar a esperança de um futuro melhor.
                             </p>
+                            </div>
 
                         </div>
 
 
                         <div className={styles.cardCausa}>
 
-                            <img className={styles.imagemCausa} src="" alt="" />
+                            <img className={styles.imagemCausa} src="./imgs/pobreza2.png" alt="" />
 
+                            <div className={styles.textoCausa}>
                             <h2>
                                 Contra a pobreza têxtil
                             </h2>
@@ -269,12 +271,16 @@ const Home = () => {
                                 Porque ter acesso a roupas adequadas é um direito de todos.
                             </p>
 
+                            </div>
+
                         </div>
 
 
                         <div className={styles.cardCausa}>
 
-                            <img className={styles.imagemCausa} src="" alt="" />
+                            <img className={styles.imagemCausa} src="./imgs/huah.png" alt="" />
+                            
+                            <div className={styles.textoCausa}>
 
                             <h2>
                                 À favor do sorriso
@@ -283,6 +289,7 @@ const Home = () => {
                             <p>
                                 Toda criança merece a chance de sorrir, brincar e sonhar.
                             </p>
+                            </div>
 
                         </div>
 

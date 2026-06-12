@@ -1,8 +1,8 @@
-.paginaDoacao{
+.paginaDoacao {
     min-height: 100vh;
 }
 
-.bannerPrincipal{
+.bannerPrincipal {
     background-image: url('@/public/imgs/banner1.png');
     width: 100%;
     height: 90vh;
@@ -10,20 +10,24 @@
     padding: 2%;
     justify-content: flex-start;
     align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
 }
 
-.texto_banner{
+.texto_banner {
     display: grid;
     gap: 15px;
     color: var(--cor-branca);
 }
 
-.bannerTitulo{
+.bannerTitulo {
     text-align: justify;
     width: 21%;
 }
 
-.bannerBotao{
+.bannerBotao {
     text-decoration: none;
     background-color: var(--cor-principal);
     text-align: center;
@@ -35,61 +39,64 @@
     font-size: var(--tamanho-texto-btn);
 }
 
-.secaoSobreDoacao{
+.secaoSobreDoacao {
     display: grid;
     gap: 30px;
     height: 20vh;
 }
 
-.textoSobreDoacao{
+.textoSobreDoacao {
     display: grid;
     gap: 5px;
 }
 
-.conteudoSuperior{
+.conteudoSuperior {
     display: flex;
     flex-direction: column;
     grid-template-columns: 2fr 1fr;
     gap: 20px;
 }
 
-.estatisticasDoacao{
+.estatisticasDoacao {
     display: flex;
     justify-content: space-between;
+    padding: 2%;
 }
 
-.estatisticaItem{
+.estatisticaItem {
     display: flex;
     text-align: justify;
 }
 
-.secaoRelatos{
+.secaoRelatos {
     background-color: var(--cor-principal);
     padding: 2%;
     height: 67vh;
 }
 
 
-.imagemRelato{
-    width: 20%;
-    height: 20%;
+.imagemRelato {
+    width: 19%;
     border-radius: 10px;
     border: 1px solid var(--cor-secundaria);
     position: relative;
     top: -60px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.galeriaRelatos{
+.galeriaRelatos {
     display: flex;
     justify-content: space-between;
 }
 
-.listaRelatos{
+.listaRelatos {
     display: flex;
     justify-content: space-between;
 }
 
-.cardRelato{
+.cardRelato {
     display: grid;
     color: var(--cor-branca);
     width: 25%;
@@ -101,3 +108,213 @@
     background-color: var(--cor-secundaria);
 }
 
+.areaSuperiorDoadores {
+    display: grid;
+    justify-content: center;
+    gap: 40px;
+}
+
+.categoriasDoacao {
+    display: flex;
+    gap: 190px;
+}
+
+.tituloDoadores {
+    text-align: center;
+    margin-top: 2%;
+}
+
+.categoriaDoacaoAlimento {
+    background-image: url('../../../public/imgs/comidaFelicidade.avif');
+    height: 70vh;
+    border-radius: 15px;
+    width: 25vw;
+    display: grid;
+    justify-content: flex-start;
+    padding: 2%;
+    align-items: end;
+    color: var(--cor-principal);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.categoriaDoacaoRoupa {
+    background-image: url('../../../public/imgs/frio.jpg');
+    height: 70vh;
+    border-radius: 15px;
+    width: 25vw;
+    display: grid;
+    justify-content: flex-start;
+    padding: 2%;
+    align-items: end;
+    color: var(--cor-principal);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.categoriaDoacaoBrinquedo {
+    background-image: url('../../../public/imgs/briqnued=.jpg');
+    height: 70vh;
+    border-radius: 15px;
+    width: 25vw;
+    display: grid;
+    justify-content: flex-start;
+    padding: 2%;
+    align-items: end;
+    color: var(--cor-principal);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.listaDoadores {
+    display: grid;
+    text-align: center;
+    justify-items: center;
+    gap: 45px;
+}
+
+.secaoDoadores {
+    display: grid;
+    gap: 45px;
+}
+
+.cardsDoadores {
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    gap: 70px;
+}
+
+.cardDoador {
+    display: grid;
+    width: 90%;
+    align-items: center;
+    justify-items: center;
+    margin-bottom: 3%;
+}
+
+.bannerMotivacional {
+    background-image: url('../../../public/imgs/maozinhas.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteudoBannerMotivacional {
+    color: var(--cor-branca);
+    background-color: color-mix(in srgb, var(--cor-principal) 75%, transparent);
+    height: 80%;
+    width: 95%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.secaoCausas {
+    display: grid;
+    gap: 40px;
+    text-align: center;
+    justify-items: center;
+    margin-top: 25px;
+    padding: 2%;
+}
+
+.listaCausas {
+    display: flex;
+    gap: 20px;
+}
+
+.cardCausa {
+    height: 85vh;
+    width: 35%;
+    display: grid;
+    border-radius: 15px;
+    background-color: var(--cor-secundaria);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.imagemCausa {
+    width: 100%;
+    height: 67%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    object-fit: cover;
+}
+
+.textoCausa {
+    display: grid;
+    height: 40%;
+    text-align: center;
+    color: var(--cor-branca);
+    padding: 3%;
+    gap: 40px;
+    top: -60px;
+    position: relative;
+    justify-items: center;
+}
+
+.textoCausa p {
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.textoCausa h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    width: 65%;
+}
+
+.secaoEscolhaDoacao {
+    padding: 2%;
+    height: 40vh;
+    display: grid;
+    text-align: center;
+    justify-items: center;
+    margin-bottom: 15%;
+    gap: 40px;
+}
+
+.listaDoacoes {
+    display: flex;
+    gap: 60px;
+}
+
+.cardDoacao {
+    height: 45vh;
+    width: 100%;
+    border-radius: 15px;
+    display: grid;
+    background-color: var(--cor-secundaria);
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+    color: var(--cor-branca);
+}
+
+.linkDoacao {
+    text-decoration: none;
+    background-color: var(--cor-principal);
+    text-align: center;
+    border-radius: 10px;
+    height: 40%;
+    padding: 1%;
+    width: 50%;
+    color: var(--cor-branca);
+    font-size: var(--tamanho-texto-btn);
+}
+
+.imagemDoacao {
+    width: 100%;
+}
