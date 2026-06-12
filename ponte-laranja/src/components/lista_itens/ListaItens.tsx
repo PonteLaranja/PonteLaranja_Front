@@ -1,3 +1,4 @@
+import { Itens } from '../itens/Itens'
 import styles from './listaItens.module.css'
 import { Search, Calendar} from 'lucide-react'
 export const ListaItens = () => {
@@ -28,14 +29,8 @@ export const ListaItens = () => {
                         </tr>
 
                         <tbody>
-                            <tr>
-                                <td>144444</td>
-                                <td>Pacote de Arroz</td>
-                                <td>12</td>
-                                <td>1.34 - São Caetano do Sul</td>
-                                <td>Caique Zanetti</td>
-                                <td>14/05/2026</td>
-                            </tr>
+                        <Itens/>
+
                         </tbody>
                     </thead>
                 </table>
