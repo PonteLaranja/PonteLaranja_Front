@@ -1,0 +1,130 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}
+
+.main h2{
+    font-size: 40px;
+}
+
+.primeiraLinha{
+    display: flex;
+    flex-direction: row;
+}
+
+.nome h4{
+  font-size: 30px;  
+}
+
+.nome input{
+    width: 1041px;
+    height: 60px;
+    border-radius: 15px;
+}
+
+.unidade h4{
+    font-size: 30px;  
+}
+
+.unidade input{
+    width: 145px;
+    height: 60px;
+    border-radius: 15px;
+}
+
+
+.segundaLinha{
+    display: flex;
+    flex-direction: row;
+}
+
+.medida h4{
+    font-size: 30px;
+}
+
+.medida input{
+    width: 626px;
+    height: 60px;
+    border-radius: 15px;
+}
+
+.coleta h4{
+    font-size: 30px;
+}
+
+.coleta input{
+    width: 213px;
+    height: 60px;
+    border-radius: 15px;
+}
+
+.doacao h4{
+    font-size: 30px;
+}
+
+.doacao input{
+    width: 213px;
+    height: 60px;
+    border-radius: 15px;
+}
+
+.terceiraLinha{
+    display: flex;
+    flex-direction: row;
+}
+
+.TipoMedida h4{
+    font-size: 30px;
+}
+
+.TipoMedida select{
+    width: 237px;
+    height: 60px;
+    border-radius: 15px;
+}
+
+.TipoItem h4{
+    font-size: 30px;
+}
+
+.TipoItem select{
+    width: 425px;
+    height: 60px;
+    border-radius: 15px;
+}
+
+.Unidade h4{
+    font-size: 30px;
+}
+
+.Unidade select{
+    width: 439px;
+    height: 60px;
+    border-radius: 15px;
+}
+
+.quartaLinha{
+    display: flex;
+    flex-direction: row;
+}
+
+.Responsavel h4{
+    font-size: 30px;
+}
+
+.Responsavel select{
+    width: 439px;
+    height: 60px;
+    border-radius: 15px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 25vh;
+}
