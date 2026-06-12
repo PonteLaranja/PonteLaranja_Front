@@ -21,7 +21,7 @@
 }
 
 p,
-span,
+/* span, */
 li {
   background: linear-gradient(180deg, #FFF1F1 29.81%, #CDE1FE 76.92%);
   background-clip: text;
