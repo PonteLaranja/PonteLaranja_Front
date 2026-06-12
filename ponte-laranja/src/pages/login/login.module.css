@@ -8,7 +8,7 @@
     align-items: center;
     
 }
-.main div{
+.img{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,7 +17,7 @@
     width: fit-content;
 }
 
-.main div img{
+.img img{
     width: 70%;
     height: 30%;
     padding: 2%;
@@ -41,5 +41,41 @@
     border: 1px solid black;
     justify-content: space-around;
     
-    
+}
+
+.inserir{
+    display: flex;
+    border: 1px solid red;
+    width: 50%;
+    height: 100%;
+    flex-direction: column;
+    gap: 10%;
+}
+
+.inserir_dados{
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+    border: 1px solid black;
+    width: 100%;
+    height: 50%;
+}
+
+.inserir_dados label, .inserir_dados input{
+    width: 100%;
+}
+
+.inserir_dados input{
+    height: 50%;
+}
+
+#inserir_senha{
+    display: inline-flex;
+    width: 100%;
+    height: 100%;
+}
+
+#inserir_senha input{
+    height: 20%;
+    width: 100%;
 }
