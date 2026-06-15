@@ -1,5 +1,7 @@
 .paginaDoacao {
     min-height: 100vh;
+    display: grid;
+    gap: 60px;
 }
 
 .bannerPrincipal {
@@ -39,29 +41,6 @@
     font-size: var(--tamanho-texto-btn);
 }
 
-.secaoSobreDoacao {
-    display: grid;
-    gap: 30px;
-    height: 20vh;
-}
-
-.textoSobreDoacao {
-    display: grid;
-    gap: 5px;
-}
-
-.conteudoSuperior {
-    display: flex;
-    flex-direction: column;
-    grid-template-columns: 2fr 1fr;
-    gap: 20px;
-}
-
-.estatisticasDoacao {
-    display: flex;
-    justify-content: space-between;
-    padding: 2%;
-}
 
 .estatisticaItem {
     display: flex;
@@ -108,10 +87,16 @@
     background-color: var(--cor-secundaria);
 }
 
+.secaoDoadores {
+    display: grid;
+    gap: 30px;
+    height: 90rem;
+}
+
 .areaSuperiorDoadores {
     display: grid;
     justify-content: center;
-    gap: 40px;
+    gap: 10%;
 }
 
 .categoriasDoacao {
@@ -125,7 +110,7 @@
 }
 
 .categoriaDoacaoAlimento {
-    background-image: url('../../../public/imgs/comidaFelicidade.avif');
+    background-image: url('../../../public/imgs/comidaFelicidade.png');
     height: 70vh;
     border-radius: 15px;
     width: 25vw;
@@ -140,7 +125,7 @@
 }
 
 .categoriaDoacaoRoupa {
-    background-image: url('../../../public/imgs/frio.jpg');
+    background-image: url('../../../public/imgs/frio.png');
     height: 70vh;
     border-radius: 15px;
     width: 25vw;
@@ -155,7 +140,7 @@
 }
 
 .categoriaDoacaoBrinquedo {
-    background-image: url('../../../public/imgs/briqnued=.jpg');
+    background-image: url('../../../public/imgs/brinquedosCard.png');
     height: 70vh;
     border-radius: 15px;
     width: 25vw;
@@ -173,12 +158,12 @@
     display: grid;
     text-align: center;
     justify-items: center;
-    gap: 45px;
+    gap: 50px;
 }
 
 .secaoDoadores {
     display: grid;
-    gap: 45px;
+    gap: 5%;
 }
 
 .cardsDoadores {
@@ -197,7 +182,7 @@
 }
 
 .bannerMotivacional {
-    background-image: url('../../../public/imgs/maozinhas.jpg');
+    background-image: url('../../../public/imgs/maozinhas.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -224,18 +209,19 @@
     gap: 40px;
     text-align: center;
     justify-items: center;
-    margin-top: 25px;
     padding: 2%;
 }
 
 .listaCausas {
     display: flex;
-    gap: 20px;
+    gap: 50px;
+    justify-content: center;
+    width: 100%;
 }
 
 .cardCausa {
-    height: 85vh;
-    width: 35%;
+    height: 55vh;
+    width: 20%;
     display: grid;
     border-radius: 15px;
     background-color: var(--cor-secundaria);
@@ -254,10 +240,10 @@
 
 .textoCausa {
     display: grid;
-    height: 40%;
+    height: 30%;
     text-align: center;
     color: var(--cor-branca);
-    padding: 3%;
+    padding: 2%;
     gap: 40px;
     top: -60px;
     position: relative;
@@ -265,25 +251,21 @@
 }
 
 .textoCausa p {
-    font-size: 2rem;
     font-weight: 500;
     text-align: center;
 }
 
 .textoCausa h2 {
-    font-size: 2.5rem;
     text-align: center;
     width: 65%;
 }
 
 .secaoEscolhaDoacao {
     padding: 2%;
-    height: 40vh;
+    height: 80vh;
     display: grid;
     text-align: center;
     justify-items: center;
-    margin-bottom: 15%;
-    gap: 40px;
 }
 
 .listaDoacoes {
@@ -317,4 +299,505 @@
 
 .imagemDoacao {
     width: 100%;
+}
+
+
+.secaoSobreDoacao {
+    display: grid;
+    gap: 30px;
+    height: 80vh;
+    padding: 2%;
+
+}
+
+.textoSobreDoacao {
+    display: grid;
+    gap: 5px;
+}
+
+.estatisticasDoacao {
+    display: flex;
+    justify-content: space-between;
+    padding: 2%;
+}
+
+.conteudoSuperior {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr;
+}
+
+.divImgPrincipal {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.textoSobreDoacao {
+    width: 50%;
+    display: grid;
+    gap: 10px;
+}
+
+.descricaoSobreDoacao {
+    width: 60%;
+    text-align: justify;
+    font-size: 20px;
+}
+
+.tituloSobreDoacao {
+    width: 40%;
+}
+
+.botaoContato {
+    text-decoration: none;
+    background-color: var(--cor-principal);
+    text-align: center;
+    border-radius: 10px;
+    height: 70%;
+    padding: 1%;
+    width: 20%;
+    color: var(--cor-branca);
+    font-size: var(--tamanho-texto-btn);
+}
+
+
+
+/* ============================
+   TABLET
+============================ */
+
+@media (max-width: 1024px) {
+
+    .paginaDoacao {
+        gap: 40px;
+    }
+
+
+    /* Banner */
+
+    .bannerPrincipal {
+        height: 70vh;
+        padding: 5%;
+        background-position: center;
+    }
+
+    .bannerTitulo {
+        width: 50%;
+        font-size: 2rem;
+    }
+
+    .bannerBotao {
+        width: 50%;
+    }
+
+
+    /* Relatos */
+
+    .secaoRelatos {
+        height: auto;
+        padding: 5%;
+    }
+
+    .galeriaRelatos,
+    .listaRelatos {
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+    }
+
+
+    .imagemRelato {
+        width: 35%;
+        top: -30px;
+    }
+
+
+    .cardRelato {
+        width: 40%;
+        height: 70%;
+    }
+
+
+
+    /* Doadores */
+
+    .categoriasDoacao {
+        gap: 50px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+
+    .categoriaDoacaoAlimento,
+    .categoriaDoacaoRoupa,
+    .categoriaDoacaoBrinquedo {
+
+        width: 40vw;
+        height: 55vh;
+    }
+
+
+    .cardsDoadores {
+        width: 90%;
+        gap: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+
+    .cardDoador {
+        width: 40%;
+    }
+
+
+
+    /* Causas */
+
+
+    .listaCausas {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+
+    .cardCausa {
+        width: 40%;
+        height: 50vh;
+    }
+
+
+    .textoCausa h2 {
+        width: 90%;
+    }
+
+
+
+    /* Escolha doação */
+
+    .secaoEscolhaDoacao {
+        height: auto;
+    }
+
+
+    .listaDoacoes {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+
+    .cardDoacao {
+        width: 40%;
+        height: 40vh;
+    }
+
+
+
+    /* Sobre */
+
+    .conteudoSuperior {
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .divImgPrincipal,
+    .textoSobreDoacao {
+
+        width: 90%;
+    }
+
+
+    .descricaoSobreDoacao,
+    .tituloSobreDoacao {
+
+        width: 100%;
+    }
+
+
+    .botaoContato {
+
+        width: 40%;
+    }
+
+}
+
+
+
+
+
+
+/* ============================
+   CELULAR
+============================ */
+
+
+@media (max-width: 600px) {
+
+
+    .paginaDoacao {
+
+        gap: 30px;
+    }
+
+
+
+    /* Banner */
+
+
+    .bannerPrincipal {
+
+        height: 80vh;
+        padding: 8%;
+        background-position: center;
+
+    }
+
+
+    .texto_banner {
+
+        gap: 20px;
+    }
+
+
+    .bannerTitulo {
+
+        width: 100%;
+        font-size: 1.6rem;
+        text-align: center;
+
+    }
+
+
+    .bannerBotao {
+
+        width: 100%;
+        padding: 3%;
+
+    }
+
+
+
+    /* Relatos */
+
+
+    .secaoRelatos {
+
+        padding: 8%;
+    }
+
+
+    .imagemRelato {
+
+        width: 80%;
+        top: 0;
+        margin: auto;
+
+    }
+
+
+    .listaRelatos {
+
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .cardRelato {
+
+        width: 90%;
+        min-height: 250px;
+
+    }
+
+
+
+    /* Categorias */
+
+
+    .categoriasDoacao {
+
+        flex-direction: column;
+        gap: 25px;
+        align-items: center;
+
+    }
+
+
+    .categoriaDoacaoAlimento,
+    .categoriaDoacaoRoupa,
+    .categoriaDoacaoBrinquedo {
+
+        width: 90%;
+        height: 55vh;
+
+    }
+
+
+
+    /* Doadores */
+
+
+    .cardsDoadores {
+
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        gap: 20px;
+
+    }
+
+
+
+    .cardDoador {
+
+        width: 90%;
+
+    }
+
+
+
+
+    /* Banner motivacional */
+
+
+    .bannerMotivacional {
+
+        height: 50vh;
+
+    }
+
+
+    .conteudoBannerMotivacional {
+
+        width: 90%;
+        height: 70%;
+        padding: 5%;
+
+    }
+
+
+
+
+
+    /* Causas */
+
+
+    .listaCausas {
+
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+
+    }
+
+
+    .cardCausa {
+
+        width: 90%;
+        height: 55vh;
+
+    }
+
+
+    .textoCausa {
+
+        gap: 20px;
+    }
+
+    /* Escolha doação */
+
+
+    .listaDoacoes {
+
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+
+    }
+
+
+
+
+    .cardDoacao {
+
+        width: 90%;
+        height: 45vh;
+
+    }
+
+
+    .linkDoacao {
+        width: 70%;
+    }
+
+    .secaoEscolhaDoacao{
+        gap: 30px;
+    }
+
+
+    /* Sobre */
+
+
+    .secaoSobreDoacao {
+
+        height: auto;
+        margin-bottom: 10%;
+
+    }
+
+
+
+    .conteudoSuperior {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+
+    .divImgPrincipal {
+
+        width: 100%;
+
+    }
+
+
+    .textoSobreDoacao {
+        width: 100%;
+        text-align: center;
+        gap: 10px;
+        justify-items: center;
+    }
+
+
+    .descricaoSobreDoacao {
+
+        width: 100%;
+        font-size: 16px;
+    }
+
+
+    .tituloSobreDoacao {
+        text-align: center;
+        width: 100%;
+    }
+
+
+    .botaoContato {
+        height: 90%;
+        width: 70%;
+    }
+
+
+
+    /* Estatísticas */
+
+
+    .estatisticasDoacao {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+
 }

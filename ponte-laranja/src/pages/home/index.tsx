@@ -28,9 +28,10 @@ const Home = () => {
 
                     <div className={styles.conteudoSuperior}>
 
-                        <div className={styles.imagemSobreDoacao}>
-                            <img className={styles.imagemPrincipal} src="../public/banner1.png" alt="" />
+                        <div className={styles.divImgPrincipal}>
+                            <img className={styles.imagemPrincipal} src="./imgs/imagemBanner1.png" alt="" />
                         </div>
+
 
 
                         <div className={styles.textoSobreDoacao}>
@@ -54,28 +55,31 @@ const Home = () => {
                         </div>
 
 
-                        <div className={styles.estatisticasDoacao}>
 
-                            <div className={styles.estatisticaItem}>
-                                <h2>10M</h2>
-                                <p>Total arrecadado</p>
-                            </div>
+                    </div>
+                    <div className={styles.conteudoInferior}>
 
-                            <div className={styles.estatisticaItem}>
-                                <h2>32M</h2>
-                                <p>Pessoas alcançadas</p>
-                            </div>
+                    </div>
+                    <div className={styles.estatisticasDoacao}>
 
-                            <div className={styles.estatisticaItem}>
-                                <h2>10K</h2>
-                                <p>Famílias alcançadas</p>
-                            </div>
+                        <div className={styles.estatisticaItem}>
+                            <h2>10M</h2>
+                            <p>Total arrecadado</p>
+                        </div>
 
-                            <div className={styles.estatisticaItem}>
-                                <h2>10M</h2>
-                                <p>Doações totais</p>
-                            </div>
+                        <div className={styles.estatisticaItem}>
+                            <h2>32M</h2>
+                            <p>Pessoas alcançadas</p>
+                        </div>
 
+                        <div className={styles.estatisticaItem}>
+                            <h2>10K</h2>
+                            <p>Famílias alcançadas</p>
+                        </div>
+
+                        <div className={styles.estatisticaItem}>
+                            <h2>10M</h2>
+                            <p>Doações totais</p>
                         </div>
 
                     </div>
@@ -85,30 +89,30 @@ const Home = () => {
 
                 <section id={styles.escolha_q_doar} className={styles.secaoEscolhaDoacao}>
 
-                    <h2 className={styles.tituloSecao}>
+                    <h1 className={styles.tituloSecao}>
                         Escolha o que doar
-                    </h2>
+                    </h1>
 
 
                     <div className={styles.listaDoacoes}>
 
                         <div className={styles.cardDoacao}>
                             <img className={styles.imagemDoacao} src="./imgs/roupas.png" alt="" />
-                            <h2>Roupa</h2>
+                            <h3>Roupa</h3>
                             <a className={styles.linkDoacao} href="">Doar</a>
                         </div>
 
 
                         <div className={styles.cardDoacao}>
                             <img className={styles.imagemDoacao} src="./imgs/comidas.png" alt="" />
-                            <h2>Alimento</h2>
+                            <h3>Alimento</h3>
                             <a className={styles.linkDoacao} href="">Doar</a>
                         </div>
 
 
                         <div className={styles.cardDoacao}>
                             <img className={styles.imagemDoacao} src="./imgs/brinquedos.png" alt="" />
-                            <h2>Brinquedo</h2>
+                            <h3>Brinquedo</h3>
                             <a className={styles.linkDoacao} href="">Doar</a>
                         </div>
 
@@ -121,8 +125,8 @@ const Home = () => {
 
                     <div className={styles.galeriaRelatos}>
 
-                        <img className={styles.imagemRelato} src="./imgs/pessoasFelizes.jpg" alt="" />
-                        <img className={styles.imagemRelato} src="./imgs/maozinhas.jpg" alt="" />
+                        <img className={styles.imagemRelato} src="./imgs/pessoasFelizes.png" alt="" />
+                        <img className={styles.imagemRelato} src="./imgs/maozinhas.png" alt="" />
                         <img className={styles.imagemRelato} src="./imgs/grupinho.avif" alt="" />
                         <img className={styles.imagemRelato} src="./imgs/duplinha.jpg" alt="" />
 
@@ -134,7 +138,7 @@ const Home = () => {
                         <div className={styles.cardRelato}>
                             <h2>Relato 1</h2>
                             <p>
-                               “Eu estava passando por um momento difícil e não sabia como seguir em frente. Quando recebi a doação, senti esperança novamente. Mais do que a ajuda recebida, aquele gesto mostrou que eu não estava sozinho. Sou muito grato por quem estendeu a mão quando eu mais precisei.”
+                                “Eu estava passando por um momento difícil e não sabia como seguir em frente. Quando recebi a doação, senti esperança novamente. Mais do que a ajuda recebida, aquele gesto mostrou que eu não estava sozinho. Sou muito grato por quem estendeu a mão quando eu mais precisei.”
                             </p>
                         </div>
 
@@ -142,7 +146,7 @@ const Home = () => {
                         <div className={styles.cardRelato}>
                             <h2>Relato 2</h2>
                             <p>
-                               "Graças à doação que recebi, consegui enfrentar um momento muito difícil da minha vida. A ajuda chegou na hora certa e trouxe mais tranquilidade para mim e minha família. Saber que existem pessoas dispostas a ajudar fez toda a diferença."
+                                "Graças à doação que recebi, consegui enfrentar um momento muito difícil da minha vida. A ajuda chegou na hora certa e trouxe mais tranquilidade para mim e minha família. Saber que existem pessoas dispostas a ajudar fez toda a diferença."
                             </p>
                         </div>
 
@@ -150,7 +154,7 @@ const Home = () => {
                         <div className={styles.cardRelato}>
                             <h2>Relato 3</h2>
                             <p>
-                               "Em um período de muitas dificuldades, a doação que recebi trouxe alívio e esperança. Esse gesto de solidariedade mostrou que ainda existem pessoas dispostas a ajudar o próximo. Sou muito grato por essa ajuda, que fez a diferença no momento em que eu mais precisava."
+                                "Em um período de muitas dificuldades, a doação que recebi trouxe alívio e esperança. Esse gesto de solidariedade mostrou que ainda existem pessoas dispostas a ajudar o próximo. Sou muito grato por essa ajuda, que fez a diferença no momento em que eu mais precisava."
                             </p>
                         </div>
 
@@ -163,9 +167,9 @@ const Home = () => {
 
                     <div className={styles.areaSuperiorDoadores}>
 
-                        <h2 className={styles.tituloDoadores}>
+                        <h1 className={styles.tituloDoadores}>
                             Conheça alguns de nossos doadores
-                        </h2>
+                        </h1>
 
 
                         <div className={styles.categoriasDoacao}>
@@ -175,11 +179,11 @@ const Home = () => {
                             </div>
 
                             <div className={styles.categoriaDoacaoRoupa}>
-                                 <h3 className={styles.tituloCategoriaDoacao}>Roupas doadas</h3>
+                                <h3 className={styles.tituloCategoriaDoacao}>Roupas doadas</h3>
                             </div>
 
                             <div className={styles.categoriaDoacaoBrinquedo}>
-                                 <h3 className={styles.tituloCategoriaDoacao}>Brinquedos doados</h3>
+                                <h3 className={styles.tituloCategoriaDoacao}>Brinquedos doados</h3>
                             </div>
 
                         </div>
@@ -196,22 +200,22 @@ const Home = () => {
 
                             <div className={styles.cardDoador}>
                                 <img src="./imgs/diego.png" alt="" />
-                                <h3>Diego Castro da Rocha</h3>
+                                <h2>Diego Castro da Rocha</h2>
                             </div>
 
                             <div className={styles.cardDoador}>
                                 <img src="./imgs/luigi.png" alt="" />
-                                <h3>Luigi Santi Luberlato</h3>
+                                <h2>Luigi Santi Luberlato</h2>
                             </div>
 
                             <div className={styles.cardDoador}>
                                 <img src="./imgs/nicollas.png" alt="" />
-                                <h3>Nicollas Oliveira Rufino</h3>
+                                <h2>Nicollas Oliveira Rufino</h2>
                             </div>
 
                             <div className={styles.cardDoador}>
                                 <img src="./imgs/guinas.png" alt="" />
-                                <h3>Guilherme Ribeiro dos Santos</h3>
+                                <h2>Guilherme Ribeiro dos Santos</h2>
                             </div>
 
                         </div>
@@ -224,9 +228,9 @@ const Home = () => {
                 <section id={styles.banner_motivador} className={styles.bannerMotivacional}>
 
                     <div className={styles.conteudoBannerMotivacional}>
-                        <h2>
+                        <h1>
                             Sua doação muda vidas e juntos por um mundo melhor
-                        </h2>
+                        </h1>
                     </div>
 
                 </section>
@@ -246,13 +250,13 @@ const Home = () => {
 
                             <img className={styles.imagemCausa} src="./imgs/fome.png" alt="" />
                             <div className={styles.textoCausa}>
-                            <h2>
-                                Contra à fome
-                            </h2>
+                                <h2>
+                                    Contra à fome
+                                </h2>
 
-                            <p>
-                                Combater a fome é alimentar a esperança de um futuro melhor.
-                            </p>
+                                <p>
+                                    Combater a fome é alimentar a esperança de um futuro melhor.
+                                </p>
                             </div>
 
                         </div>
@@ -263,13 +267,13 @@ const Home = () => {
                             <img className={styles.imagemCausa} src="./imgs/pobreza2.png" alt="" />
 
                             <div className={styles.textoCausa}>
-                            <h2>
-                                Contra a pobreza têxtil
-                            </h2>
+                                <h2>
+                                    Contra a pobreza têxtil
+                                </h2>
 
-                            <p>
-                                Porque ter acesso a roupas adequadas é um direito de todos.
-                            </p>
+                                <p>
+                                    Porque ter acesso a roupas adequadas é um direito de todos.
+                                </p>
 
                             </div>
 
@@ -279,16 +283,16 @@ const Home = () => {
                         <div className={styles.cardCausa}>
 
                             <img className={styles.imagemCausa} src="./imgs/huah.png" alt="" />
-                            
+
                             <div className={styles.textoCausa}>
 
-                            <h2>
-                                À favor do sorriso
-                            </h2>
+                                <h2>
+                                    À favor do sorriso
+                                </h2>
 
-                            <p>
-                                Toda criança merece a chance de sorrir, brincar e sonhar.
-                            </p>
+                                <p>
+                                    Toda criança merece a chance de sorrir, brincar e sonhar.
+                                </p>
                             </div>
 
                         </div>
