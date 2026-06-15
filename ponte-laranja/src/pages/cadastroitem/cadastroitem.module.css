@@ -9,6 +9,9 @@
 
 .main h2{
     font-size: 40px;
+    color: #2C2C2C;
+    margin-bottom: 20px;
+    font-family: var(--font-texto-titulo)
 }
 
 .primeiraLinha{
@@ -18,22 +21,39 @@
 
 .nome h4{
   font-size: 30px;  
+  color: rgba(0, 0, 0, 0.57);
+  margin-bottom: 5px;
+  margin-left: 10px;
+  font-family: var(--font-texto-titulo)
 }
 
 .nome input{
     width: 1041px;
     height: 60px;
     border-radius: 15px;
+    border: 2px solid #A6A6A6;
+    font-size: 25px;
+    margin-right: 114px;
+    font-family: var(--font-texto-padrao);
+    padding-left: 5px;
 }
 
 .unidade h4{
     font-size: 30px;  
+    color: rgba(0, 0, 0, 0.57);
+    margin-bottom: 5px;
+    margin-left: 10px;
+    font-family: var(--font-texto-titulo)
 }
 
 .unidade input{
     width: 145px;
     height: 60px;
     border-radius: 15px;
+    border: 2px solid #A6A6A6;
+    font-size: 25px;
+    font-family: var(--font-texto-padrao);
+    padding-left: 5px;
 }
 
 
@@ -44,32 +64,61 @@
 
 .medida h4{
     font-size: 30px;
+    color: rgba(0, 0, 0, 0.57);
+    margin-top: 30px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    font-family: var(--font-texto-titulo)
 }
 
 .medida input{
     width: 626px;
     height: 60px;
     border-radius: 15px;
+    border: 2px solid #A6A6A6;
+    font-size: 25px;
+    margin-right: 169px;
+    font-family: var(--font-texto-padrao);
+    padding-left: 5px;
 }
 
 .coleta h4{
     font-size: 30px;
+    color: rgba(0, 0, 0, 0.57);
+    margin-top: 30px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    font-family: var(--font-texto-titulo)
 }
 
 .coleta input{
     width: 213px;
     height: 60px;
     border-radius: 15px;
+    border: 2px solid #A6A6A6;
+    font-size: 25px;
+    margin-right: 79px;
+    font-family: var(--font-texto-padrao);
+    padding-left: 5px;
 }
 
 .doacao h4{
     font-size: 30px;
+    color: rgba(0, 0, 0, 0.57);
+    margin-top: 30px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    font-family: var(--font-texto-titulo)
 }
 
 .doacao input{
     width: 213px;
     height: 60px;
     border-radius: 15px;
+    border: 2px solid #A6A6A6;
+    font-size: 25px;
+    font-family: var(--font-texto-padrao);
+    padding-left: 5px;
 }
 
 .terceiraLinha{
@@ -79,32 +128,61 @@
 
 .TipoMedida h4{
     font-size: 30px;
+    color: rgba(0, 0, 0, 0.57);
+    margin-top: 30px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    font-family: var(--font-texto-titulo)
 }
 
 .TipoMedida select{
     width: 237px;
     height: 60px;
     border-radius: 15px;
+    border: 2px solid #A6A6A6;
+    font-size: 25px;
+    margin-right: 122px;
+    font-family: var(--font-texto-padrao);
+    padding-left: 5px;
 }
 
 .TipoItem h4{
     font-size: 30px;
+    color: rgba(0, 0, 0, 0.57);
+    margin-top: 30px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    font-family: var(--font-texto-titulo)
 }
 
 .TipoItem select{
     width: 425px;
     height: 60px;
     border-radius: 15px;
+    border: 2px solid #A6A6A6;
+    font-size: 25px;
+    margin-right: 77px;
+    font-family: var(--font-texto-padrao);
+    padding-left: 5px;
 }
 
 .Unidade h4{
     font-size: 30px;
+    color: rgba(0, 0, 0, 0.57);
+    margin-top: 30px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    font-family: var(--font-texto-titulo)
 }
 
 .Unidade select{
     width: 439px;
     height: 60px;
     border-radius: 15px;
+    border: 2px solid #A6A6A6;
+    font-size: 25px;
+    font-family: var(--font-texto-padrao);
+    padding-left: 5px;
 }
 
 .quartaLinha{
@@ -114,12 +192,21 @@
 
 .Responsavel h4{
     font-size: 30px;
+    color: rgba(0, 0, 0, 0.57);
+    margin-top: 30px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    font-family: var(--font-texto-titulo)
 }
 
 .Responsavel select{
     width: 439px;
     height: 60px;
     border-radius: 15px;
+    border: 2px solid #A6A6A6;
+    font-size: 25px;
+    font-family: var(--font-texto-padrao);
+    padding-left: 5px;
 }
 
 .form{
@@ -127,4 +214,17 @@
     flex-direction: column;
     justify-content: space-between;
     height: 25vh;
+}
+
+.form button{
+    font-size: 50px;
+    width: 389px;
+    height: 105px;
+    border-radius: 15px;
+    background-color: var(--cor-fundo-botao);
+    color: white;
+    margin-left: 450px;
+    border: none;
+    margin-top: 120px;
+    font-family: var(--font-texto-titulo)
 }

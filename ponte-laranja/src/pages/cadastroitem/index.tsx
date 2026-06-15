@@ -1,6 +1,6 @@
 import styles from "./cadastroitem.module.css";
 
-const cadastroitem = () => {
+const CadastroItem = () => {
   return (
     <main className={styles.main}>
       <h2>Cadastro de Itens</h2>
@@ -63,4 +63,4 @@ const cadastroitem = () => {
   );
 };
 
-export default cadastroitem;
+export default CadastroItem;
