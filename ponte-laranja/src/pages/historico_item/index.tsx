@@ -10,8 +10,8 @@ const Historico = () => {
         <>
             <Header />
             <main className={styles.main}>
-                
-                
+            <Banner />
+
 
             </main>
         </>

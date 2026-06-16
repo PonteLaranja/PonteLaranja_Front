@@ -22,7 +22,7 @@ export const Banner = () => {
                 </div>
             </section>
 
-            {/* <section className={styles.lista_tabelas}> */}
+            <section className={styles.secao_tabelas}>
             <table className={styles.lista_tabelas}>
                 <thead className={styles.cabecalho_tabelas}>
                     <tr className={styles.cabecalho_linha}  >
@@ -38,7 +38,7 @@ export const Banner = () => {
                     <tr>
                         <td colSpan={6} className={styles.separador}></td>
                     </tr>
-                    <tr>
+                    <tr className={styles.conteudo}>
                         <td>144444</td>
                         <td>Pacote de Arroz</td>
                         <td>12</td>
@@ -46,9 +46,10 @@ export const Banner = () => {
                         <td>Caique Zanetti</td>
                         <td>14/05/2026</td>
                     </tr>
+                    {/* Conteudo máximo sem quebrar é 6, faça paginate de 5 ent */}
                 </tbody>
             </table>
-            {/* </section> */}
+            </section>
         </>
     )
 }
