@@ -1,0 +1,111 @@
+.filtros {
+    background: linear-gradient(to bottom right, #0D8BDF 0%, #045BA1 28%) bottom right / 50% 50% no-repeat, linear-gradient(to bottom left, #0D8BDF 0%, #045BA1 28%) bottom left / 50% 50% no-repeat, linear-gradient(to top left, #0D8BDF 0%, #045BA1 28%) top left / 50% 50% no-repeat, linear-gradient(to top right, #0D8BDF 0%, #045BA1 28%) top right / 50% 50% no-repeat;
+    width: 100%;
+    margin: 3% 0 1% 0;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10%;
+
+}
+
+.filtros h1 {
+    text-align: center;
+    font-family: var(--font-texto-titulo);
+    color: white;
+
+}
+
+.pesquisas {
+    /* display: inline-flex;
+    align-items: center;
+    justify-content: center; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    width: 60vw;
+    border: 1px solid black;
+    height: 100%;
+    gap: 5%;
+}
+
+.inserir_pesq {
+    /* height: 5vh;     */
+    padding-left: .5%;
+    height: 18%;
+    border-radius: .5vw;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: var(--font-texto-titulo);
+    width: 50%;
+    background: var(--background-pesquisa);
+    outline: none;
+    font-size: 15px;
+}
+
+.search {
+    width: 50%;
+    background-color: transparent;
+}
+
+.input {
+    font-size: 15px;
+    background-color: transparent;
+    width: 100%;
+    outline: none;
+    border: none;
+    font-family: var(--font-texto-titulo);
+}
+
+.input::placeholder {
+    color: black;
+    
+}
+
+.icon {
+    width: 15%;
+}
+
+.select_selecionar {
+    /* padding-left: 0; */
+}
+
+#inserir_data{
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    outline: none;
+    border: none;
+}
+
+.lista_tabelas{
+    width: 100%;
+    background-color: red;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.cabecalho_tabelas{
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+
+}
+
+
+.cabecalho_linha{
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 32px;
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+}
