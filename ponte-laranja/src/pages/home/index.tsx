@@ -1,9 +1,11 @@
+import { Header } from "@/src/components/header/Header";
 import styles from "./home.module.css"
 
 
 const Home = () => {
     return (
         <>
+            <Header />
             <main className={styles.paginaDoacao}>
 
                 <section id={styles.banner} className={styles.bannerPrincipal}>
@@ -29,9 +31,12 @@ const Home = () => {
                     <div className={styles.conteudoSuperior}>
 
                         <div className={styles.divImgPrincipal}>
-                            <img className={styles.imagemPrincipal} src="./imgs/imagemBanner1.png" alt="" />
+                            <img
+                                className={styles.imagemPrincipal}
+                                src="./imgs/criancaSonriendo.jpg"
+                                alt=""
+                            />
                         </div>
-
 
 
                         <div className={styles.textoSobreDoacao}>
@@ -303,7 +308,6 @@ const Home = () => {
                 </section>
 
             </main>
-
 
         </>
     )

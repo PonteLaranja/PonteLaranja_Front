@@ -325,6 +325,8 @@
     display: flex;
     justify-content: center;
     justify-items: center;
+    gap: 3%;
+    padding: 2%;
     grid-template-columns: 1fr 1fr;
 }
 
@@ -361,6 +363,21 @@
     color: var(--cor-branca);
     font-size: var(--tamanho-texto-btn);
 }
+
+.divImgPrincipal {
+    width: 50%;
+    height: 400px;
+}
+
+
+.imagemPrincipal {
+    width: 60%;
+    border-radius: 15px;
+    height: 100%;
+    object-fit: cover;
+
+}
+
 
 
 
@@ -732,7 +749,7 @@
         width: 70%;
     }
 
-    .secaoEscolhaDoacao{
+    .secaoEscolhaDoacao {
         gap: 30px;
     }
 
