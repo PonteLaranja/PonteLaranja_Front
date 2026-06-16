@@ -1,8 +1,11 @@
 import styles from "./cadastroitem.module.css";
+import { Header } from "@/src/components/header/header";
 
 const CadastroItem = () => {
   return (
-    <main className={styles.main}>
+    <>
+    <Header></Header>
+    <main className={styles.main}>  
       <h2>Cadastro de Itens</h2>
       <form className={styles.form}>
       <div className={styles.primeiraLinha}>
@@ -60,6 +63,7 @@ const CadastroItem = () => {
       <button>Cadastrar</button>
       </form>
     </main>
+    </>
   );
 };
 
