@@ -1,7 +1,15 @@
 import Link from 'next/link'
 import styles from './header.module.css'
+import { useState } from 'react'
 
 export const Header = () => {
+
+    const [abertofechado, setabertofechado] = useState<boolean>(false)
+
+    const AbrirBarraLateral = () =>
+    {
+        setabertofechado(!abertofechado)
+    }
 
     return (
         <header className={styles.cabecalho}>
@@ -13,7 +21,18 @@ export const Header = () => {
                     <Link href={""} className={styles.link}><li className={`texto_layout`}>Sobre nós</li></Link>
                 </ul>
             </nav>
-            <button className={styles.login}>Login</button>
+            <button className={styles.login} onClick={AbrirBarraLateral}>Login</button>
+            <aside className={abertofechado ? styles.barraLateralOpen : styles.barraLateral}>
+                <div>
+                    <img src="" alt="" />
+                    <br />
+                    <section>
+                        <Link></Link>
+                        <Link></Link>
+                        <Link></Link>
+                    </section>
+                </div>
+            </aside>
         </header>
 
     )
