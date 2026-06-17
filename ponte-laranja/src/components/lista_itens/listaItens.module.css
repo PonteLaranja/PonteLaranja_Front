@@ -123,7 +123,7 @@
 .separador {
     height: 8px;
     border-radius: 1vw;
-    width: 10vw;
+    width: 12vw;
     padding: 0 !important;
     background: linear-gradient(
         180deg,
@@ -172,4 +172,19 @@
 .conteudo:hover{
     filter: brightness(0.97);
     transition: 0.2s;
+}
+#item{
+    font-size: 14px;
+}
+#idade{
+    font-size: 20px;
+    width: 40%;
+    margin-left: 30%;
+    
+}
+#acoes{
+    width: 70%;
+    align-self: flex-end;
+    margin-left: 22%;
+
 }

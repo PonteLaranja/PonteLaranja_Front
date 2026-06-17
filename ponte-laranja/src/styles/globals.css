@@ -43,6 +43,10 @@ li {
 
 }
 
+.link{
+  text-decoration: none;
+  color: black;
+}
 
 p,
 span,
