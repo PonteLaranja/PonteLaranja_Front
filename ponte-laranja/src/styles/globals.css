@@ -1,5 +1,51 @@
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+:root {
+  --laranja: #ff6600;
+  --azul-gradiente:
+    linear-gradient(to bottom right, #55bafd 0%, #0d8bdf 50%) bottom right / 50%
+      50% no-repeat,
+    linear-gradient(to bottom left, #55bafd 0%, #0d8bdf 50%) bottom left / 50%
+      50% no-repeat,
+    linear-gradient(to top left, #55bafd 0%, #0d8bdf 50%) top left / 50% 50%
+      no-repeat,
+    linear-gradient(to top right, #55bafd 0%, #0d8bdf 50%) top right / 50% 50%
+      no-repeat;
+  --cor-fundo-botao: #ff6600;
+}
+
+.texto_layout {
+  font-size: 25px;
+  background: linear-gradient(180deg, #fff1f1 29.81%, #cde1fe 76.92%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: 2.5s ease-in-out;
+}
+
+p,
+/* span, */
+li {
+  background: linear-gradient(180deg, #fff1f1 29.81%, #cde1fe 76.92%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+p,
+span,
+li,
+button {
+  font-family: var(--font-texto-padrao);
+}
+
+/* p:hover, */
+span:hover,
+li:hover,
+button:hover {
+  cursor: pointer;
 }

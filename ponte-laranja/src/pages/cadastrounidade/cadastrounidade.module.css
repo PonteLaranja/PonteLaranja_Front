@@ -1,0 +1,98 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.main h2{
+    font-size: 40px;
+    color: #2C2C2C;
+    margin-bottom: 60px;
+    font-family: var(--font-texto-titulo)
+}
+
+.primeiraLinha{
+    display: flex;
+    flex-direction: row;
+}
+
+.nome h4{
+  font-size: 30px;  
+  color: rgba(0, 0, 0, 0.57);
+  margin-bottom: 5px;
+  margin-left: 10px;
+  font-family: var(--font-texto-titulo)
+}
+
+.nome input{
+    width: 1003px;
+    height: 60px;
+    border-radius: 15px;
+    border: 2px solid #A6A6A6;
+    font-size: 25px;
+    margin-right: 114px;
+    font-family: var(--font-texto-padrao);
+    padding-left: 5px;
+}
+
+.cep h4{
+    font-size: 30px;  
+    color: rgba(0, 0, 0, 0.57);
+    margin-bottom: 5px;
+    margin-left: 10px;
+    font-family: var(--font-texto-titulo)
+}
+
+.cep input{
+    width: 234px;
+    height: 60px;
+    border-radius: 15px;
+    border: 2px solid #A6A6A6;
+    font-size: 25px;
+    font-family: var(--font-texto-padrao);
+    padding-left: 5px;
+}
+
+.segundaLinha{
+    display: flex;
+    flex-direction: row;
+}
+
+.Responsavel h4{
+    font-size: 30px;
+    color: rgba(0, 0, 0, 0.57);
+    margin-top: 70px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    font-family: var(--font-texto-titulo)
+}
+
+.Responsavel select{
+    width: 439px;
+    height: 60px;
+    border-radius: 15px;
+    border: 2px solid #A6A6A6;
+    font-size: 25px;
+    font-family: var(--font-texto-padrao);
+    padding-left: 5px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.form button{
+    font-size: 50px;
+    width: 389px;
+    height: 70px;
+    border-radius: 15px;
+    background-color: var(--cor-fundo-botao);
+    color: white;
+    margin-left: 450px;
+    border: none;
+    margin-top: 200px;
+    font-family: var(--font-texto-titulo);
+}
