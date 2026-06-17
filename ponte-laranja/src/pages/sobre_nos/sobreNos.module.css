@@ -1,0 +1,32 @@
+.conteudoPrincipal{
+    height: 71vh;
+    display: flex;
+    grid-template-columns: 2fr 2fr;
+    padding: 2%;
+    justify-content: center;
+}
+
+.esquerda{
+    width: 40%;
+    padding-top: 1%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    text-align: justify;
+}
+
+.esquerda p{
+    width: 80%;
+}
+
+.direita{
+    width: 50%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+}
+
+.logoSobre{
+    height: 80%;
+}

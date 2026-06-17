@@ -10,7 +10,7 @@ export const Header = () => {
                 <ul>
                     <Link href={""} className={styles.link}><li className={`texto_layout`}>Histórico</li></Link>
                     <Link href={""} className={styles.link}><li className={`texto_layout`}>Contato</li></Link>
-                    <Link href={""} className={styles.link}><li className={`texto_layout`}>Sobre nós</li></Link>
+                    <Link href="/sobre_nos" className={styles.link}><li className={`texto_layout`}>Sobre nós</li></Link>
                 </ul>
             </nav>
             <button className={styles.login}>Login</button>
