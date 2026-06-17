@@ -1,5 +1,7 @@
 import { Header } from "@/src/components/header/Header";
 import styles from "./home.module.css"
+import Footer from "@/src/components/footer/footer";
+import ModalTransferencia from "@/src/components/modal_transferencia/modalTransferencia";
 
 
 const Home = () => {
@@ -306,9 +308,9 @@ const Home = () => {
                     </div>
 
                 </section>
-
             </main>
 
+        <Footer/>
         </>
     )
 }
