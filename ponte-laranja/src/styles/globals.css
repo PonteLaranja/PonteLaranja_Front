@@ -2,6 +2,11 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  
+}
+
+body{
+  overflow-x: hidden;
 }
 
 :root {
@@ -21,7 +26,12 @@
 }
 
 
-
+.texto_tabela{
+  font-size: 12px;
+  background: transparent;
+  color: black !important;
+  
+}
 
 p,
 /* span, */
@@ -42,7 +52,7 @@ button {
 }
 
 /* p:hover, */
-span:hover,
+/* span:hover, */
 li:hover,
 button:hover {
   cursor: pointer;
@@ -50,3 +60,10 @@ button:hover {
 }
 
 .texto_layout {}
+
+@media (max-width: 900px) {
+  .texto_tabela{
+    font-size: 12px;
+  } 
+  
+}

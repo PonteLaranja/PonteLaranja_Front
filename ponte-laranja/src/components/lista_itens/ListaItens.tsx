@@ -23,32 +23,32 @@ export const Banner = () => {
             </section>
 
             <section className={styles.secao_tabelas}>
-            <table className={styles.lista_tabelas}>
-                <thead className={styles.cabecalho_tabelas}>
-                    <tr className={styles.cabecalho_linha}  >
-                        <th>ID</th>
-                        <th>Nome do Item Doado</th>
-                        <th>Quantidade</th>
-                        <th>Unidade</th>
-                        <th>Usuário Doador</th>
-                        <th>Data</th>
-                    </tr>
-                </thead>
-                <tbody className={styles.corpo_f}>
-                    <tr>
-                        <td colSpan={6} className={styles.separador}></td>
-                    </tr>
-                    <tr className={styles.conteudo}>
-                        <td>144444</td>
-                        <td>Pacote de Arroz</td>
-                        <td>12</td>
-                        <td>1.34 - São Caetano do Sul</td>
-                        <td>Caique Zanetti</td>
-                        <td>14/05/2026</td>
-                    </tr>
-                    {/* Conteudo máximo sem quebrar é 6, faça paginate de 5 ent */}
-                </tbody>
-            </table>
+                <table className={styles.lista_tabelas}>
+                    <thead className={styles.cabecalho_tabelas}>
+                        <tr className={styles.cabecalho_linha}  >
+                            <th className={`texto_tabela`}><span>ID</span></th>
+                            <th className={`texto_tabela`}><span>Nome do Item Doado</span></th>
+                            <th className={`texto_tabela`}><span>Quantidade</span></th>
+                            <th className={`texto_tabela`}><span>Unidade</span></th>
+                            <th className={`texto_tabela`}><span>Usuário Doador</span></th>
+                            <th className={`texto_tabela`}><span>Data</span></th>
+                        </tr>
+                    </thead>
+                    <tbody className={styles.corpo_f}>
+                        <tr>
+                            <td colSpan={6} className={styles.separador}></td>
+                        </tr>
+                        <tr className={styles.conteudo}>
+                            <td><div className={`${styles.card} texto_tabela`}><span>144444</span> </div></td>
+                            <td><div className={`${styles.card} texto_tabela`}><span>Pacote de Arroz</span>             </div></td>
+                            <td><div className={`${styles.card} texto_tabela`}><span>12</span>                          </div></td>
+                            <td><div className={`${styles.card} texto_tabela`}><span>1.34 - São Caetano do Sul</span>   </div></td>
+                            <td><div className={`${styles.card} texto_tabela`}><span>Caique Zanetti</span>              </div></td>
+                            <td><div className={`${styles.card} texto_tabela`}><span>14/05/2026 </span>                 </div></td>
+                        </tr>
+                        {/* Conteudo máximo sem quebrar é 6, faça paginate de 5 ent */}
+                    </tbody>
+                </table>
             </section>
         </>
     )
