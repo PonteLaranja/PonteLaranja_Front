@@ -1,5 +1,4 @@
-import { Header } from "@/src/components/header/Header"
-import { SubHeader } from "@/src/components/sub-header/subHeader"
+import ListaUnidade from "@/components/lista-unidade/listaUnidade"
 
 
 
@@ -7,7 +6,7 @@ const Historico = () => {
 
     return(
         <>
-        
+         <ListaUnidade/>
         </>
     )
 }
