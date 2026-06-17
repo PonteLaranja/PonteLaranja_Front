@@ -1,5 +1,49 @@
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
+
+:root {
+
+  --laranja: #FF6600;
+  --azul-gradiente: linear-gradient(to bottom right, #55BAFD 0%, #0D8BDF 50%) bottom right / 50% 50% no-repeat, linear-gradient(to bottom left, #55BAFD 0%, #0D8BDF 50%) bottom left / 50% 50% no-repeat, linear-gradient(to top left, #55BAFD 0%, #0D8BDF 50%) top left / 50% 50% no-repeat, linear-gradient(to top right, #55BAFD 0%, #0D8BDF 50%) top right / 50% 50% no-repeat;
+
+}
+
+.texto_layout {
+  font-size: 25px;
+  background: linear-gradient(180deg, #FFF1F1 29.81%, #CDE1FE 76.92%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: 2.5s ease-in-out;
+}
+
+p,
+/* span, */
+li {
+  background: linear-gradient(180deg, #FFF1F1 29.81%, #CDE1FE 76.92%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+
+
+p,
+span,
+li,
+button {
+  font-family: var(--font-texto-padrao);
+}
+
+/* p:hover, */
+span:hover,
+li:hover,
+button:hover {
+  cursor: pointer;
+
+}
+
+.texto_layout {}
