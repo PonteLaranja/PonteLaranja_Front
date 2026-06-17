@@ -1,9 +1,34 @@
+import { useEffect, useState } from 'react'
 import Unidade from '../unidade/unidade'
 import styles from './listaUnidade.module.css'
 import { Search, Calendar } from 'lucide-react'
-export const ListaUnidade = () => {
+import { listarUnidade } from '@/pages/api/unidade';
 
-    
+interface ListaUnidade {
+    unidadeDto: string;
+    nomeUnidadeDto: string;
+    cepDto: string;
+    nomeResponsavelDto: string;
+    nomeTipoUnidadeDto: string;
+}
+
+
+export const Listar = () => {
+
+    const [unidades, setUnidades] = useState<ListaUnidade[]>([]);
+
+    async function listar() {
+        try {
+            const lista = await listarUnidade();
+            setUnidades(lista)
+        } catch (error: any) {
+            console.log(error.any)
+        }
+    }
+
+    useEffect(() => {
+        listar();
+    }, [])
 
     return (
         <>
@@ -35,10 +60,19 @@ export const ListaUnidade = () => {
                         </tr>
                     </thead>
                     <tbody className={styles.corpo_f}>
-                        <tr>
-                            <td colSpan={6} className={styles.separador}></td>
-                        </tr>
-                        <Unidade/>
+                        {unidades.length > 0 ? unidades.map((item) => (
+                            <>
+                                <tr>
+                                    <td colSpan={6} className={styles.separador}></td>
+                                </tr>
+                                <Unidade />
+                            </>
+
+                        )): (
+                            <tr>
+                                <td>Carregando unidades...</td>
+                            </tr>
+                        )}
                         {/* Conteudo máximo sem quebrar é 6, faça paginate de 5 ent */}
                     </tbody>
                 </table>
@@ -47,4 +81,4 @@ export const ListaUnidade = () => {
     )
 }
 
-export default ListaUnidade
+export default Listar
