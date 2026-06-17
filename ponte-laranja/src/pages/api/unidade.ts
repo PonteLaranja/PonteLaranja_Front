@@ -1,3 +1,5 @@
+import { api } from "./api";
+
 interface unidadeListagem {
   unidadeDto: string;
   nomeUnidadeDto: string;
@@ -6,12 +8,17 @@ interface unidadeListagem {
   nomeResponsavelDto: string;
   tipoUnidadeDto: string;
   nomeTipoUnidadeDto: string;
+  ativo : boolean
 }
 
 export async function listarUnidade() {
     try {
-        const response = await api
-    } catch (error) {
-        
+        const response = await api.get("Unidade");
+
+        const unidadesAtivas = response.data.filter((unidade: unidadeListagem) => unidade.ativo === true);
+
+        return unidadesAtivas
+    } catch (error: any) {
+        throw new Error(error.response.data);
     }
 }
