@@ -20,7 +20,7 @@ const SobreNos = () => {
                     </p>
                 </div>
                 <div className={styles.direita}>
-                    <img className={styles.logoSobre} src="/imgs/logo_header.svg" alt="" />
+                    <img className={styles.logoSobre} src="/imgs/logoSobre.svg" alt="" />
                 </div>
             </main>
             <Footer />
