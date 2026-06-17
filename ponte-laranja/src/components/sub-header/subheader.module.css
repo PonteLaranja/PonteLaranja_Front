@@ -3,6 +3,7 @@
     background: linear-gradient(357deg, rgba(13, 139, 223, 0.75) -34.33%, #067FE0 46.83%, rgba(13, 139, 223, 0.75) 97.87%);
     width: 100%;
     height: clamp(1vh, 136px, 15vh);
+    /* rfdsafsd */
     display: inline-flex;
     padding: 0 5%;
     align-items: center;

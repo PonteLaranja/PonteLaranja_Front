@@ -35,14 +35,14 @@
 .inserir_pesq {
     /* height: 5vh;     */
     padding-left: .5%;
-    height: 18%;
+    height: 24%;
     border-radius: .5vw;
     /* border: 1px solid black; */
     display: flex;
     flex-direction: row;
     align-items: center;
     font-family: var(--font-texto-titulo);
-    width: 50%;
+    width: 52%;
     background: var(--background-pesquisa);
     outline: none;
     font-size: 15px;
@@ -82,58 +82,94 @@
     border: none;
 }
 
+
+
+/* ====================== */
+
+.lista_tabelas th {
+    padding: 0 2rem;
+}
+
+
 .lista_tabelas {
     width: 100%;
+    padding: 0 0%;
     border-collapse: separate;
-    border-spacing: 0px 2rem;
+    border-spacing: 0 12px;
 }
 
 .lista_tabelas th {
     font-weight: 400;
     color: var(--cor-texto);
-    padding-bottom: 2rem;
+    padding-bottom: 1.5rem;
     border-bottom: 1px solid #cfd4da;
     text-align: center;
     font-size: 18px;
     font-family: var(--font-texto-titulo);
 }
 
-.cabecalho_linha th{
-    border-collapse: separate;
-    
-}
+
+
 
 .lista_tabelas td {
-    /* background-color: #ffffff; */
-    /* padding: 34px 58px; */
-    padding: 1px 40px;
-    padding: 1px clamp(38px, 3.5vw, 550px);
     text-align: center;
-    color: var(--cor-cinza);
+    color: #000;
     font-size: 18px;
     font-family: var(--font-texto-padrao);
+    padding: 16px;
 }
 
-.lista_tabelas tbody tr td:first-child {
-    border-radius: 
-    5px 0 0 5px;
+/* Linha separadora abaixo do cabeçalho */
+.separador {
+    height: 8px;
+    border-radius: 1vw;
+    width: 10vw;
+    padding: 0 !important;
+    background: linear-gradient(
+        180deg,
+        #ABCDFE 0.01%,
+        rgba(109, 155, 254, 0.75) 51.92%,
+        rgba(171, 205, 254, 0.90) 89.9%
+    );
 }
 
-.lista_tabelas tbody tr td:last-child {
-    border-radius: 0 5px 5px 0;
-}
-.corpo_f{
-    background-color: black;
-}
-.corpo_f tr {
-    background-color: beige;
-}
-.separador{
-    height: .8vh;
-    background: linear-gradient(180deg, #ABCDFE 0.01%, rgba(109, 155, 254, 0.75) 51.92%, rgba(171, 205, 254, 0.90) 89.9%);
+/* Linha de conteúdo */
+.conteudo td {
+    background: linear-gradient(
+        180deg,
+        #C2D6FF 0%,
+        #ABC4F0 100%
+    );
+    padding: 10px;
 }
 
-.conteudo td{
-    background: #045BA1;
-    height: 10vh;
+.card {
+    background: #F5F5F5;
+    border-radius: 6px;
+    padding: 12px;
+    text-align: center;
+}
+
+.card:hover{
+    cursor: pointer;
+    transition: 0.2s;
+
+    filter: brightness(0.90);
+}
+
+
+.conteudo td:first-child {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.conteudo td:last-child {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+/* Opcional: hover */
+.conteudo:hover{
+    filter: brightness(0.97);
+    transition: 0.2s;
 }

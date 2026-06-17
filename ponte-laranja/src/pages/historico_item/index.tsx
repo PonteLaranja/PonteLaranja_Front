@@ -1,12 +1,19 @@
-import ListaUnidade from "@/components/lista-unidade/listaUnidade"
-
+import { Header } from "@/src/components/header/Header"
+import { SubHeader } from "@/src/components/sub-header/subHeader"
+import styles from './historico.module.css'
+import { Banner } from "@/src/components/lista_itens/ListaItens"
 
 
 const Historico = () => {
 
-    return(
+    return (
         <>
-         <ListaUnidade/>
+            <Header />
+            <main className={styles.main}>
+            <Banner />
+
+
+            </main>
         </>
     )
 }

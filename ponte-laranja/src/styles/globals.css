@@ -2,13 +2,18 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  
+}
+
+body{
+  overflow-x: hidden;
 }
 
 :root {
 
   --laranja: #FF6600;
   --azul-gradiente: linear-gradient(to bottom right, #55BAFD 0%, #0D8BDF 50%) bottom right / 50% 50% no-repeat, linear-gradient(to bottom left, #55BAFD 0%, #0D8BDF 50%) bottom left / 50% 50% no-repeat, linear-gradient(to top left, #55BAFD 0%, #0D8BDF 50%) top left / 50% 50% no-repeat, linear-gradient(to top right, #55BAFD 0%, #0D8BDF 50%) top right / 50% 50% no-repeat;
-
+  --background-pesquisa: linear-gradient(180deg, #B6D3FE 0%, #B4D2FE 27.4%, #B1D0FE 53%, #A7CAFE 73.08%, #95BFFD 100%);
 }
 
 .texto_layout {
@@ -18,6 +23,14 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: 2.5s ease-in-out;
+}
+
+
+.texto_tabela{
+  font-size: 12px;
+  background: transparent;
+  color: black !important;
+  
 }
 
 p,
@@ -39,7 +52,7 @@ button {
 }
 
 /* p:hover, */
-span:hover,
+/* span:hover, */
 li:hover,
 button:hover {
   cursor: pointer;
@@ -47,3 +60,10 @@ button:hover {
 }
 
 .texto_layout {}
+
+@media (max-width: 900px) {
+  .texto_tabela{
+    font-size: 12px;
+  } 
+  
+}
