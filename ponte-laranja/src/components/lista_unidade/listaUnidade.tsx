@@ -65,7 +65,12 @@ export const Listar = () => {
                                 <tr>
                                     <td colSpan={6} className={styles.separador}></td>
                                 </tr>
-                                <Unidade />
+                                <Unidade nomeResponsavelDto={item.nomeResponsavelDto} 
+                                cepDto={item.cepDto} 
+                                nomeTipoUnidadeDto={item.nomeTipoUnidadeDto}
+                                unidadeDto={item.unidadeDto}
+                                nomeUnidadeDto={item.nomeUnidadeDto}
+                                />
                             </>
 
                         )): (

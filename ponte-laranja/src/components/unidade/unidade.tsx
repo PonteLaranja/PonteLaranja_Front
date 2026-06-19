@@ -1,17 +1,25 @@
 import { useState } from "react"
 import styles from "./unidade.module.css"
+import { useRouter } from "next/router";
+import { listarUnidade } from "@/pages/api/unidade";
 
-const Unidade = () => {
+interface unidade {
+  unidadeDto: string;
+  nomeUnidadeDto: string;
+  cepDto: string;
+  nomeResponsavelDto: string;
+  nomeTipoUnidadeDto: string;
+}
 
-    const [situacao, setSituracao] =  useState<string>("Instável")
+const Unidade = ({unidadeDto, nomeUnidadeDto, cepDto, nomeResponsavelDto, nomeTipoUnidadeDto} : unidade) => {
     return (
         <>
             <tr className={styles.conteudo}>
-                <td><div className={`${styles.card} texto_tabela`}><span>144444</span> </div></td>
-                <td><div className={`${styles.card} texto_tabela`}><span>Matriz Sao Paulo</span>             </div></td>
-                <td><div className={`${styles.card} texto_tabela`}><span>124938493</span>                          </div></td>
-                <td><div className={`${styles.card} texto_tabela`}><span>Romario</span>   </div></td>
-                <td><div className={`${styles.card} texto_tabela`}><span>Matriz</span>              </div></td>
+                <td><div className={`${styles.card} texto_tabela`}><span>{unidadeDto}</span> </div></td>
+                <td><div className={`${styles.card} texto_tabela`}><span>{nomeUnidadeDto}</span>             </div></td>
+                <td><div className={`${styles.card} texto_tabela`}><span>{cepDto}</span>                          </div></td>
+                <td><div className={`${styles.card} texto_tabela`}><span>{nomeResponsavelDto}</span>   </div></td>
+                <td><div className={`${styles.card} texto_tabela`}><span>{nomeTipoUnidadeDto}</span>              </div></td>
                 <td><div className={`${styles.card} texto_tabela ${styles.estabilidade}`}><span>Crítico</span> 
                     <div className={styles.bola}></div>               
                 </div></td>
