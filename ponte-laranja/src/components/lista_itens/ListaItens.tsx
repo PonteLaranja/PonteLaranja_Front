@@ -7,22 +7,28 @@ import ReactPaginate from 'react-paginate'
 import { Item } from '../itens/Itens'
 import { ItemV2 } from '../itens/ItensProps'
 
-type itemMock = {
-    logId: string
-    itemId: string,
-    nomeItem: string,
-    quantidade: number,
-    unidade: string,
-    usuarioDoador: string,
-    data: Date
-}
+import { LogDoacao } from '@/src/pages/api/logHistoricoMock'
+
+type itemMock = LogDoacao
+
+// type itemMock = {
+//     logId: string;
+//     itemId: string;
+//     nomeItem: string;
+//     quantidade: number;
+//     tipoMedida: string;
+//     unidade: string;
+//     usuarioDoador: string;
+//     data: Date;
+// }
 
 
 export const Banner = () => {
 
     const [log, setLog] = useState<itemMock[]>([])
-    const [primeiroItem, setPrimeiroItem] = useState(0)
     const [pesquisa, setPesquisa] = useState("")
+
+    const [primeiroItem, setPrimeiroItem] = useState(0)
     const numItem = 5
     const ultimoItem = primeiroItem + numItem
     const itensAtuais = log.slice(primeiroItem, ultimoItem)
@@ -34,7 +40,10 @@ export const Banner = () => {
     }
 
     // const itensFiltrados = log.filter((logs) => logs.)
+    // async function pesquisa()
+    // {
 
+    // }
     async function listagem() {
         const dados = await listar()
         setLog(dados)
@@ -78,8 +87,29 @@ export const Banner = () => {
                         </tr>
                     </thead>
                     <tbody className={styles.corpo_f}>
-                        {/* <Item /> */}
-                        <ItemV2 page="itensDoados" />
+                        {itensAtuais.length > 0 ? (
+                            itensAtuais.map((item) => (
+                                <ItemV2 
+                                page="itensDoados"
+                                key={item.logId}
+                                itemId={item.itemId}
+                                data={item.data}
+                                quantidade={item.quantidade}
+                                nomeItem={item.nomeItem}
+                                unidade={item.unidade}
+                                usuarioDoador={item.usuarioDoador}
+                                tipoMedida={item.tipoMedida}
+                                logId={item.logId}
+                                 />
+                            ))
+                        ) : (
+                            <tr>
+                                <td>
+                                    <p>oi</p>
+                                </td>
+                            </tr>
+                        )}
+                        
                     </tbody>
                     {/* <tfoot className={styles.tFooter}>
 
@@ -97,21 +127,28 @@ export const Banner = () => {
                         </tr>
                     </tfoot> */}
                 </table>
-                        <ReactPaginate 
+                <nav className={styles.navegacao}>
+                    <ul>
+
+                    <ReactPaginate
                         breakLabel="..."
                         previousLabel={<ChevronLeft size={40} />}
                         onPageChange={alterarPagina}
-                        pageRangeDisplayed={itensAtuais}
-                        renderOnZeroPageCount={null}
-                        pageClassName={styles.pagina}
-                        pageLinkClassName={styles.pagina_link}
-                        previousClassName={styles.pagina}
-                        nextClassName={styles.pagina}
-                        activeClassName={styles.ativo}
-                        nextLabel={<ChevronRight size={40} />}
+                        pageRangeDisplayed={paginas}
                         pageCount={paginas}
-                        
-                        />
+                        renderOnZeroPageCount={null}
+                        // pageClassName={styles.pagina}
+                        // pageLinkClassName={styles.pagina_link}
+                        // previousClassName={styles.pagina}
+                        // nextClassName={styles.pagina}
+                        // activeClassName={styles.ativo}
+                        // containerClassName={styles.paginacao}
+                        nextLabel={<ChevronRight size={40} />}
+
+                    />
+                    </ul>
+                </nav>
+
             </section>
         </>
     )
