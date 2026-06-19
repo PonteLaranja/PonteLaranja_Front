@@ -3,6 +3,7 @@ import Unidade from '../unidade/unidade'
 import styles from './listaUnidade.module.css'
 import { Search, Calendar } from 'lucide-react'
 import { listarUnidade } from '@/pages/api/unidade';
+import { obterPorNome, obterTipoItemPeloNome } from '@/pages/api/tipoItem';
 
 interface ListaUnidade {
     unidadeDto: string;
@@ -12,12 +13,28 @@ interface ListaUnidade {
     nomeTipoUnidadeDto: string;
 }
 
+interface tipoItem{
+    tipoItemID: string,
+    nomeTipoItem: string
+}
 
 export const Listar = () => {
 
     const [unidades, setUnidades] = useState<ListaUnidade[]>([]);
+    const [itemSelecionado, setItemSelecionado] = useState<string>("");
+    const [tipoItem, setTipoItem] = useState<tipoItem[]>([]);
 
-    async function listar() {
+    async function listarRank(tipoItem: tipoItem){
+        try{
+            const tipoBanco = await listarRank( tipoItem);
+
+            setTipoItem(tipoBanco)
+        }catch(error:any){
+            console.log(error.any)
+        }
+    }
+
+    async function listarUnidades() {
         try {
             const lista = await listarUnidade();
             setUnidades(lista)
@@ -27,7 +44,11 @@ export const Listar = () => {
     }
 
     useEffect(() => {
-        listar();
+        listarUnidades();
+    }, [])
+
+    useEffect(() => {
+
     }, [])
 
     return (
@@ -65,7 +86,12 @@ export const Listar = () => {
                                 <tr>
                                     <td colSpan={6} className={styles.separador}></td>
                                 </tr>
-                                <Unidade />
+                                <Unidade nomeResponsavelDto={item.nomeResponsavelDto} 
+                                cepDto={item.cepDto} 
+                                nomeTipoUnidadeDto={item.nomeTipoUnidadeDto}
+                                unidadeDto={item.unidadeDto}
+                                nomeUnidadeDto={item.nomeUnidadeDto}
+                                />
                             </>
 
                         )): (
