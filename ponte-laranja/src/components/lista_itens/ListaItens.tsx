@@ -1,9 +1,11 @@
 import Link from 'next/link'
 import styles from './listaItens.module.css'
-import { Search, Calendar, SquarePen } from 'lucide-react'
-import { useEffect, useState } from 'react'
+import { Search, ChevronLeft, ChevronRight } from 'lucide-react'
+import React, { useEffect, useState } from 'react'
 import { listar } from '@/src/pages/api/logHistorico'
 import ReactPaginate from 'react-paginate'
+import { Item } from '../itens/Itens'
+import { ItemV2 } from '../itens/ItensProps'
 
 type itemMock = {
     logId: string
@@ -15,31 +17,32 @@ type itemMock = {
     data: Date
 }
 
+
 export const Banner = () => {
 
-        const [log, setLog] = useState<itemMock[]>([])
-        const [primeiroItem, setPrimeiroItem] = useState(0)
-        const [pesquisa, setPesquisa] = useState("")
-        const numItem = 5
-        const ultimoItem = primeiroItem + numItem
-        const itensAtuais = log.slice(primeiroItem, ultimoItem)
-        const paginas = Math.ceil(log.length / numItem)
-            const alterarPagina = (event: any) => {
-                const newOffSet = (event.selected * numItem) % log.length
+    const [log, setLog] = useState<itemMock[]>([])
+    const [primeiroItem, setPrimeiroItem] = useState(0)
+    const [pesquisa, setPesquisa] = useState("")
+    const numItem = 5
+    const ultimoItem = primeiroItem + numItem
+    const itensAtuais = log.slice(primeiroItem, ultimoItem)
+    const paginas = Math.ceil(log.length / numItem)
+    const alterarPagina = (event: any) => {
+        const newOffSet = (event.selected * numItem) % log.length
 
-                setPrimeiroItem(newOffSet)
-            }
+        setPrimeiroItem(newOffSet)
+    }
 
-        // const itensFiltrados = log.filter((logs) => logs.)
-    
-        async function listagem() {
-            const dados = await listar()
-            setLog(dados)
-        }
-    
-        useEffect(() => {
-            listagem()
-        }, [])
+    // const itensFiltrados = log.filter((logs) => logs.)
+
+    async function listagem() {
+        const dados = await listar()
+        setLog(dados)
+    }
+
+    useEffect(() => {
+        listagem()
+    }, [])
     return (
         <>
             <Link href={""}></Link>
@@ -65,8 +68,8 @@ export const Banner = () => {
                 <table className={styles.lista_tabelas}>
                     <thead className={styles.cabecalho_tabelas}>
                         <tr className={styles.cabecalho_linha}  >
-                            <th className={`texto_tabela`}><span>ID</span></th>
-                            <th className={`texto_tabela`}><span>Nome do Item Doado</span></th>
+                            <th className={`texto_tabela`}><span>Nome do Item</span></th>
+                            <th className={`texto_tabela`}><span>Medida</span></th>
                             <th className={`texto_tabela`}><span>Quantidade</span></th>
                             <th className={`texto_tabela`}><span>Unidade</span></th>
                             <th className={`texto_tabela`}><span>Usuário Doador</span></th>
@@ -75,22 +78,40 @@ export const Banner = () => {
                         </tr>
                     </thead>
                     <tbody className={styles.corpo_f}>
-                        {/* <tr>
-                            <td colSpan={6} className={styles.separador}></td>
-                        </tr> */}
-                        <tr className={styles.conteudo}>
-                            <td><div className={`${styles.card} texto_tabela`}><span>144444</span> </div></td>
-                            <td><div className={`${styles.card} texto_tabela`} id={styles.item}><span>Pacote de Arroz</span>             </div></td>
-                            <td><div className={`${styles.card} texto_tabela`} id={styles.idade}><span>12</span>                          </div></td>
-                            <td><div className={`${styles.card} texto_tabela`}><span>1.34 - São Caetano do Sul</span>   </div></td>
-                            <td><div className={`${styles.card} texto_tabela`}><span>Caique Zanetti</span>              </div></td>
-                            <td><div className={`${styles.card} texto_tabela`}><span>14/05/2026 </span>                 </div></td>
-                            <td><div className={`${styles.card} texto_tabela`} id={styles.acoes}> <Link href={""} className={`link`}><SquarePen className={styles.card2} size={32} /></Link> </div></td>
-                        </tr>
-                        {/* Conteudo máximo sem quebrar é 5, faça paginate de 4 ent */}
-                        {/* <Link href={""}><SquarePen className={styles.card2} size={32} /><Link /> */}
+                        {/* <Item /> */}
+                        <ItemV2 page="itensDoados" />
                     </tbody>
+                    {/* <tfoot className={styles.tFooter}>
+
+                        <tr>
+                            <td colSpan={3}>
+                            <ul className={styles.paginacao}>
+                                <li><ChevronLeft size={20}/></li>
+                                <li>1</li>
+                                <li>2</li>
+                                <li>3</li>
+                                <li>4</li>
+                                <li><ChevronRight size={20}/></li>
+                            </ul>
+                            </td>
+                        </tr>
+                    </tfoot> */}
                 </table>
+                        <ReactPaginate 
+                        breakLabel="..."
+                        previousLabel={<ChevronLeft size={40} />}
+                        onPageChange={alterarPagina}
+                        pageRangeDisplayed={itensAtuais}
+                        renderOnZeroPageCount={null}
+                        pageClassName={styles.pagina}
+                        pageLinkClassName={styles.pagina_link}
+                        previousClassName={styles.pagina}
+                        nextClassName={styles.pagina}
+                        activeClassName={styles.ativo}
+                        nextLabel={<ChevronRight size={40} />}
+                        pageCount={paginas}
+                        
+                        />
             </section>
         </>
     )

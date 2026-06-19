@@ -1,0 +1,102 @@
+.separador {
+    height: 8px;
+    border-radius: 1vw;
+    width: 12vw;
+    padding: 0 !important;
+    background: linear-gradient(180deg,
+            #ABCDFE 0.01%,
+            rgba(109, 155, 254, 0.75) 51.92%,
+            rgba(171, 205, 254, 0.90) 89.9%);
+}
+
+/* Linha de conteúdo */
+.conteudo td {
+    background: linear-gradient(180deg,
+            #C2D6FF 0%,
+            #ABC4F0 100%);
+    padding: 10px;
+}
+
+.card {
+    background: #F5F5F5;
+    border-radius: 6px;
+    padding: 12px;
+    text-align: center;
+}
+
+.card:hover {
+    cursor: pointer;
+    transition: 0.2s;
+
+    filter: brightness(0.90);
+}
+
+
+.conteudo td:first-child {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.conteudo td:last-child {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.conteudo td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+/* Opcional: hover */
+.conteudo:hover {
+    filter: brightness(0.97);
+    transition: 0.2s;
+}
+
+#item {
+    font-size: 14px;
+}
+
+#tipoMedida {
+    /* width: 50%; */
+    /* padding: 10%;     */
+    margin: 0 auto;
+    width: 70%;
+
+}
+
+#quantidade {
+    width: 70%;
+    margin: 0 auto;
+}
+
+#idade {
+    font-size: 14px;
+    width: 70%;
+    margin-left: 15%;
+
+}
+
+#usuarioDoador {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 15px;
+}
+
+#data {
+    margin: 0 auto;
+    font-size: 14px;
+}
+
+#acoes {
+    width: 70%;
+    /* height: 4vh; */
+    padding: 5% 5%;
+    align-self: flex-end;
+    /* margin-left: 22%; */
+    margin: 0 auto;
+
+}

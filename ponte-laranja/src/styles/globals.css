@@ -27,21 +27,21 @@ body{
 
 
 .texto_tabela{
-  font-size: 12px;
+  font-size: 14px;
   background: transparent;
   color: black !important;
   
 }
 
-p,
-/* span, */
+/* p,
+span,
 li {
   background: linear-gradient(180deg, #FFF1F1 29.81%, #CDE1FE 76.92%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-}
+} */
 
 .link{
   text-decoration: none;
