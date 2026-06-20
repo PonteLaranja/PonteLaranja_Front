@@ -21,7 +21,7 @@ interface selectPros{
 type propsSelect = {
     tipo?: string;
 }
-const SelectDemo: React.FC = () => (
+const SelectTipoItem: React.FC = () => (
   
 
 
@@ -94,4 +94,4 @@ const SelectItem = React.forwardRef<
 
 SelectItem.displayName = "SelectItem";
 
-export default SelectDemo;
+export default SelectTipoItem;

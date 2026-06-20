@@ -8,7 +8,7 @@ import { Item } from '../itens/Itens'
 import { ItemV2 } from '../itens/ItensProps'
 
 import { LogDoacao } from '@/src/pages/api/logHistoricoMock'
-import SelectDemo from '../select/select'
+import SelectTipoItem from '../select/select'
 
 type itemMock = LogDoacao
 
@@ -58,9 +58,11 @@ export const Banner = () => {
             <section className={styles.filtros}>
                 <h1>Histórico de Itens</h1>
                 <div className={styles.pesquisas}>
-                    {/* <select name="" id="" className={`${styles.inserir_pesq} ${styles.select_selecionar}`}><option value="" className={styles.inserir_pesq}>Unidades selecionadas</option></select>
-                    <select name="" id="" className={`${styles.inserir_pesq} ${styles.select_selecionar}`}><option value="" className={styles.inserir_pesq}>Unidades selecionadas</option></select> */}
-                    <SelectDemo/>
+                    {/*
+                     <select name="" id="" className={`${styles.inserir_pesq} ${styles.select_selecionar}`}><option value="" className={styles.inserir_pesq}>Unidades selecionadas</option></select>
+                     <select name="" id="" className={`${styles.inserir_pesq} ${styles.select_selecionar}`}><option value="" className={styles.inserir_pesq}>Unidades selecionadas</option></select> 
+                    */}
+                    <SelectTipoItem/>
                     <div className={`${styles.inserir_pesq} ${styles.search}`}>
                         <input type="text" placeholder='Pesquisa' className={styles.input} />
                         <Search size={30} className={styles.icon} />

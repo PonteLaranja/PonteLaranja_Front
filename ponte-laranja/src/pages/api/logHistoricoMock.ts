@@ -19,6 +19,44 @@ export interface logUnidade {
     unidadeNome: string
 }
 
+
+
+export const logsMockTipoItem: logTipoItem[] = [
+    {
+        tipoItemId: "Teste1",
+        tipoItemNome: "Brinquedo"
+    },
+    {
+        tipoItemId: "Teste2",
+        tipoItemNome: "Roupa"
+    },
+    {
+        tipoItemId: "Teste3",
+        tipoItemNome: "Alimento"
+    }
+]
+
+export const logsMockUnidade: logUnidade[] = [
+    {
+        unidadeId: "Teste2",
+        unidadeNome: "1.34 - São Caetano do Sul"
+    },
+    
+    {
+        unidadeId: "Teste3",
+        unidadeNome: "1.35 - São Caetano do Sul"
+    },
+    {
+        unidadeId: "Teste4",
+        unidadeNome: "1.32 - São Bernardo do Campo"
+    },
+    {
+        unidadeId: "Teste5",
+        unidadeNome: "1.31 - Santo André"
+    },
+
+]
+
 export const logsMockItem: LogDoacao[] = [
     {
         logId: "LOG001",
@@ -156,40 +194,3 @@ export const logsMockItem: LogDoacao[] = [
     // }
 
 ];
-
-export const logsMockTipoItem: logTipoItem[] = [
-    {
-        tipoItemId: "Teste1",
-        tipoItemNome: "Brinquedo"
-    },
-    {
-        tipoItemId: "Teste2",
-        tipoItemNome: "Roupa"
-    },
-    {
-        tipoItemId: "Teste3",
-        tipoItemNome: "Alimento"
-    }
-]
-
-export const logsMockUnidade: logUnidade[] = [
-    {
-        unidadeId: "Teste2",
-        unidadeNome: "1.34 - São Caetano do Sul"
-    },
-    
-    {
-        unidadeId: "Teste3",
-        unidadeNome: "1.35 - São Caetano do Sul"
-    },
-    {
-        unidadeId: "Teste4",
-        unidadeNome: "1.32 - São Bernardo do Campo"
-    },
-    {
-        unidadeId: "Teste5",
-        unidadeNome: "1.31 - Santo André"
-    },
-
-]
-

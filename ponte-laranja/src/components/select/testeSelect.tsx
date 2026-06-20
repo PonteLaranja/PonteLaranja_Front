@@ -6,17 +6,22 @@ import { useEffect, useState } from "react";
 import { ChevronDown } from "lucide-react";
 import styles from "./select.module.css";
 
-import { listarDoacao, listarUnidade } from "@/src/pages/api/logHistorico";
+// 1. Importe seus mocks e interfaces do arquivo onde eles estão
+import { 
+  logTipoItem, 
+  logUnidade 
+} from "@/src/pages/api/logHistoricoMock"; // Ajuste o caminho se necessário
 
-// 1. Definição dos tipos
-interface SelectOption {
-  id: string | number; // ou value, mude conforme seu back-end
-  nome: string;        // ou descricao, mude conforme seu back-end
+import {  listar_tipoItem, 
+  listarUnidade, } from "@/src/pages/api/logHistorico"
+// 2. Criamos um tipo unificado para o estado interno do Select, facilitando o .map
+interface SelectOptionFormatted {
+  id: string;
+  label: string;
 }
 
-interface SelectDemoProps 
-{
-  tipo: "doacao" | "unidade"; // Definir quais tipos este select aceita
+interface SelectDemoProps {
+  tipo: "tipoItem" | "unidade"; // Define qual mock usar
   placeholder?: string;
   value?: string;
   onValueChange?: (value: string) => void;
@@ -28,34 +33,39 @@ const SelectDemo: React.FC<SelectDemoProps> = ({
   value,
   onValueChange,
 }) => {
-  const [options, setOptions] = useState<SelectOption[]>([]);
+  const [options, setOptions] = useState<SelectOptionFormatted[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
 
-//   2. useEffect para buscar os dados com Axios baseado na prop 'tipo'
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        let response;
-        if (tipo === "doacao") {
-          response = await listarDoacao(); // Supondo que retorne { data: [...] } ou direto o array
+        if (tipo === "tipoItem") {
+          const dados: logTipoItem[] = await listar_tipoItem();
+          // Padroniza o formato para { id, label }
+          const formatado = dados.map(item => ({
+            id: item.tipoItemId,
+            label: item.tipoItemNome
+          }));
+          setOptions(formatado);
         } else if (tipo === "unidade") {
-          response = await listarUnidade();
-        }
-
-        // Ajuste aqui dependendo de como o axios retorna o seu dado (ex: response.data)
-        if (response) {
-          setOptions(response); 
+          const dados: logUnidade[] = await listarUnidade();
+          // Padroniza o formato para { id, label }
+          const formatado = dados.map(item => ({
+            id: item.unidadeId,
+            label: item.unidadeNome
+          }));
+          setOptions(formatado);
         }
       } catch (error) {
-        console.error("Erro ao buscar dados do select:", error);
+        console.error("Erro ao carregar dados mockados:", error);
       } finally {
         setLoading(false);
       }
     };
 
     fetchData();
-  }, [tipo]); // Executa novamente se o 'tipo' mudar
+  }, [tipo]);
 
   return (
     <Select.Root value={value} onValueChange={onValueChange}>
@@ -75,8 +85,8 @@ const SelectDemo: React.FC<SelectDemoProps> = ({
           <Select.Viewport className={styles.Viewport}>
             <Select.Group>
               {options.map((item) => (
-                <SelectItem key={item.id} value={String(item.id)}>
-                  {item.nome}
+                <SelectItem key={item.id} value={item.id}>
+                  {item.label}
                 </SelectItem>
               ))}
               
@@ -93,7 +103,7 @@ const SelectDemo: React.FC<SelectDemoProps> = ({
   );
 };
 
-// --- Seu componente SelectItem permanece igual ---
+// --- Componente auxiliar SelectItem ---
 type SelectItemProps = React.ComponentPropsWithoutRef<typeof Select.Item>;
 
 const SelectItem = React.forwardRef<
