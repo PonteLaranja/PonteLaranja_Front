@@ -2,12 +2,13 @@ import Link from 'next/link'
 import styles from './listaItens.module.css'
 import { Search, ChevronLeft, ChevronRight } from 'lucide-react'
 import React, { useEffect, useState } from 'react'
-import { listar } from '@/src/pages/api/logHistorico'
+import { listarDoacao } from '@/src/pages/api/logHistorico'
 import ReactPaginate from 'react-paginate'
 import { Item } from '../itens/Itens'
 import { ItemV2 } from '../itens/ItensProps'
 
 import { LogDoacao } from '@/src/pages/api/logHistoricoMock'
+import SelectDemo from '../select/select'
 
 type itemMock = LogDoacao
 
@@ -22,14 +23,13 @@ type itemMock = LogDoacao
 //     data: Date;
 // }
 
-
 export const Banner = () => {
 
     const [log, setLog] = useState<itemMock[]>([])
     const [pesquisa, setPesquisa] = useState("")
 
     const [primeiroItem, setPrimeiroItem] = useState(0)
-    const numItem = 5
+    const numItem = 2
     const ultimoItem = primeiroItem + numItem
     const itensAtuais = log.slice(primeiroItem, ultimoItem)
     const paginas = Math.ceil(log.length / numItem)
@@ -45,7 +45,7 @@ export const Banner = () => {
 
     // }
     async function listagem() {
-        const dados = await listar()
+        const dados = await listarDoacao()
         setLog(dados)
     }
 
@@ -58,9 +58,9 @@ export const Banner = () => {
             <section className={styles.filtros}>
                 <h1>Histórico de Itens</h1>
                 <div className={styles.pesquisas}>
-                    <select name="" id="" className={`${styles.inserir_pesq} ${styles.select_selecionar}`}><option value="" className={styles.inserir_pesq}>Unidades selecionadas</option></select>
-                    <select name="" id="" className={`${styles.inserir_pesq} ${styles.select_selecionar}`}><option value="" className={styles.inserir_pesq}>Unidades selecionadas</option></select>
-
+                    {/* <select name="" id="" className={`${styles.inserir_pesq} ${styles.select_selecionar}`}><option value="" className={styles.inserir_pesq}>Unidades selecionadas</option></select>
+                    <select name="" id="" className={`${styles.inserir_pesq} ${styles.select_selecionar}`}><option value="" className={styles.inserir_pesq}>Unidades selecionadas</option></select> */}
+                    <SelectDemo/>
                     <div className={`${styles.inserir_pesq} ${styles.search}`}>
                         <input type="text" placeholder='Pesquisa' className={styles.input} />
                         <Search size={30} className={styles.icon} />

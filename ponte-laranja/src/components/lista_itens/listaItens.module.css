@@ -28,9 +28,9 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    width: 60vw;
+    width: 40%;
     /* border: 1px solid black; */
-    height: 20%;
+    height: 16%;
     gap: 5%;
 }
 

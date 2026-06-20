@@ -9,7 +9,17 @@ export interface LogDoacao {
     data: Date;
 }
 
-export const logsMock: LogDoacao[] = [
+export interface logTipoItem {
+    tipoItemId: string,
+    tipoItemNome: string
+}
+
+export interface logUnidade {
+    unidadeId: string,
+    unidadeNome: string
+}
+
+export const logsMockItem: LogDoacao[] = [
     {
         logId: "LOG001",
         itemId: "ITEM001",
@@ -66,7 +76,7 @@ export const logsMock: LogDoacao[] = [
         itemId: "ITEM004",
         nomeItem: "Macarrão",
         tipoMedida: "KG",
-        quantidade: 15,
+        quantidade: 152,
         unidade: "1.34 - São Caetano do Sul",
         usuarioDoador: "Ana Costa",
         data: new Date("2026-06-16T14:45:00")
@@ -144,5 +154,42 @@ export const logsMock: LogDoacao[] = [
     //     usuarioDoador: "Pedro Santos",
     //     data: new Date("2026-06-17T10:00:00")
     // }
-    
+
 ];
+
+export const logsMockTipoItem: logTipoItem[] = [
+    {
+        tipoItemId: "Teste1",
+        tipoItemNome: "Brinquedo"
+    },
+    {
+        tipoItemId: "Teste2",
+        tipoItemNome: "Roupa"
+    },
+    {
+        tipoItemId: "Teste3",
+        tipoItemNome: "Alimento"
+    }
+]
+
+export const logsMockUnidade: logUnidade[] = [
+    {
+        unidadeId: "Teste2",
+        unidadeNome: "1.34 - São Caetano do Sul"
+    },
+    
+    {
+        unidadeId: "Teste3",
+        unidadeNome: "1.35 - São Caetano do Sul"
+    },
+    {
+        unidadeId: "Teste4",
+        unidadeNome: "1.32 - São Bernardo do Campo"
+    },
+    {
+        unidadeId: "Teste5",
+        unidadeNome: "1.31 - Santo André"
+    },
+
+]
+

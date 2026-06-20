@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import styles from './itens.module.css'
-import { listar } from '@/src/pages/api/logHistorico'
+import { listarDoacao } from '@/src/pages/api/logHistorico'
 import { Search, Calendar, SquarePen } from 'lucide-react'
 import { LogDoacao } from '@/src/pages/api/logHistoricoMock'
 
@@ -14,7 +14,7 @@ export const Item = () => {
 
 
     async function listagem() {
-        const dados = await listar()
+        const dados = await listarDoacao()
         setLog(dados)
     }
 
