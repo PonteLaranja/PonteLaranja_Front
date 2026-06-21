@@ -2,17 +2,22 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  
+
 }
 
-body{
+body {
   overflow-x: hidden;
 }
 
 :root {
 
   --laranja: #FF6600;
-  --azul-gradiente: linear-gradient(to bottom right, #55BAFD 0%, #0D8BDF 50%) bottom right / 50% 50% no-repeat, linear-gradient(to bottom left, #55BAFD 0%, #0D8BDF 50%) bottom left / 50% 50% no-repeat, linear-gradient(to top left, #55BAFD 0%, #0D8BDF 50%) top left / 50% 50% no-repeat, linear-gradient(to top right, #55BAFD 0%, #0D8BDF 50%) top right / 50% 50% no-repeat;
+
+  --azul-gradiente:
+    linear-gradient(to bottom right, #0D8BDF 0%, #045BA1 28%) bottom right / 51% 51% no-repeat,
+    linear-gradient(to bottom left, #0D8BDF 0%, #045BA1 28%) bottom left / 51% 51% no-repeat,
+    linear-gradient(to top left, #0D8BDF 0%, #045BA1 28%) top left / 51% 51% no-repeat,
+    linear-gradient(to top right, #0D8BDF 0%, #045BA1 28%) top right / 51% 51% no-repeat;
   --background-pesquisa: linear-gradient(180deg, #B6D3FE 0%, #B4D2FE 27.4%, #B1D0FE 53%, #A7CAFE 73.08%, #95BFFD 100%);
 }
 
@@ -26,11 +31,11 @@ body{
 }
 
 
-.texto_tabela{
+.texto_tabela {
   font-size: 14px;
   background: transparent;
   color: black !important;
-  
+
 }
 
 /* p,
@@ -43,7 +48,7 @@ li {
 
 } */
 
-.link{
+.link {
   text-decoration: none;
   color: black;
 }
@@ -66,8 +71,8 @@ button:hover {
 .texto_layout {}
 
 @media (max-width: 900px) {
-  .texto_tabela{
+  .texto_tabela {
     font-size: 12px;
-  } 
-  
+  }
+
 }

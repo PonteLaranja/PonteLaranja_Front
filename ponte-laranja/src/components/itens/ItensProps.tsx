@@ -20,6 +20,16 @@ type itemMock = {
     page?: string
 }
 
+type Item = {
+    itemID: string,
+    nomeItem: string,
+    medida: string | number,
+    quantidade: number,
+    tipoItem_ID: string,
+    tipoMedida_ID: string,
+    usuarioDoador_ID: string,
+    unidadeID: string
+}
 
 type itemMockv2 = LogDoacao
 
@@ -58,8 +68,8 @@ export const ItemV2 =
 
 
                         <td>
-                            <div className={`${styles.card} texto_tabela`} id={styles.idade}>
-                                <span>{nomeItem}</span>
+                            <div className={`${styles.card} texto_tabela`} id={styles.nomeItem}>
+                                <span id={styles.textoT}>{nomeItem}</span>
                             </div>
                         </td>
                         <td>
@@ -76,7 +86,7 @@ export const ItemV2 =
 
                         <td>
                             <div className={`${styles.card} texto_tabela`} id={styles.unidade}>
-                                <span>{unidade}</span>
+                                <span id={styles.teste}>{unidade}</span>
                             </div>
                         </td>
 

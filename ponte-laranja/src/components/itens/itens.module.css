@@ -48,6 +48,15 @@
     text-overflow: ellipsis;
 }
 
+.card span {
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#teste {}
 
 
 /* Opcional: hover */
@@ -56,8 +65,10 @@
     transition: 0.2s;
 }
 
-#item {
-    font-size: 14px;
+#textoT {
+    width: 100px;
+    margin: 0 auto;
+
 }
 
 #tipoMedida {
@@ -73,10 +84,22 @@
     margin: 0 auto;
 }
 
-#idade {
+#nomeItem {
     font-size: 14px;
     width: 70%;
     margin-left: 15%;
+
+}
+
+#unidade {
+    width: 100%;
+    margin: 0 auto;
+    font-size: 14px;
+    display: block;
+    width: 210px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
 }
 
