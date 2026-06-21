@@ -10,76 +10,96 @@ import { ItemV2 } from "../itens/ItensProps";
 import { LogDoacao, LogDoacao2 } from "@/src/pages/api/logHistoricoMock";
 import SelectTipoItem from "../select/selectAnterior";
 
-import SelectDemo from "../select/Select";
+// import SelectDemo from "../select/Select";
+
 import { listarLogs, listarLogs_por_Unidade } from "@/src/pages/api/logHistoricov2";
 import { listarItens } from "@/src/pages/api/item";
+import SelectDemo from "../select/Select"; // ignora o erro
+import { listar_tipoMedida } from "@/src/pages/api/tipoMedida";
+import { listar_tipoItem } from "@/src/pages/api/tipoItem";
 
 type itemMock = LogDoacao2;
 
-// type itemMock = {
-//     logId: string;
-//     itemId: string;
-//     nomeItem: string;
-//     quantidade: number;
-//     tipoMedida: string;
-//     unidade: string;
-//     usuarioDoador: string;
-//     data: Date;
-// }
-
+type itemAPI = {
+  
+}
 export const Banner = () => {
-
   const [log, setLog] = useState<itemMock[]>([]);
   const [pesquisa, setPesquisa] = useState("");
 
   const [primeiroItem, setPrimeiroItem] = useState(0);
-  const numItem = 1;
-  const ultimoItem = primeiroItem + numItem;
-  const itensAtuais = log.slice(primeiroItem, ultimoItem);
-  const paginas = Math.ceil(log.length / numItem);
-  const alterarPagina = (event: any) => {
-    const newOffSet = (event.selected * numItem) % log.length;
 
-    setPrimeiroItem(newOffSet);
-  };
+  const numItem = 5;
 
-  // const itensFiltrados = log.filter((logs) => logs.)
-  // async function pesquisa()
-  // {
-
-  // }
   async function listagem() {
-    const teste = await listarItens()
-    console.log(teste.data)
     const dados = await listarDoacaoV2();
-    console.log(listarLogs())
     setLog(dados);
   }
 
   useEffect(() => {
     listagem();
   }, []);
+
+  useEffect(() => {
+    setPrimeiroItem(0);
+  }, [pesquisa]);
+
+  const itensFiltrados = log.filter((item) =>
+    item.nomeItem.toLowerCase().includes(
+      pesquisa.toLowerCase().trim()
+    )
+  );
+
+  const ultimoItem = primeiroItem + numItem;
+
+  const itensAtuais = itensFiltrados.slice(
+    primeiroItem,
+    ultimoItem
+  );
+
+  const paginas = Math.ceil(
+    itensFiltrados.length / numItem
+  );
+
+  const alterarPagina = (event: any) => {
+    setPrimeiroItem(event.selected * numItem);
+  };
+
   return (
     <>
       <Link href={""}></Link>
+
       <section className={styles.filtros}>
         <h1>Histórico de Itens</h1>
-        <div className={styles.pesquisas}>
-          {/*
-                     <select name="" id="" className={`${styles.inserir_pesq} ${styles.select_selecionar}`}><option value="" className={styles.inserir_pesq}>Unidades selecionadas</option></select>
-                     <select name="" id="" className={`${styles.inserir_pesq} ${styles.select_selecionar}`}><option value="" className={styles.inserir_pesq}>Unidades selecionadas</option></select> 
-                    */}
-          {/* <SelectTipoItem /> */}
 
-          <SelectDemo tipo="tipoItem" placeholder="Escolha o Item"/>
-          <SelectDemo tipo="unidade" placeholder="Escolha a Unidade"/>
-          <div className={`${styles.inserir_pesq} ${styles.search}`}>
+        <div className={styles.pesquisas}>
+          <SelectDemo
+            tipo="tipoItem"
+            placeholder="Escolha o Item"
+          />
+
+          <SelectDemo
+            tipo="unidade"
+            placeholder="Escolha a Unidade"
+          />
+
+          <div
+            className={`${styles.inserir_pesq} ${styles.search}`}
+          >
             <input
               type="text"
               placeholder="Pesquisa"
               className={styles.input}
+              value={pesquisa}
+              onChange={(e) =>
+                setPesquisa(e.target.value)
+              }
             />
-            <Search size={30} className={styles.icon} />
+
+            <Search
+              size={30}
+              className={styles.icon}
+            />
           </div>
 
           <input
@@ -94,29 +114,36 @@ export const Banner = () => {
         <table className={styles.lista_tabelas}>
           <thead className={styles.cabecalho_tabelas}>
             <tr className={styles.cabecalho_linha}>
-              <th className={`texto_tabela`}>
+              <th>
                 <span>Nome do Item</span>
               </th>
-              <th className={`texto_tabela`}>
+
+              <th>
                 <span>Medida</span>
               </th>
-              <th className={`texto_tabela`}>
+
+              <th>
                 <span>Quantidade</span>
               </th>
-              <th className={`texto_tabela`}>
+
+              <th>
                 <span>Unidade</span>
               </th>
-              <th className={`texto_tabela`}>
+
+              <th>
                 <span>Usuário Doador</span>
               </th>
-              <th className={`texto_tabela`}>
+
+              <th>
                 <span>Data</span>
               </th>
-              <th className={`texto_tabela`}>
+
+              <th>
                 <span>Ações</span>
               </th>
             </tr>
           </thead>
+
           <tbody className={styles.corpo_f}>
             {itensAtuais.length > 0 ? (
               itensAtuais.map((item) => (
@@ -135,15 +162,14 @@ export const Banner = () => {
               ))
             ) : (
               <tr>
-                <td>
-                  <p>oi</p>
+                <td colSpan={7}>
+                  Nenhum item encontrado.
                 </td>
               </tr>
             )}
-
           </tbody>
         </table>
-       
+
         <ReactPaginate
           breakLabel="..."
           nextLabel={<ChevronRight size={24} />}
@@ -165,31 +191,7 @@ export const Banner = () => {
           activeClassName={styles.pagina_ativa}
           disabledClassName={styles.desabilitado}
         />
-
       </section>
     </>
   );
 };
-
-
-{
-  /* <ul>
-
-                    <ReactPaginate
-                        breakLabel="..."
-                        previousLabel={<ChevronLeft size={40} />}
-                        onPageChange={alterarPagina}
-                        pageRangeDisplayed={paginas}
-                        pageCount={paginas}
-                        renderOnZeroPageCount={null}
-                        // pageClassName={styles.pagina}
-                        // pageLinkClassName={styles.pagina_link}
-                        // previousClassName={styles.pagina}
-                        // nextClassName={styles.pagina}
-                        // activeClassName={styles.ativo}
-                        // containerClassName={styles.paginacao}
-                        nextLabel={<ChevronRight size={40} />}
-
-                    />
-                    </ul> */
-}

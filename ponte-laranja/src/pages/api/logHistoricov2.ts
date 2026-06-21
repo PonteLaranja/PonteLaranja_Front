@@ -1,4 +1,6 @@
 import { api } from "./api";
+import { listar_tipoItem } from "./tipoItem";
+import { listar_tipoMedida } from "./tipoMedida";
 
 export async function listarLogs() {
   try {

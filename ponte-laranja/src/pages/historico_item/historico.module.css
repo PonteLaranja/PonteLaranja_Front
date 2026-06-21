@@ -3,6 +3,7 @@
     /* height: clamp(70vh, 90vh, 120vh); */
     /* height: 100%; */
     height: clamp(70vh, 150vh, 200vh);
+    margin-top: 0;
 
     /* border: 21px solid black; */
     display: flex;

@@ -13,3 +13,8 @@ export async function listarItens() {
         throw new Error(erro.response.data)
     }
 }
+
+export async function listarItens_Id()
+{
+    
+}
