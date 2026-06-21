@@ -16,6 +16,43 @@
     width: 14%;
 }
 
+<<<<<<< HEAD
+=======
+.cabecalho nav {
+    display: inline-flex;
+    width: fit-content;
+    justify-content: space-bet;
+    width: 50%;
+
+
+}
+
+.cabecalho nav ul {
+    display: inline-flex;
+    justify-content: space-around;
+    list-style-type: none;
+    white-space: nowrap;
+    
+    gap: 2%;
+    width: 100%;
+}
+
+.link{
+    text-decoration: none;
+}
+
+.cabecalho li {
+
+    font-size: 25px;
+    background: linear-gradient(180deg, #FFF1F1 29.81%, #CDE1FE 76.92%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: .65s ease-in-out;
+    /* width: 50%; */
+}
+
+>>>>>>> feature/cadastroItem
 .cabecalho button {
     width: 8%;
     border-radius: .5vw;
@@ -37,6 +74,7 @@
     background-color: #FF8636;
 }
 
+<<<<<<< HEAD
 .barraLateral{
     position: absolute;
     right: 999999px;
@@ -103,6 +141,8 @@
     margin-top: 350px;
 }
 
+=======
+>>>>>>> feature/cadastroItem
 @media (max-width:1000px) {
 
     .cabecalho img{
@@ -157,4 +197,9 @@
         width: 9%;
         height: 22%;
     }
+<<<<<<< HEAD
 }
+=======
+}
+
+>>>>>>> feature/cadastroItem
