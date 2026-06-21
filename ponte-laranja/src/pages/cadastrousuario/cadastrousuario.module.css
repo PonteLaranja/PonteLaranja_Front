@@ -14,7 +14,7 @@
     align-items: center;
     justify-content: center;
     /* border: 1px solid black; */
-    width: fit-content;
+    width: 100%;
 }
 
 .img img{
@@ -34,6 +34,7 @@
     height: 65%;
     font-family: var(--font-texto-titulo);
     justify-content: space-around;
+    padding-right: 10%;
 }
 
 .login p{
@@ -43,8 +44,8 @@
 .LabelInput{
     display: flex;
     flex-direction: column;
-    width: 50%;
-    height: 50%;
+    width: 100%;
+    height: 75%;
     justify-content: space-around;
     align-items: center;
 }
