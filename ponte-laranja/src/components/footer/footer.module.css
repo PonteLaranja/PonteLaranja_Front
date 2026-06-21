@@ -1,0 +1,22 @@
+.rodape{
+     background: linear-gradient(to bottom right, #0D8BDF 0%, #045BA1 28%) bottom right / 50% 50% no-repeat, linear-gradient(to bottom left, #0D8BDF 0%, #045BA1 28%) bottom left / 50% 50% no-repeat, linear-gradient(to top left, #0D8BDF 0%, #045BA1 28%) top left / 50% 50% no-repeat, linear-gradient(to top right, #0D8BDF 0%, #045BA1 28%) top right / 50% 50% no-repeat;
+    width: 100%;
+    height: clamp(1vh, 136px, 15vh);
+    display: inline-flex;
+    padding: 2%;
+    align-items: center;
+    text-align: center;
+/* fgsdafsad */
+    justify-content: space-between;
+    color: var(--cor-principal);
+}
+
+.imgs_rodape{
+    display: flex;
+    gap: 30px;
+}
+
+.imgRedes{
+    width: 30%;
+    height: 20%;
+}

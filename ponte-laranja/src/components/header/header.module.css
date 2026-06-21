@@ -1,5 +1,6 @@
 .cabecalho {
 
+<<<<<<< HEAD
     background: linear-gradient(357deg, rgba(13, 139, 223, 0.75) -34.33%, #067FE0 46.83%, rgba(13, 139, 223, 0.75) 97.87%);
     width: 100%;
     height: clamp(1vh, 136px, 15vh);
@@ -7,6 +8,16 @@
     padding: 0 5%;
     align-items: center;
 
+=======
+    /* background: linear-gradient(357deg, rgba(13, 139, 223, 0.75) -34.33%, #067FE0 46.83%, rgba(13, 139, 223, 0.75) 97.87%); */
+    background: linear-gradient(to bottom right, #0D8BDF 0%, #045BA1 28%) bottom right / 50% 50% no-repeat, linear-gradient(to bottom left, #0D8BDF 0%, #045BA1 28%) bottom left / 50% 50% no-repeat, linear-gradient(to top left, #0D8BDF 0%, #045BA1 28%) top left / 50% 50% no-repeat, linear-gradient(to top right, #0D8BDF 0%, #045BA1 28%) top right / 50% 50% no-repeat;
+    width: 100%;
+    height: clamp(1vh, 136px, 15vh);
+    display: inline-flex;
+    padding: 2%;
+    align-items: center;
+/* fgsdafsad */
+>>>>>>> feature/home
     justify-content: space-between;
 
 }
@@ -34,6 +45,13 @@
     width: 100%;
 }
 
+<<<<<<< HEAD
+=======
+.link{
+    text-decoration: none;
+}
+
+>>>>>>> feature/home
 .cabecalho li {
 
     font-size: 25px;
@@ -49,10 +67,17 @@
     width: 8%;
     border-radius: .5vw;
     border: none;
+<<<<<<< HEAD
     background-color: var(--laranja);
     color: white;
     font-size: clamp(.4vw, 30px, 2vw);
     height: clamp(37%, 42%, 43%);
+=======
+    background-color: var(--cor-principal);
+    color: white;
+    font-size: clamp(.4vw, 30px, 2vw);
+    height: clamp(60%, 42%, 43%);
+>>>>>>> feature/home
 }
 
 .cabecalho li:hover {
@@ -63,7 +88,10 @@
 .cabecalho button:hover {
     transition: .1s ease-in-out;
     /* color: #DEDEDE; */
+<<<<<<< HEAD
     background-color: #FF8636;
+=======
+>>>>>>> feature/home
 }
 
 @media (max-width:1000px) {

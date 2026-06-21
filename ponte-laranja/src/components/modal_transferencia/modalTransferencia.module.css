@@ -1,0 +1,72 @@
+.modalTransferencia{
+    display: grid;
+    text-align: center;
+    border: solid 2px var(--cor-principal);
+    align-items: center;
+    justify-items: center;
+    background-color: #035AA0;
+    border-radius: 15px;
+    padding: 2%;
+    color: var(--cor-branca);
+    gap: 40px;
+    height: 60vh;
+    width: 45vw;
+}
+
+
+
+.campoUnidade{
+    display: grid;
+    gap: 5px;
+    text-align: start;
+    width: 45%;
+}
+
+.campoMotivo{
+    display: grid;
+    gap: 5px;
+    text-align: start;
+    width: 45%;
+}
+
+.textArea{
+    height: 15vh;
+    padding: 2%;
+    resize: none;
+    outline: none;
+    border-radius: 10px;
+    padding: 1%;
+    font-family: var(--font-texto-padrao);
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.label{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.btn_transferir{
+    width: 45%;
+    border-radius: 10px;
+    border: none;
+    height: 4vh;
+    background-color: var(--cor-principal);
+    color: var(--cor-branca);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.select{
+    border-radius: 10px;
+    padding: 1%;
+    font-weight: 600;
+    font-family: var(--font-texto-padrao);
+}
+
+
+.option{
+    font-family: var(--font-texto-padrao);
+}
+
+
