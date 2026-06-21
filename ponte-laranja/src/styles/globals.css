@@ -1,33 +1,26 @@
-<<<<<<< HEAD
-=======
-:root {
-  --cor-principal: #FF6600;
-  --cor-secundaria: #045BA1;
-  --cor-branca: #FFFFFF;
-  --fonte-preta: #000000;
-
-  --tamanho-titulo: 50px;
-  --tamanho-texto-btn: 20px;
-}
-
->>>>>>> feature/home
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-<<<<<<< HEAD
 :root {
-
-  --laranja: #FF6600;
-  --azul-gradiente: linear-gradient(to bottom right, #55BAFD 0%, #0D8BDF 50%) bottom right / 50% 50% no-repeat, linear-gradient(to bottom left, #55BAFD 0%, #0D8BDF 50%) bottom left / 50% 50% no-repeat, linear-gradient(to top left, #55BAFD 0%, #0D8BDF 50%) top left / 50% 50% no-repeat, linear-gradient(to top right, #55BAFD 0%, #0D8BDF 50%) top right / 50% 50% no-repeat;
-
+  --laranja: #ff6600;
+  --azul-gradiente:
+    linear-gradient(to bottom right, #55bafd 0%, #0d8bdf 50%) bottom right / 50%
+      50% no-repeat,
+    linear-gradient(to bottom left, #55bafd 0%, #0d8bdf 50%) bottom left / 50%
+      50% no-repeat,
+    linear-gradient(to top left, #55bafd 0%, #0d8bdf 50%) top left / 50% 50%
+      no-repeat,
+    linear-gradient(to top right, #55bafd 0%, #0d8bdf 50%) top right / 50% 50%
+      no-repeat;
+  --cor-fundo-botao: #ff6600;
 }
 
 .texto_layout {
   font-size: 25px;
-  background: linear-gradient(180deg, #FFF1F1 29.81%, #CDE1FE 76.92%);
+  background: linear-gradient(180deg, #fff1f1 29.81%, #cde1fe 76.92%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -37,13 +30,11 @@
 p,
 /* span, */
 li {
-  background: linear-gradient(180deg, #FFF1F1 29.81%, #CDE1FE 76.92%);
+  background: linear-gradient(180deg, #fff1f1 29.81%, #cde1fe 76.92%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
 }
-
 
 p,
 span,
@@ -57,33 +48,4 @@ span:hover,
 li:hover,
 button:hover {
   cursor: pointer;
-
 }
-
-.texto_layout {}
-=======
-
-h1 {
-  font-family: var(--font-texto-titulo);
-  font-size: 2.2rem;
-  font-weight: 700;
-}
-
-h2{
-  font-size: 2rem;
-  font-family: var(--font-texto-titulo);
-}
-
-h3{
-  font-family: var(--font-texto-titulo);
-  font-size: 1.7rem;
-}
-
-
-
-p {
-  font-family: var(--font-texto-padrao);
-  text-align: justify;
-  font-size: 1rem;
-}
->>>>>>> feature/home
