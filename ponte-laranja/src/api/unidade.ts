@@ -11,9 +11,11 @@ interface unidadeListagem {
   ativo : boolean
 }
 
-interface dadosTipoItem {
-    tipoItemID: string,
-    nomeTipoItem: string
+export interface unidadeFormulario {
+  nomeUnidadeDto: string;
+  cepDto: string;
+  usuarioResponsavelDto: string; 
+  tipoUnidadeDto: string;        
 }
 
 export async function listarUnidade() {
@@ -30,16 +32,11 @@ export async function listarUnidade() {
     }
 }
 
-export async function rankPrioridade(dados: dadosTipoItem) {
+export async function cadastrarUnidade(dados: unidadeFormulario){
     try{
-        const formData = new FormData();
+        await api.post("Unidade", dados);
 
-        formData.append("tipoItemID", dados.tipoItemID);
-        formData.append("nomeTipoItem", dados.nomeTipoItem);
-
-        const response = await api.post("Unidade/rank-prioridade", formData)
-        return response;
-    }catch(error: any) {
-        throw new Error(error.response.data);
+    }catch(error: any){
+        throw new Error(error.response.data)
     }
 }

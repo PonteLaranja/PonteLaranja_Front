@@ -1,7 +1,7 @@
 import Link from 'next/link'
-import styles from './header.module.css'
+import styles from './header-minimazado.module.css'
 
-export const Header = () => {
+export const HeaderMinimazado = () => {
 
     return (
         <header className={styles.cabecalho}>
@@ -18,3 +18,5 @@ export const Header = () => {
 
     )
 }
+
+export default HeaderMinimazado

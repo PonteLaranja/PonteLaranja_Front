@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react'
 import Unidade from '../unidade/unidade'
 import styles from './listaUnidade.module.css'
 import { Search, Calendar } from 'lucide-react'
-import { listarUnidade } from '@/pages/api/unidade';
-import { obterPorNome, obterTipoItemPeloNome } from '@/pages/api/tipoItem';
+import { listarUnidade } from '@/api/unidade';
+
 
 interface ListaUnidade {
     unidadeDto: string;
@@ -21,18 +21,6 @@ interface tipoItem{
 export const Listar = () => {
 
     const [unidades, setUnidades] = useState<ListaUnidade[]>([]);
-    const [itemSelecionado, setItemSelecionado] = useState<string>("");
-    const [tipoItem, setTipoItem] = useState<tipoItem[]>([]);
-
-    async function listarRank(tipoItem: tipoItem){
-        try{
-            const tipoBanco = await listarRank( tipoItem);
-
-            setTipoItem(tipoBanco)
-        }catch(error:any){
-            console.log(error.any)
-        }
-    }
 
     async function listarUnidades() {
         try {

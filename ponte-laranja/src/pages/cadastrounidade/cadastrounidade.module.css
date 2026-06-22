@@ -57,9 +57,10 @@
 .segundaLinha{
     display: flex;
     flex-direction: row;
+    gap: 10%;
 }
 
-.Responsavel h4{
+.Selects h4{
     font-size: 30px;
     color: rgba(0, 0, 0, 0.57);
     margin-top: 70px;
@@ -68,7 +69,7 @@
     font-family: var(--font-texto-titulo)
 }
 
-.Responsavel select{
+.Selects select{
     width: 439px;
     height: 60px;
     border-radius: 15px;
