@@ -1,9 +1,27 @@
 import { api } from "./api";
 
-export type Unidade = {
+export type UnidadeList = {
   unidadeDto: string;
-  nomeUnidadeDto: string
+  nomeUnidadeDto: string,
+  ativo: boolean,
+  cepDTO: string,
+  usuarioResponsavelDto: string
+  nomeResponsavelDto: string,
+  tipoUnidadeDto: string,
+  nomeTipoUnidadeDto: string  
 };
+
+
+export type UnidadePost = {
+  unidadeDto: string;
+  nomeUnidadeDto: string,
+  ativo: boolean,
+  cepDTO: string,
+  usuarioResponsavelDto: string
+  nomeResponsavelDto: string,
+  tipoUnidadeDto: string,
+  nomeTipoUnidadeDto: string  
+}
 
 export async function listarUnidades() {
   try {
@@ -15,4 +33,17 @@ export async function listarUnidades() {
   }
 }
 
-export async function listarUnidade_ID(id: string) {}
+export async function listarUnidade_ID(id: string) {
+
+  try
+  {
+    const response = await api.get("Unidade " + id)
+    return response.data
+  }
+
+  catch(erro: any)
+  {
+    throw new Error(erro.response.data)
+  }
+
+}

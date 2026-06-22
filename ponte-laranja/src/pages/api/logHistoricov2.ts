@@ -4,15 +4,15 @@ import { listar_tipoMedida } from "./tipoMedida";
 
 export interface Transferencia {
   transferenciaID: string;
-  dataEnvio: string;
-  dataChegada: string;
+  dataEnvio: string;  // estava em string
+  dataChegada: string; // estava em string
   unidadeOrigemID: string;
   unidadeOrigemNome: string;
   unidadeDestinoID: string;
   unidadeDestinoNome: string;
   estadoTransferenciaID: string;
   itemID: string;
-  itemNome: string | null;
+  itemNome: string; //corrija para nunca retornar nulo
   itemCategoria: string;
 }
 
@@ -43,5 +43,21 @@ export async function listarLogs_por_Unidade(
     return response;
   } catch (erro: any) {
     throw new Error(erro.response.data);
+  }
+}
+
+export async function listarLog_itemId (id:string)
+{
+  try
+  {
+    const response = await api.get("Transferencia")
+    return response.data
+    
+    
+  }
+
+  catch(erro: any)
+  {
+    throw new Error(erro.response.data)
   }
 }

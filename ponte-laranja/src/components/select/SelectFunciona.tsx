@@ -12,7 +12,7 @@ import { tipoItem, listar_tipoItem } from "@/src/pages/api/tipoItem";
 // import { listar_tipoItem, listarUnidade } from "@/src/pages/api/logHistorico";
 
 import { it } from "node:test";
-import { listarUnidades, Unidade } from "@/src/pages/api/unidade";
+import { listarUnidades, UnidadeList } from "@/src/pages/api/unidade";
 // 2. Criamos um tipo unificado para o estado interno do Select, facilitando o .map
 interface selectOpcaoInterface {
   id: string;
@@ -59,7 +59,7 @@ const SelectDemo: React.FC<select_const_Interface> = ({
 
           const responseUnidade = await listarUnidades();
 
-          const formatadoJSON = responseUnidade.data.map((item: Unidade) => ({
+          const formatadoJSON = responseUnidade.data.map((item: UnidadeList) => ({
             id: item.unidadeDto,
             label: item.nomeUnidadeDto,
           }));

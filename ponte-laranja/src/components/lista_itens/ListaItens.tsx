@@ -8,23 +8,29 @@ import { Item } from "../itens/Itens";
 import { ItemV2 } from "../itens/ItensProps";
 
 import { LogDoacao, LogDoacao2 } from "@/src/pages/api/logHistoricoMock";
-import SelectTipoItem from "../select/selectAnterior";
+// import SelectTipoItem from "../select/selectAnterior";
 
 // import SelectDemo from "../select/Select";
 
-import { listarLogs, listarLogs_por_Unidade } from "@/src/pages/api/logHistoricov2";
+import { listarLogs, listarLogs_por_Unidade, Transferencia } from "@/src/pages/api/logHistoricov2";
 import { listarItens } from "@/src/pages/api/item";
-import SelectDemo from "../select/Select"; // ignora o erro
+// import SelectDemo from "../select/Select"; //! ignorar o erro de import
 import { listar_tipoMedida } from "@/src/pages/api/tipoMedida";
 import { listar_tipoItem } from "@/src/pages/api/tipoItem";
+import { ItemZero } from "../itens/zero";
 
-type itemMock = LogDoacao2;
 
-type itemAPI = {
-  
+export interface TransferenciaTabela
+  extends Transferencia {
+  quantidade?: number;
+  usuarioID?: string;
+  medida?: number;
 }
+
+
+
 export const Banner = () => {
-  const [log, setLog] = useState<itemMock[]>([]);
+  const [log, setLog] = useState<TransferenciaTabela[]>([]);
   const [pesquisa, setPesquisa] = useState("");
 
   const [primeiroItem, setPrimeiroItem] = useState(0);
@@ -32,8 +38,37 @@ export const Banner = () => {
   const numItem = 5;
 
   async function listagem() {
-    const dados = await listarDoacaoV2();
+    const dados = await listarLogs();
     setLog(dados);
+  }
+
+  async function listarItensDeLogs()
+  {
+    const transferencia = await listarLogs()
+    const itens = (await listarItens()).data
+
+    const listaCompleta = transferencia.map((transferencia : any) => {
+    const item = itens.find(
+        (i : any) => i.itemID === transferencia.itemID
+    );
+
+    return {
+        ...transferencia,
+
+        nomeItem:
+            transferencia.itemNome ??
+            item?.nomeItem,
+
+        quantidade:
+            item?.quantidade,
+
+        usuarioID:
+            item?.usuarioID,
+
+        medida:
+            item?.medida
+    };
+});
   }
 
   useEffect(() => {
@@ -45,7 +80,8 @@ export const Banner = () => {
   }, [pesquisa]);
 
   const itensFiltrados = log.filter((item) =>
-    item.nomeItem.toLowerCase().includes(
+    item.itemNome ?? "" // está vindo nulo
+  .toLowerCase().includes(
       pesquisa.toLowerCase().trim()
     )
   );
@@ -73,7 +109,7 @@ export const Banner = () => {
         <h1>Histórico de Itens</h1>
 
         <div className={styles.pesquisas}>
-          <SelectDemo
+          {/* <SelectDemo
             tipo="tipoItem"
             placeholder="Escolha o Item"
           />
@@ -81,7 +117,7 @@ export const Banner = () => {
           <SelectDemo
             tipo="unidade"
             placeholder="Escolha a Unidade"
-          />
+          /> */}
 
           <div
             className={`${styles.inserir_pesq} ${styles.search}`}
@@ -147,17 +183,18 @@ export const Banner = () => {
           <tbody className={styles.corpo_f}>
             {itensAtuais.length > 0 ? (
               itensAtuais.map((item) => (
-                <ItemV2
+                <ItemZero
                   page="itensDoados"
-                  key={item.logId}
-                  itemId={item.itemId}
-                  data={item.data}
-                  quantidade={item.quantidade}
-                  nomeItem={item.nomeItem}
-                  unidade={item.unidadeId}
-                  usuarioDoador={item.usuarioDoador}
-                  tipoMedida={item.tipoMedida}
-                  logId={item.logId}
+                  key={item.transferenciaID}
+                  {...item}
+                  // itemId={item.itemID}
+                  // data={item.data}
+                  // quantidade={item.quantidade}
+                  // nomeItem={item.nomeItem}
+                  // unidade={item.unidadeId}
+                  // usuarioDoador={item.usuarioDoador}
+                  // tipoMedida={item.tipoMedida}
+                  // logId={item.logId}
                 />
               ))
             ) : (
