@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react'
 import Unidade from '../unidade/unidade'
 import styles from './listaUnidade.module.css'
 import { Search, Calendar } from 'lucide-react'
-import { listarUnidade } from '@/pages/api/unidade';
-import { obterPorNome, obterTipoItemPeloNome } from '@/pages/api/tipoItem';
+import { listarUnidade } from '@/api/unidade';
+
 
 interface ListaUnidade {
     unidadeDto: string;
@@ -13,26 +13,11 @@ interface ListaUnidade {
     nomeTipoUnidadeDto: string;
 }
 
-interface tipoItem{
-    tipoItemID: string,
-    nomeTipoItem: string
-}
-
 export const Listar = () => {
 
     const [unidades, setUnidades] = useState<ListaUnidade[]>([]);
-    const [itemSelecionado, setItemSelecionado] = useState<string>("");
-    const [tipoItem, setTipoItem] = useState<tipoItem[]>([]);
 
-    async function listarRank(tipoItem: tipoItem){
-        try{
-            const tipoBanco = await listarRank( tipoItem);
-
-            setTipoItem(tipoBanco)
-        }catch(error:any){
-            console.log(error.any)
-        }
-    }
+    const [pesquisa, setPesquisa] = useState("");
 
     async function listarUnidades() {
         try {
@@ -42,6 +27,8 @@ export const Listar = () => {
             console.log(error.any)
         }
     }
+
+    const unidadesFiltrados = unidades.filter((uni) => uni.nomeUnidadeDto.toLocaleLowerCase().includes(pesquisa.toLowerCase()));
 
     useEffect(() => {
         listarUnidades();
@@ -60,7 +47,7 @@ export const Listar = () => {
                     <select name="" id="" className={`${styles.inserir_pesq} ${styles.select_selecionar}`}><option value="" className={styles.inserir_pesq}>Item</option></select>
                     {/* <label htmlFor="" className={styles.inserir_pesq}> */}
                     <div className={`${styles.inserir_pesq} ${styles.search}`}>
-                        <input type="text" placeholder='Pesquisa' className={styles.input} />
+                        <input type="text" placeholder='Pesquisa' value={pesquisa} className={styles.input} onChange={(e) => setPesquisa(e.target.value)}/>
                         <Search size={30} className={styles.icon} />
                     </div>
                     {/* </label> */}
@@ -81,7 +68,7 @@ export const Listar = () => {
                         </tr>
                     </thead>
                     <tbody className={styles.corpo_f}>
-                        {unidades.length > 0 ? unidades.map((item) => (
+                        {unidadesFiltrados.length > 0 ? unidadesFiltrados.map((item) => (
                             <>
                                 <tr>
                                     <td colSpan={6} className={styles.separador}></td>
