@@ -55,7 +55,7 @@ const Login = () => {
         <div className={styles.botoes}>
           <button type="submit">Entrar</button>
         </div>
-        <p>Não possui cadastro? <Link href="/cadastrousuario">Click aqui</Link></p>
+        <Link href="/cadastrousuario">Não possui cadastro? Click aqui</Link>
       </form>
     </main>
   );

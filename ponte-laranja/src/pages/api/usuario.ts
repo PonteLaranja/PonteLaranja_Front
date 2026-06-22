@@ -9,15 +9,8 @@ type formsUsuario = {
 
 export async function cadastroUsuario(dados: formsUsuario ) {
     try{
-        const formData = new FormData;
-
-        formData.append("nome", dados.nome)
-        formData.append("senha", dados.senha)
-        formData.append("email", dados.email)
-        formData.append("tipoUsuarioID", dados.tipoUsuarioID)
-        
-        console.log(formData)
-        await api.post("Usuario", formData);
+        const response = await api.post("Usuario", dados)
+        return response.data
     }
     catch(error: any){
         throw new Error("Email ou senha inválidos");
