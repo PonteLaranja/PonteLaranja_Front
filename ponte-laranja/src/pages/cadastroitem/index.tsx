@@ -1,10 +1,13 @@
 import styles from "./cadastroitem.module.css";
-import { Header } from "@/src/components/header/header";
+import { Header } from "@/components/header/header";
 
 const CadastroItem = () => {
+
+  
+
   return (
     <>
-    <Header></Header>
+    <Header/>
     <main className={styles.main}>  
       <h2>Cadastro de Itens</h2>
       <form className={styles.form}>

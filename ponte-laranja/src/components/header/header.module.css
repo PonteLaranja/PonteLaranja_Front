@@ -16,8 +16,7 @@
     width: 14%;
 }
 
-<<<<<<< HEAD
-=======
+
 .cabecalho nav {
     display: inline-flex;
     width: fit-content;
@@ -52,7 +51,7 @@
     /* width: 50%; */
 }
 
->>>>>>> feature/cadastroItem
+
 .cabecalho button {
     width: 8%;
     border-radius: .5vw;
@@ -74,7 +73,7 @@
     background-color: #FF8636;
 }
 
-<<<<<<< HEAD
+
 .barraLateral{
     position: absolute;
     right: 999999px;
@@ -141,8 +140,7 @@
     margin-top: 350px;
 }
 
-=======
->>>>>>> feature/cadastroItem
+
 @media (max-width:1000px) {
 
     .cabecalho img{
@@ -197,9 +195,9 @@
         width: 9%;
         height: 22%;
     }
-<<<<<<< HEAD
-}
-=======
+
 }
 
->>>>>>> feature/cadastroItem
+
+
+ 

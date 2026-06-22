@@ -14,7 +14,3 @@ export async function obterTipoItemPeloNome(nome: string) {
         throw new Error(error.response.data);
     }
 }
-
-export async function name(params:type) {
-    
-}

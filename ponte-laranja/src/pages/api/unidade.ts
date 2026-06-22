@@ -16,6 +16,16 @@ interface dadosTipoItem {
     nomeTipoItem: string
 }
 
+
+type UnidadeFormulario = {
+    nomeUnidadeDto: string;
+    cepDto: string;
+    usuarioResponsavelID: string;
+    tipoUnidadeID: string;
+};
+
+
+
 export async function listarUnidade() {
     try {
         const response = await api.get("Unidade");

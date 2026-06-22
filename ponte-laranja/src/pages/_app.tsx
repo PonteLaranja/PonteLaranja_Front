@@ -5,6 +5,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { Montserrat, Plus_Jakarta_Sans } from "next/font/google";
 import styles from "@/styles/Home.module.css";
+import { ToastContainer } from "react-toastify";
 
 const montserrat = Montserrat({
   variable: "--font-texto-titulo",
@@ -22,6 +23,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return(
     <main className={`${jakarta.variable} ${montserrat.variable}`}>
       <Component {...pageProps}/>
+       <ToastContainer/>
     </main>
   )
 }
