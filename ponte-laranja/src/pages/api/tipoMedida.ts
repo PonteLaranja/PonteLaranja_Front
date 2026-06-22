@@ -1,5 +1,10 @@
 import { api } from "./api";
 
+export interface tipoMedida
+{
+    tipoMedidaID: string,
+    nomeTipoMedida: string
+}
 export async function listar_tipoMedida()
 {
     try

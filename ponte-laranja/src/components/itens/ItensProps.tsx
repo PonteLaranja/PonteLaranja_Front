@@ -3,53 +3,41 @@ import styles from './itens.module.css'
 import { listarDoacao } from '@/src/pages/api/logHistorico'
 import { Search, Calendar, SquarePen } from 'lucide-react'
 import { LogDoacao } from '@/src/pages/api/logHistoricoMock'
+import { listarLogs, listarLogs_por_Unidade, Transferencia } from "@/src/pages/api/logHistoricov2";
 
 type propsList = {
     page?: string
 }
 
-type itemMock = {
-    logId: string;
-    itemId: string;
-    nomeItem: string;
-    quantidade: number;
-    tipoMedida: string;
-    unidade: string;
-    usuarioDoador: string;
-    data: Date;
-    page?: string
+interface itemAPI extends Transferencia {
+    page?: "itensDoados" | "itensRecebidos" | "itensUnidade";
 }
-
-type Item = {
-    itemID: string,
-    nomeItem: string,
-    medida: string | number,
-    quantidade: number,
-    tipoItem_ID: string,
-    tipoMedida_ID: string,
-    usuarioDoador_ID: string,
-    unidadeID: string
-}
-
-type itemMockv2 = LogDoacao
-
 
 
 export const ItemV2 =
-    ({
-        page, logId,
-        itemId, nomeItem,
-        quantidade, tipoMedida,
-        usuarioDoador, data,
-        unidade,
-    }: itemMock) => {
+    (
+    //     {
+    //     page, logId,
+    //     itemId, nomeItem,
+    //     quantidade, tipoMedida,
+    //     usuarioDoador, data,
+    //     unidade,
+    // }: itemMock) => 
+    {
+        itemID, dataChegada, dataEnvio, estadoTransferenciaID, 
+        itemCategoria, itemNome, transferenciaID, unidadeDestinoID, 
+        unidadeDestinoNome, unidadeOrigemID, unidadeOrigemNome, page
+    }: itemAPI)
+        {
         
-        const [log, setLog] = useState<itemMockv2[]>([])
+        // const [log, setLog] = useState<itemMockv2[]>([])
+        const [log, setLog] = useState<Transferencia[]>([])
 
 
 
         async function listagem() {
-            const dados = await listarDoacao()
+            // const dados = await listarDoacao()
+            const dados = await listarLogs()
             setLog(dados)
         }
 
@@ -64,17 +52,17 @@ export const ItemV2 =
 
                     // log.map((item) => (
                     // log.map((item) => (
-                    <tr key={logId} className={styles.conteudo}>
+                    <tr className={styles.conteudo}> //curiosamente está faltando key porque nao existe log com primarykey
 
 
                         <td>
                             <div className={`${styles.card} texto_tabela`} id={styles.nomeItem}>
-                                <span id={styles.textoT}>{nomeItem}</span>
+                                <span id={styles.textoT}>{itemNome}</span>
                             </div>
                         </td>
                         <td>
                             <div className={`${styles.card} texto_tabela`} id={styles.tipoMedida}>
-                                <span>{tipoMedida}</span>
+                                <span>{itemCategoria}</span>
                             </div>
                         </td>
 
