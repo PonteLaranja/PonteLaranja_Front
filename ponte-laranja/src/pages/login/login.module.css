@@ -131,3 +131,11 @@
     font-family: var(--font-texto-titulo);
 }
 
+.link{
+    text-decoration: none;
+    filter: brightness(.5);
+}
+
+.link:hover{
+    text-decoration: underline;
+}

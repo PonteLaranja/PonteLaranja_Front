@@ -3,10 +3,8 @@ import styles from "./login.module.css";
 import { useRouter } from "next/router";
 import { toast } from "react-toastify";
 import { login } from "../api/autenticação";
-import { Link } from "lucide-react";
-
+import Link from "next/link";
 const Login = () => {
-
   const [email, setEmail] = useState<string>("");
   const [senha, setSenha] = useState<string>("");
 
@@ -18,18 +16,16 @@ const Login = () => {
     e.preventDefault();
     try {
       await login(email, senha);
-      notificacao("Login bem sucedido!")
+      notificacao("Login bem sucedido!");
 
       //espera 2 segundos para redirecionar para a login
       setTimeout(() => {
         router.push("/home");
       }, 2000); // 2 segundos
-
     } catch (error: any) {
       erro(error.message);
     }
   }
-
 
   return (
     <main className={styles.main}>
@@ -42,20 +38,29 @@ const Login = () => {
           <div className={styles.email}>
             <label htmlFor="">Email</label>
             <div>
-              <input type="email" placeholder="email@gmail.com" value={email} onChange={(e) => setEmail(e.target.value)}></input>
+              <input
+                type="email"
+                placeholder="email@gmail.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              ></input>
             </div>
           </div>
           <div className={styles.senha}>
             <label htmlFor="">Senha</label>
             <div>
-              <input type="password" value={senha} onChange={(e) => setSenha(e.target.value)}></input>
+              <input
+                type="password"
+                value={senha}
+                onChange={(e) => setSenha(e.target.value)}
+              ></input>
             </div>
           </div>
         </div>
         <div className={styles.botoes}>
           <button type="submit">Entrar</button>
         </div>
-        <Link href="/cadastrousuario">Não possui cadastro? Click aqui</Link>
+        <Link href={"/cadastrousuario"} className={styles.link}>Não possui cadastro? Clique aqui</Link>
       </form>
     </main>
   );

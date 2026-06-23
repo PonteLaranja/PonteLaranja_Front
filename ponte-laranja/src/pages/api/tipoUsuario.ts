@@ -8,6 +8,7 @@ export async function listarTipoUsuario() {
     try
     {
         const response = await api.get("TipoUsuario")
+        console.log(response.data)
         return response.data
     }
 
