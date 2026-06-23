@@ -53,7 +53,7 @@ export const Banner = () => {
 
   const [primeiroItem, setPrimeiroItem] = useState(0);
 
-  const numItem = 2;
+  const numItem = 5;
 
   async function listagem() {
     const dados = await listarLogs();
@@ -116,15 +116,7 @@ export const Banner = () => {
   }
 
   const itensFiltrados = logV2.filter((item) => {
-    //     console.log({
-    //   itemNome: item.itemNome,
-    //   tipoItemID: item.tipoItemID,
-    //   unidadeID: item.unidadeDestinoID,
-    //   dataChegada: item.dataChegada,
-    //   filtroTipoItem,
-    //   filtroUnidade,
-    //   filtroData,
-    // });
+
 
     const matchPesquisa =
       item.itemNome?.toLowerCase().includes(pesquisa.toLowerCase().trim()) ??
@@ -161,22 +153,6 @@ export const Banner = () => {
     listarItensDeLogs();
   }, []);
 
-  //   useEffect(() => {
-  //     setPrimeiroItem(0);
-  //   }, [pesquisa, filtroData, filtroTipoItem, filtroUnidade]);
-
-  //   useEffect(() => {
-  //   // console.log("Tipo selecionado:", filtroTipoItem);
-  // }, [filtroTipoItem]);
-
-  // useEffect(() => {
-  //   // console.log("Unidade selecionada:", filtroUnidade);
-  // }, [filtroUnidade]);
-
-  // useEffect(() => {
-  //   // console.log("Data selecionada:", filtroData);
-
-  // }, [filtroData]);
 
   return (
     <>

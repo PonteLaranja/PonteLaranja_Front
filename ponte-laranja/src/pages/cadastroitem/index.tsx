@@ -1,71 +1,184 @@
 import styles from "./cadastroitem.module.css";
-import { Header } from "@/components/header/header";
+import { adicionarItem, getUnidade, getUsuario, Item2, listarItens, listarTipoItem, listarTipoMedida } from "../api/item";
+import { useEffect, useState } from "react";
+
+export interface TipoItem {
+  tipoItemID: string
+  nomeTipoItem: string
+}
+
+export interface TipoMedida {
+  tipoMedidaID: string
+  nomeTipoMedida: string
+}
+
+export interface listarunidade {
+  unidadeDto: string
+  nomeUnidadeDto: string
+  ativo: boolean
+  cepDto: string
+  usuarioResponsavelDto: string
+  nomeResponsavelDto: string
+  tipoUnidadeDto: string
+  nomeTipoUnidadeDto: string
+}
+
+export interface listarusuario {
+  usuarioID: string
+  nome: string
+  email: string
+  dataCriação: string
+  tipoUsuarioID: string
+}
 
 const CadastroItem = () => {
 
-  
+  const [nome, setNome] = useState<string>("")
+  const [quantidade, setQuantidade] = useState<number>(0)
+  const [medida, setMedida] = useState<number>(0)
+  const [coleta, setColeta] = useState<Date>(new Date())
+  const [doacao, setDoacao] = useState<Date>(new Date())
+  const [tipoItem, setTipoItem] = useState<TipoItem[]>([])
+  const [tipoMedida, setTipoMedida] = useState<TipoMedida[]>([])
+  const [listarUnidade, setListarUnidade] = useState<listarunidade[]>([])
+  const [listarUsuario, setListarUsuario] = useState<listarusuario[]>([])
+  const [tipoItemSelecionado, setTipoItemSelecionado] = useState("");
+  const [tipoMedidaSelecionada, setTipoMedidaSelecionada] = useState("");
+  const [usuarioSelecionado, setUsuarioSelecionado] = useState("");
+  const [unidadeSelecionada, setUnidadeSelecionada] = useState("");
+
+  async function salvaritem(e: React.FormEvent<HTMLFormElement>) {
+        e.preventDefault();
+        try {
+
+          const dados = {
+              nome,
+              coleta,
+              doacao,
+              medida,
+              quantidade,
+              tipoItem: tipoItemSelecionado,
+              tipoMedida: tipoMedidaSelecionada,
+              listarUsuario: usuarioSelecionado,
+              listarUnidade: unidadeSelecionada
+          }
+
+          await adicionarItem(dados)
+
+        }
+        catch{
+          
+        }
+
+      }
+  async function ListarItens() {
+    const itens: TipoItem[] = await listarTipoItem();
+    setTipoItem(itens)
+  }
+
+  async function ListarMedida() {
+    const medidas: TipoMedida[] = await listarTipoMedida();
+    setTipoMedida(medidas)
+  }
+
+  async function ListarUnidade() {
+    const unidades: listarunidade[] = await getUnidade();
+    setListarUnidade(unidades.filter(U => U.ativo == true))
+  }
+
+  async function ListarUsuario() {
+    const usuarios: listarusuario[] = await getUsuario();
+    setListarUsuario(usuarios)
+  }
+
+  useEffect(() => {
+    ListarItens();
+    ListarMedida();
+    ListarUnidade();
+    ListarUsuario();
+  }, []);
 
   return (
     <>
-    <Header/>
-    <main className={styles.main}>  
-      <h2>Cadastro de Itens</h2>
-      <form className={styles.form}>
-      <div className={styles.primeiraLinha}>
-        <div className={styles.nome}>
-          <h4>Nome</h4>
-          <input type="text" />
-        </div>
-        <div className={styles.unidade}>
-          <h4>UN</h4>
-          <input type="text" />
-        </div>
-      </div>
-      <div className={styles.segundaLinha}>
-        <div className={styles.medida}>
-          <h4>Medida</h4>
-          <input type="text" />
-        </div>
-        <div className={styles.coleta}>
-          <h4>Coleta</h4>
-          <input type="date" />
-        </div>
-        <div className={styles.doacao}>
-          <h4>Doação</h4>
-          <input type="date" />
-        </div>
-      </div>
-      <div className={styles.terceiraLinha}>
-        <div className={styles.TipoMedida}>
-          <h4>Tipo da Medida</h4>
-          <select>
-            <option value="kg">kg</option>
-          </select>
-        </div>
-        <div className={styles.TipoItem}>
-          <h4>Tipo de Item</h4>
-          <select>
-            <option value="brinquedo">Brinquedo</option>
-          </select>
-        </div>
-        <div className={styles.Unidade}>
-          <h4>Unidade</h4>
-          <select>
-            <option value="santo andre">Santo André</option>
-          </select>
-        </div>
-      </div>
-      <div className={styles.quartaLinha}>
-        <div className={styles.Responsavel}>
-          <h4>Responsável</h4>
-          <select>
-            <option value="nicollas">Nicollas</option>
-          </select>
-        </div>
-      </div>
-      <button>Cadastrar</button>
-      </form>
-    </main>
+      <main className={styles.main}>
+        <h2>Cadastro de Itens</h2>
+        <form className={styles.form} onSubmit={salvaritem}>
+          <div className={styles.primeiraLinha}>
+            <div className={styles.nome}>
+              <h4>Nome</h4>
+              <input type="text" value={nome} onChange={(e) => setNome(e.target.value)} />
+            </div>
+            <div className={styles.unidade}>
+              <h4>UN</h4>
+              <input type="text" value={quantidade} onChange={(e) => setQuantidade(Number(e.target.value))} />
+            </div>
+          </div>
+          <div className={styles.segundaLinha}>
+            <div className={styles.medida}>
+              <h4>Medida</h4>
+              <input type="text" value={medida} onChange={(e) => setMedida(Number(e.target.value))} />
+            </div>
+            <div className={styles.coleta}>
+              <h4>Coleta</h4>
+              <input type="date" value={coleta?.toLocaleDateString('pt-BR')} onChange={(e) => setColeta(new Date(e.target.value))} />
+            </div>
+            <div className={styles.doacao}>
+              <h4>Doação</h4>
+              <input type="date" value={doacao?.toLocaleDateString('pt-BR')} onChange={(e) => setDoacao(new Date(e.target.value))} />
+            </div>
+          </div>
+          <div className={styles.terceiraLinha}>
+            <div className={styles.TipoMedida}>
+              <h4>Tipo da Medida</h4>
+              <select value={tipoItemSelecionado} onChange={(e) => setTipoItemSelecionado(e.target.value)}>
+                {tipoItem.map((item) => (
+                  <option key={item.tipoItemID} value={item.tipoItemID}>
+                    {item.nomeTipoItem}
+                  </option>
+                )
+                )
+                }
+              </select >
+            </div>
+            <div className={styles.TipoItem}>
+              <h4>Tipo de Item</h4>
+              <select value={tipoMedidaSelecionada} onChange={(e) => setTipoMedidaSelecionada(e.target.value)}>
+                {tipoMedida.map((medida) =>
+                  <option key={medida.tipoMedidaID} value={medida.tipoMedidaID}>
+                    {medida.nomeTipoMedida}
+                  </option>
+                )
+                }
+              </select>
+            </div>
+            <div className={styles.Unidade}>
+              <h4>Unidade</h4>
+              <select value={usuarioSelecionado} onChange={(e) => setUsuarioSelecionado(e.target.value)}>
+                {listarUnidade.map((unidade) =>
+                  <option key={unidade.unidadeDto} value={unidade.unidadeDto}>
+                    {unidade.nomeUnidadeDto}
+                  </option>
+                )
+                }
+              </select>
+            </div>
+          </div>
+          <div className={styles.quartaLinha}>
+            <div className={styles.Responsavel}>
+              <h4>Responsável</h4>
+              <select value={unidadeSelecionada} onChange={(e) => setUnidadeSelecionada(e.target.value)}>
+                {listarUsuario.map((usuario) =>
+                  <option key={usuario.usuarioID} value={usuario.usuarioID}>
+                    {usuario.nome}
+                  </option>
+                )
+                }
+              </select>
+            </div>
+          </div>
+          <button>Cadastrar</button>
+        </form>
+      </main>
     </>
   );
 };

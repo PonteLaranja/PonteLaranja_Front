@@ -13,7 +13,7 @@ export const Header = () => {
   useEffect(() => {
     set_estaAutenticado(verificarAuth());
   }, []);
-  const estaAutenticado = true;
+  // const estaAutenticado = true;
 
   const AbrirBarraLateral = () => {
     setabertofechado(!abertofechado);

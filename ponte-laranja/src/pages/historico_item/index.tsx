@@ -15,7 +15,7 @@ const Historico = () => {
             <main className={styles.main}>
             <Banner />
             
-
+            
             </main>
         </>
     )

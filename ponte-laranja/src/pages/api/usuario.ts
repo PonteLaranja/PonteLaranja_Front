@@ -41,3 +41,26 @@ export async function cadastroUsuario(dados: formsUsuario ) {
         console.log(error.response.data)
     }
 }
+
+
+
+export interface usuariosListagem2 {
+    usuarioID: string;     
+    nome: string;
+    email: string;
+    dataCriação: string;     
+    tipoUsuarioID: string;    
+    nomeTipoUsuario: string
+}
+
+export async function ListarResponsaveis() {
+    try {
+        const response = await api.get("Usuario");
+
+        const responsaveis = response.data.filter((unidade: usuariosListagem2) => unidade.nomeTipoUsuario === "Responsavel" || unidade.nomeTipoUsuario === "Administrador");
+
+        return responsaveis
+    } catch (error: any) {
+        throw new Error(error.response.data);
+    }
+}

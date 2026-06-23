@@ -31,7 +31,7 @@ const Cadastro = () => {
         nome: nome,
         senha: senha,
         email: email,
-        tipoUsuarioID: "110ded0b-b763-4ef2-9ec3-a07fe0c062cc", //! Conferir o tipoUsuarioID
+        tipoUsuarioID: "6025575f-be52-4dbc-b9d1-e7d6e3de0124", //! Conferir o tipoUsuarioID
       };
 
       console.log(dados);
