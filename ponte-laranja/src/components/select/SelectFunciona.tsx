@@ -49,11 +49,6 @@ const SelectDemo: React.FC<select_const_Interface> = ({
             label: item.nomeTipoItem,
           }));
 
-          // const formatado = dados.map((item) => ({
-          //   id: item.tipoItemId,
-          //   label: item.tipoItemNome,
-          // }));
-          // setOpcoes(formatado);
           setOpcoes(formatadoJSON);
         } else if (tipo === "unidade") {
 
@@ -96,6 +91,9 @@ const SelectDemo: React.FC<select_const_Interface> = ({
 
           <Select.Viewport className={styles.Viewport}>
             <Select.Group>
+              <SelectItem value="todos">
+                Todos
+              </SelectItem>
               {opcoes.map((item) => (
                 <SelectItem key={item.id} value={item.id}>
                   {item.label}
