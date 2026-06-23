@@ -1,15 +1,13 @@
 .cabecalho {
-
-
     background: var(--azul-gradiente);
-    /* background: var(--azul-gradiente); */
     width: 100%;
     height: clamp(1vh, 136px, 15vh);
     display: inline-flex;
     padding: 0 5%;
     align-items: center;
     justify-content: space-between;
-
+    position: relative;
+    z-index: 10;
 }
 
 .cabecalho img {
@@ -18,11 +16,8 @@
 
 .cabecalho nav {
     display: inline-flex;
-    width: fit-content;
-    justify-content: space-bet;
     width: 50%;
-
-
+    justify-content: space-between;
 }
 
 .cabecalho nav ul {
@@ -30,7 +25,6 @@
     justify-content: space-around;
     list-style-type: none;
     white-space: nowrap;
-
     gap: 2%;
     width: 100%;
 }
@@ -40,24 +34,12 @@
 }
 
 .cabecalho li {
-
     font-size: 25px;
     background: linear-gradient(180deg, #FFF1F1 29.81%, #CDE1FE 76.92%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: .65s ease-in-out;
-    /* width: 50%; */
-}
-
-.cabecalho button {
-    width: 8%;
-    border-radius: .5vw;
-    border: none;
-    background-color: var(--laranja);
-    color: white;
-    font-size: clamp(.4vw, 30px, 2vw);
-    height: clamp(37%, 42%, 43%);
 }
 
 .cabecalho li:hover {
@@ -65,96 +47,72 @@
     text-decoration: underline;
 }
 
-
-.login {
-    width: 8%;
-    border-radius: .5vw;
-    border: none;
-    background-color: var(--laranja);
-    color: white;
-    font-size: clamp(.4vw, 30px, 2vw);
-    height: clamp(37%, 42%, 43%);
-}
-
-
-
-#login_ {
-    width: 8%;
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: .5vw;
-    border: none;
-    background-color: var(--laranja);
-    color: white;
-    font-size: clamp(.4vw, 30px, 2vw);
-    height: clamp(30%, 38%, 43%);
-    text-decoration: none;
-}
-
-#login_:hover {
-    transition: .1s ease-in-out;
-    background-color: #FF8636;
-}
-
-
-/* css */
-
-
-
-
-.barraLateral{
-    position: absolute;
-    right: 999999px;
+/* Estilo do Overlay */
+.overlay {
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escurecido */
+    z-index: 998; /* Abaixo da barra lateral, mas acima do conteúdo */
+    cursor: pointer;
 }
 
-.barraLateralOpen{
-    position: absolute;
+.barraLateral {
+    position: fixed; /* Mudado para fixed para garantir que cubra a tela */
+    right: -100%; /* Escondido fora da tela */
+    top: 0;
+    transition: right 0.3s ease-in-out;
+    z-index: 999;
+}
+
+.barraLateralOpen {
+    position: fixed;
     right: 0;
     top: 0;
     background-color: #FF8636;
     width: 329px;
     height: 100vh;
+    transition: right 0.3s ease-in-out;
+    z-index: 999; /* Acima do overlay */
 }
 
-.div{
+.div {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.div img{
+.div img {
     width: 93px;
     height: 93px;
     margin-top: 22px;
     margin-bottom: 9px;
 }
 
-.div hr{
+.div hr {
     width: 280px;
     border: 1px solid rgba(255, 255, 255, 1);
     margin-top: 11px;
     margin-bottom: 68px;
 }
 
-.div h3{
+.div h3 {
     font-family: var(--font-texto-titulo);
     font-size: 23px;
     color: rgba(0, 0, 0, 0.57);
 }
 
-.navegacao{
+.navegacao {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-#links{
+#links {
     display: flex;
     justify-content: center;
     width: 230px;
@@ -167,78 +125,35 @@
     margin-bottom: 40px;
 }
 
-.logout{
+.logout {
     margin-top: 350px;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
+.menuButton {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    width: auto !important;
+    height: auto !important;
+}
+
+.menuButton:hover {
+    transform: scale(1.1);
+}
 
 @media (max-width:1000px) {
-
-    .cabecalho img{
-        width: 15%;
-    }
-
-    .cabecalho nav {
-        display: inline-flex;
-        width: fit-content;
-        width: 50%;
-        /* align-self: center; */
-        margin-right: 10%;
-    }
-
-    .cabecalho nav ul {
-        display: inline-flex;
-        justify-content: space-around;
-        list-style-type: none;
-        white-space: nowrap;
-        justify-content: space-between;
-        gap: 10%;
-        width: 100%;
-        /* border: 1px solid black; */
-    }
-
-    .cabecalho li {
-
-        font-size: 25px;
-        background: linear-gradient(180deg, #FFF1F1 29.81%, #CDE1FE 76.92%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        transition: 2.5s ease-in-out;
-        /* width: 50%; */
-    }
-
-
-    .cabecalho button {
-        font-size: 1.1rem;
-        width: 10%;
-        height: 28%;
-    }
+    .cabecalho img { width: 15%; }
+    .cabecalho nav { width: 50%; margin-right: 10%; }
+    .cabecalho nav ul { gap: 10%; }
+    .cabecalho li { font-size: 25px; }
 }
 
 @media (max-width:768px) {
-
-    .cabecalho nav ul li{
-        font-size: 19px;
-    }
-    .cabecalho button {
-        font-size: .9rem;
-        width: 9%;
-        height: 22%;
-    }
-
+    .cabecalho nav ul li { font-size: 19px; }
+    .cabecalho button { font-size: .9rem; }
 }
-
-
-
- 
-
-
-
-
-
-
-
-
-
-

@@ -13,8 +13,14 @@ export const Header = () => {
   useEffect(() => {
     set_estaAutenticado(verificarAuth());
   }, []);
+  const estaAutenticado = true;
+
   const AbrirBarraLateral = () => {
     setabertofechado(!abertofechado);
+  };
+
+    const fecharBarraLateral = () => {
+    setabertofechado(false);
   };
 
   return (
@@ -35,47 +41,61 @@ export const Header = () => {
       </nav>
       {estaAutenticado && ( <Link href={"/login"} className={styles.login} id={styles.login_}>Login</Link>)}
       {!estaAutenticado && (
-        <aside
-          className={
-            abertofechado ? styles.barraLateralOpen : styles.barraLateral
-          }
-          onClick={AbrirBarraLateral}
-        >
-          <div className={styles.div}>
-            <img src="imgs/imgUser.svg" alt="usuario" />
-            <h3>Usuario</h3>
-            <hr />
-            <nav className={styles.navegacao}>
-              <Link href={"/home"} id={styles.links}>
-                Home
-              </Link>
-              <Link href={"/cadastroitem"} id={styles.links}>
-                Cadastro de Item
-              </Link>
-              <Link href={"/cadastrounidade"} id={styles.links}>
-                Cadastro de Unidade
-              </Link>
-              <Link href={"/historico_item"} id={styles.links}>
-                Histórico
-              </Link>
-              <button id={styles.links} className={styles.logout} onClick={() => {
-                logout()
-                router.push("/login")
-              }
-                
-              }>Logout</button>
-              {/* <Link href={""} id={styles.links} className={styles.logout}>Logout</Link> */}
-              {/* {estaAutenticado && (<Link href={""} id={styles.links} className={styles.logout}>Logout</Link>)} */}
-              {/* {!estaAutenticado && (<Link href={"/login"} id={styles.links} className={styles.logout}>Login</Link>)} */}
-            </nav>
-          </div>
-        </aside>
-        
+        <>
+          <button
+            className={styles.menuButton}
+            onClick={AbrirBarraLateral}
+          >
+            ☰
+          </button>
+
+          {abertofechado && (
+            <div className={styles.overlay} onClick={fecharBarraLateral}></div>
+          )}
+
+          <aside
+            className={
+              abertofechado ? styles.barraLateralOpen : styles.barraLateral
+            }
+            onClick={AbrirBarraLateral}
+          >
+            <div className={styles.div}>
+
+              
+
+              <img src="imgs/imgUser.svg" alt="usuario" />
+              <h3>Usuario</h3>
+              <hr />
+              <nav className={styles.navegacao}>
+                <Link href={"/home"} id={styles.links}>
+                  Home
+                </Link>
+                <Link href={"/cadastroitem"} id={styles.links}>
+                  Cadastro de Item
+                </Link>
+                <Link href={"/cadastrounidade"} id={styles.links}>
+                  Cadastro de Unidade
+                </Link>
+                <Link href={"/historico_item"} id={styles.links}>
+                  Histórico
+                </Link>
+                <button id={styles.links} className={styles.logout} onClick={() => {
+                  logout()
+                  router.push("/login")
+                }
+
+                }>Logout</button>
+                {/* <Link href={""} id={styles.links} className={styles.logout}>Logout</Link> */}
+                {/* {estaAutenticado && (<Link href={""} id={styles.links} className={styles.logout}>Logout</Link>)} */}
+                {/* {!estaAutenticado && (<Link href={"/login"} id={styles.links} className={styles.logout}>Login</Link>)} */}
+              </nav>
+            </div>
+          </aside>
+        </>
       )}
-      
-      
+
     </header>
 
- 
+
   );
 }; 

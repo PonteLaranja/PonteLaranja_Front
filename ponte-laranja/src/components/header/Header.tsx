@@ -2,7 +2,7 @@ import Link from 'next/link'
 import styles from './header.module.css'
 import { useState } from 'react'
 
-export const Header = () => {
+export const HeaderLateral = () => {
 
     const [abertofechado, setabertofechado] = useState<boolean>(false)
 
