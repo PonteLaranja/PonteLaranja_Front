@@ -1,5 +1,5 @@
 import styles from "./cadastroitem.module.css";
-import { getUnidade, getUsuario, Item, listarItens, listarTipoItem, listarTipoMedida } from "../api/item";
+import { adicionarItem, getUnidade, getUsuario, Item, listarItens, listarTipoItem, listarTipoMedida } from "../api/item";
 import { useEffect, useState } from "react";
 
 export interface TipoItem {
@@ -34,27 +34,42 @@ export interface listarusuario {
 const CadastroItem = () => {
 
   const [nome, setNome] = useState<string>("")
-  const [quantidade, setQuantidade] = useState<number>()
-  const [medida, setMedida] = useState<number>()
-  const [coleta, setColeta] = useState<Date>()
-  const [doacao, setDoacao] = useState<Date>()
+  const [quantidade, setQuantidade] = useState<number>(0)
+  const [medida, setMedida] = useState<number>(0)
+  const [coleta, setColeta] = useState<Date>(new Date())
+  const [doacao, setDoacao] = useState<Date>(new Date())
   const [tipoItem, setTipoItem] = useState<TipoItem[]>([])
   const [tipoMedida, setTipoMedida] = useState<TipoMedida[]>([])
   const [listarUnidade, setListarUnidade] = useState<listarunidade[]>([])
   const [listarUsuario, setListarUsuario] = useState<listarusuario[]>([])
+  const [tipoItemSelecionado, setTipoItemSelecionado] = useState("");
+  const [tipoMedidaSelecionada, setTipoMedidaSelecionada] = useState("");
+  const [usuarioSelecionado, setUsuarioSelecionado] = useState("");
+  const [unidadeSelecionada, setUnidadeSelecionada] = useState("");
 
   async function salvaritem(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         try {
 
           const dados = {
-              
+              nome,
+              coleta,
+              doacao,
+              medida,
+              quantidade,
+              tipoItem: tipoItemSelecionado,
+              tipoMedida: tipoMedidaSelecionada,
+              listarUsuario: usuarioSelecionado,
+              listarUnidade: unidadeSelecionada
           }
+
+          await adicionarItem(dados)
 
         }
         catch{
-
+          
         }
+
       }
   async function ListarItens() {
     const itens: TipoItem[] = await listarTipoItem();
@@ -87,7 +102,7 @@ const CadastroItem = () => {
     <>
       <main className={styles.main}>
         <h2>Cadastro de Itens</h2>
-        <form className={styles.form}>
+        <form className={styles.form} onSubmit={salvaritem}>
           <div className={styles.primeiraLinha}>
             <div className={styles.nome}>
               <h4>Nome</h4>
@@ -115,21 +130,21 @@ const CadastroItem = () => {
           <div className={styles.terceiraLinha}>
             <div className={styles.TipoMedida}>
               <h4>Tipo da Medida</h4>
-              <select>
+              <select value={tipoItemSelecionado} onChange={(e) => setTipoItemSelecionado(e.target.value)}>
                 {tipoItem.map((item) => (
-                  <option value={item.tipoItemID}>
+                  <option key={item.tipoItemID} value={item.tipoItemID}>
                     {item.nomeTipoItem}
                   </option>
                 )
                 )
                 }
-              </select>
+              </select >
             </div>
             <div className={styles.TipoItem}>
               <h4>Tipo de Item</h4>
-              <select>
+              <select value={tipoMedidaSelecionada} onChange={(e) => setTipoMedidaSelecionada(e.target.value)}>
                 {tipoMedida.map((medida) =>
-                  <option value={medida.tipoMedidaID}>
+                  <option key={medida.tipoMedidaID} value={medida.tipoMedidaID}>
                     {medida.nomeTipoMedida}
                   </option>
                 )
@@ -138,9 +153,9 @@ const CadastroItem = () => {
             </div>
             <div className={styles.Unidade}>
               <h4>Unidade</h4>
-              <select>
+              <select value={usuarioSelecionado} onChange={(e) => setUsuarioSelecionado(e.target.value)}>
                 {listarUnidade.map((unidade) =>
-                  <option value={unidade.unidadeDto}>
+                  <option key={unidade.unidadeDto} value={unidade.unidadeDto}>
                     {unidade.nomeUnidadeDto}
                   </option>
                 )
@@ -151,9 +166,9 @@ const CadastroItem = () => {
           <div className={styles.quartaLinha}>
             <div className={styles.Responsavel}>
               <h4>Responsável</h4>
-              <select>
+              <select value={unidadeSelecionada} onChange={(e) => setUnidadeSelecionada(e.target.value)}>
                 {listarUsuario.map((usuario) =>
-                  <option value={usuario.usuarioID}>
+                  <option key={usuario.usuarioID} value={usuario.usuarioID}>
                     {usuario.nome}
                   </option>
                 )
