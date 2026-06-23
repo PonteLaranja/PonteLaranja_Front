@@ -12,9 +12,9 @@ export const api = axios.create({
 api.interceptors.request.use((config) => {
     const token = secureLocalStorage.getItem("Token");
 
-    if(token){
+    if(token)
         config.headers.Authorization = "Bearer " + token;
-    }
+    
 
     return config;
 });

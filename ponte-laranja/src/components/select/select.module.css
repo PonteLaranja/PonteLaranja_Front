@@ -1,0 +1,153 @@
+.Trigger {
+	all: unset;
+	display: inline-flex;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+	border-radius: .5vw;
+	/* padding: 0 15px; */
+	font-size: 15px;
+	line-height: 1vw;
+	padding: 0% 1%;
+	padding-right: 40px;
+	white-space: nowrap;
+	height: 35px;
+	/* width: clamp(15vw, 20%, 28vw); */
+	width: clamp(12vw, 15%, 28vw);
+	/* width: 10vw; */
+	font-family: var(--font-texto-titulo) !important;
+	gap: 5%;
+	background: var(--background-pesquisa);
+
+	/* color: black; */
+	&:hover {
+
+		filter: brightness(.9);
+	}
+
+	&:focus {
+		/* box-shadow: 0 0 0 2px black; */
+	}
+
+	&[data-placeholder] {
+		color: black;
+	}
+}
+
+.Value {
+	flex: 1;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 100%;
+}
+
+.Icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Conteudo que segura os options  */
+.Content {
+	/* overflow: hidden; */
+	background: var(--background-pesquisa);
+	border: 1px solid black;
+	width: 100%;
+	border-radius: .5vw;
+	box-shadow:
+		0px 10px 38px -10px rgba(22, 23, 24, 0.35),
+		0px 10px 20px -15px rgba(22, 23, 24, 0.2);
+}
+
+.Content:hover {
+	filter: brightness(0.95);
+}
+
+/* parte interna do conteudo, pense justamente como padding */
+.Viewport {
+	padding: 5px;
+	/* width: 100%; */
+}
+
+/* Aqui seriam os options mesmo, em formato de lista, ou seja::after
+
+ul > option
+
+*/
+
+.itemText {
+
+	font-family: var(--font-texto-titulo) !important;
+}
+
+.Item {
+	font-family: var(--font-texto-titulo) !important;
+	font-size: 15px;
+	line-height: 1;
+	color: var(--violet-11);
+	border-radius: 3px;
+	display: flex;
+	align-items: center;
+	height: 35px;
+	width: 100%;
+	padding: 0 35px 0 25px;
+	position: relative;
+	user-select: none;
+
+	&[data-disabled] {
+		color: var(--mauve-8);
+		pointer-events: none;
+	}
+
+	&[data-highlighted] {
+		outline: none;
+		background-color: var(--violet-9);
+		color: var(--violet-1);
+	}
+
+	:hover {
+		filter: brightness(0.9);
+	}
+}
+
+.Item:hover {
+	color: white;
+}
+
+
+
+.Label {
+	padding: 0 25px;
+	font-size: 15px;
+	font-family: var(--font-texto-titulo) !important;
+	line-height: 25px;
+	color: var(--mauve-11);
+}
+
+.Separator {
+	height: 2px;
+	border-radius: .5vw;
+	background-color: black;
+	margin: 5px;
+}
+
+.ItemIndicator {
+	position: absolute;
+	left: 0;
+	width: 22%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.ScrollButton {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 25px;
+	background-color: white;
+	color: var(--violet-11);
+	cursor: default;
+}

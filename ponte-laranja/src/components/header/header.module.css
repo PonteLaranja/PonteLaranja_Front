@@ -1,13 +1,13 @@
 .cabecalho {
 
-    /* background: linear-gradient(357deg, rgba(13, 139, 223, 0.75) -34.33%, #067FE0 46.83%, rgba(13, 139, 223, 0.75) 97.87%); */
-    background: linear-gradient(to bottom right, #0D8BDF 0%, #045BA1 28%) bottom right / 50% 50% no-repeat, linear-gradient(to bottom left, #0D8BDF 0%, #045BA1 28%) bottom left / 50% 50% no-repeat, linear-gradient(to top left, #0D8BDF 0%, #045BA1 28%) top left / 50% 50% no-repeat, linear-gradient(to top right, #0D8BDF 0%, #045BA1 28%) top right / 50% 50% no-repeat;
+
+    background: var(--azul-gradiente);
+    /* background: var(--azul-gradiente); */
     width: 100%;
     height: clamp(1vh, 136px, 15vh);
     display: inline-flex;
     padding: 0 5%;
     align-items: center;
-/* fgsdafsad */
     justify-content: space-between;
 
 }
@@ -15,7 +15,6 @@
 .cabecalho img {
     width: 14%;
 }
-
 
 .cabecalho nav {
     display: inline-flex;
@@ -31,12 +30,12 @@
     justify-content: space-around;
     list-style-type: none;
     white-space: nowrap;
-    
+
     gap: 2%;
     width: 100%;
 }
 
-.link{
+.link {
     text-decoration: none;
 }
 
@@ -50,7 +49,6 @@
     transition: .65s ease-in-out;
     /* width: 50%; */
 }
-
 
 .cabecalho button {
     width: 8%;
@@ -67,11 +65,44 @@
     text-decoration: underline;
 }
 
-.cabecalho button:hover {
+
+.login {
+    width: 8%;
+    border-radius: .5vw;
+    border: none;
+    background-color: var(--laranja);
+    color: white;
+    font-size: clamp(.4vw, 30px, 2vw);
+    height: clamp(37%, 42%, 43%);
+}
+
+
+
+#login_ {
+    width: 8%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: .5vw;
+    border: none;
+    background-color: var(--laranja);
+    color: white;
+    font-size: clamp(.4vw, 30px, 2vw);
+    height: clamp(30%, 38%, 43%);
+    text-decoration: none;
+}
+
+#login_:hover {
     transition: .1s ease-in-out;
-    /* color: #DEDEDE; */
     background-color: #FF8636;
 }
+
+
+/* css */
+
+
 
 
 .barraLateral{
@@ -201,3 +232,13 @@
 
 
  
+
+
+
+
+
+
+
+
+
+

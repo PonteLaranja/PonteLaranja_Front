@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "./login.module.css";
 import { useRouter } from "next/router";
 import { toast } from "react-toastify";
-import { login } from "../api/autenticação";
+import { login } from "../api/autenticacao";
 import Link from "next/link";
 const Login = () => {
   const [email, setEmail] = useState<string>("");

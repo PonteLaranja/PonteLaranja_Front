@@ -6,45 +6,67 @@
 
 :root {
   --laranja: #ff6600;
-  --azul-gradiente:
-    linear-gradient(to bottom right, #55bafd 0%, #0d8bdf 50%) bottom right / 50%
-      50% no-repeat,
-    linear-gradient(to bottom left, #55bafd 0%, #0d8bdf 50%) bottom left / 50%
-      50% no-repeat,
-    linear-gradient(to top left, #55bafd 0%, #0d8bdf 50%) top left / 50% 50%
-      no-repeat,
-    linear-gradient(to top right, #55bafd 0%, #0d8bdf 50%) top right / 50% 50%
-      no-repeat;
+--azul-gradiente:
+    linear-gradient(to bottom right, #0D8BDF 0%, #045BA1 28%) bottom right / 51% 51% no-repeat,
+    linear-gradient(to bottom left, #0D8BDF 0%, #045BA1 28%) bottom left / 51% 51% no-repeat,
+    linear-gradient(to top left, #0D8BDF 0%, #045BA1 28%) top left / 51% 51% no-repeat,
+    linear-gradient(to top right, #0D8BDF 0%, #045BA1 28%) top right / 51% 51% no-repeat;
+  --background-pesquisa: linear-gradient(180deg, #B6D3FE 0%, #B4D2FE 27.4%, #B1D0FE 53%, #A7CAFE 73.08%, #95BFFD 100%);
   --cor-fundo-botao: #ff6600;
 }
-
 .texto_layout {
   font-size: 25px;
-  background: linear-gradient(180deg, #fff1f1 29.81%, #cde1fe 76.92%);
+  background: linear-gradient(180deg, #FFF1F1 29.81%, #CDE1FE 76.92%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: 2.5s ease-in-out;
 }
 
-/* span, */
+
+.texto_tabela {
+  font-size: 14px;
+  background: transparent;
+  color: black !important;
+
+}
+
+/* p,
+span,
 li {
-  background: linear-gradient(180deg, #fff1f1 29.81%, #cde1fe 76.92%);
+  background: linear-gradient(180deg, #FFF1F1 29.81%, #CDE1FE 76.92%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
+} */
+
+.link {
+  text-decoration: none;
+  color: black;
 }
 
 p,
 span,
 li,
-button {
+button,
+#login_ {
   font-family: var(--font-texto-padrao);
 }
 
 /* p:hover, */
-span:hover,
+/* span:hover, */
 li:hover,
 button:hover {
   cursor: pointer;
+
+}
+
+.texto_layout {}
+
+@media (max-width: 900px) {
+  .texto_tabela {
+    font-size: 12px;
+  }
+
 }

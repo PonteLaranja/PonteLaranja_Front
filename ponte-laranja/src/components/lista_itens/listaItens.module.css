@@ -1,0 +1,248 @@
+.filtros {
+    background: var(--azul-gradiente);
+    width: 100%;
+    margin: 0% 0 1% 0;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+    gap: 25%;
+
+}
+
+.filtros h1 {
+    text-align: center;
+    font-family: var(--font-texto-titulo);
+    color: white;
+}
+
+.pesquisas {
+    /* display: inline-flex;
+    align-items: center;
+    justify-content: center; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    width: 80%;
+    /* border: 1px solid black; */
+    height: 11%;
+    gap: 5%;
+}
+
+.inserir_pesq {
+    /* height: 5vh;     */
+    padding-left: .5%;
+    height: 100%;
+    border-radius: .5vw;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: var(--font-texto-titulo);
+    width: 52%;
+    background: var(--background-pesquisa);
+    outline: none;
+    font-size: 15px;
+}
+
+.search {
+    width: 20%;
+    width: 200px;
+    width: clamp(200px, 20%, 11vw);
+    background-color: transparent;
+}
+
+.input {
+    font-size: 15px;
+    background-color: transparent;
+    width: 100%;
+    outline: none;
+    border: none;
+    font-family: var(--font-texto-titulo);
+}
+
+.input::placeholder {
+    color: black;
+
+}
+
+.icon {
+    width: 30px;
+    width: clamp(15%, 25px, 5vw);
+}
+
+.select_selecionar {
+    /* padding-left: 0; */
+}
+
+#inserir_data {
+    width: clamp(180px, 14%, 12vw);
+    padding-left: 2%;
+    outline: none;
+    border: none;
+}
+
+
+
+
+/* ====================== */
+
+.lista_tabelas th {
+    padding: 0 2rem;
+}
+
+
+.lista_tabelas {
+    /* width: 100%; */
+    /* width: 10vw; */
+    /* border: 1px solid black; */
+    /* max-width: calc(100% - 55%); */
+    padding: 0 0%;
+    border-collapse: separate;
+    border-spacing: 0 12px;
+}
+
+.lista_tabelas th {
+    font-weight: 400;
+    color: var(--cor-texto);
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #cfd4da;
+    text-align: center;
+    font-size: 18px;
+    font-family: var(--font-texto-titulo);
+}
+
+
+
+
+.lista_tabelas td {
+    text-align: center;
+    color: #000;
+    font-size: 18px;
+    font-family: var(--font-texto-padrao);
+    padding: 16px;
+}
+
+
+
+
+
+/* Linha de conteúdo */
+.conteudo td {
+    background: linear-gradient(180deg,
+            #C2D6FF 0%,
+            #ABC4F0 100%);
+    padding: 10px;
+}
+
+.card {
+    background: #F5F5F5;
+    border-radius: 6px;
+    padding: 12px;
+    text-align: center;
+}
+
+.card:hover {
+    cursor: pointer;
+    transition: 0.2s;
+
+    filter: brightness(0.90);
+}
+
+
+.conteudo td:first-child {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.conteudo td:last-child {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+/* Opcional: hover */
+.conteudo:hover {
+    filter: brightness(0.97);
+    transition: 0.2s;
+}
+
+#item {
+    font-size: 14px;
+}
+
+#idade {
+    font-size: 20px;
+    width: 40%;
+    margin-left: 30%;
+
+}
+
+#acoes {
+    width: 70%;
+    align-self: flex-end;
+    margin-left: 22%;
+
+}
+
+
+.navegacao {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 15%;
+    /* border: 1px solid black; */
+    justify-content: center;
+}
+
+.navegacao_lista {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 20%;
+    justify-content: center;
+    gap: 5%;
+    /* border: 1px solid red; */
+    align-items: center;
+}
+
+.item_link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    font-size: 18px;
+    width: 100%;
+    width: 2vw;
+    height: 90%;
+}
+
+.navegacao_item {
+    color: black;
+    border-radius: .2vw;
+    background-color: #FEFEFE;
+    filter: brightness(.95);
+    border-radius: .2vw;
+    transition: .05s ease-out;
+}
+
+.navegacao_item:hover
+{
+    filter: brightness(0.8);
+    cursor: pointer;
+}
+
+.navegacao_item:first-child:hover,
+.navegacao_item:last-child:hover {
+    background: none;
+    background-color: #b8b8b881;
+    filter: brightness(0.9);
+}
+

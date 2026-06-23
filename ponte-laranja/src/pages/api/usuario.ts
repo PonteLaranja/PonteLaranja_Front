@@ -1,5 +1,29 @@
 import { api } from "./api";
 
+
+export async function listarUsuario() {
+    // console.log("vamo la")
+    try
+    {
+        
+        const response = await api.get("Usuario")
+        // console.log(response)
+        return response.data
+    }
+    
+    catch(erro: any)
+    {
+        // console.log("teste22")
+        throw new Error(erro.response.data)
+        console.log(erro.response.data)
+    }
+}
+
+export type listUsuario = {
+    usuarioID: string,
+    nome: string
+}
+
 type formsUsuario = {
     nome: string,
     senha: string,
