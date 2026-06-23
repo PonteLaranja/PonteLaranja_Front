@@ -39,8 +39,8 @@ export const Header = () => {
           </Link>
         </ul>
       </nav>
-      {estaAutenticado && ( <Link href={"/login"} className={styles.login} id={styles.login_}>Login</Link>)}
-      {!estaAutenticado && (
+      {!estaAutenticado && ( <Link href={"/login"} className={styles.login} id={styles.login_}>Login</Link>)}
+      {estaAutenticado && (
         <>
           <button
             className={styles.menuButton}

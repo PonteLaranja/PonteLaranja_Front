@@ -1,11 +1,15 @@
 import styles from "./cadastroitem.module.css";
 import { adicionarItem, getUnidade, getUsuario, Item2, listarItens, listarTipoItem, listarTipoMedida } from "../api/item";
 import { useEffect, useState } from "react";
+import { Header } from "@/components/header/header";
+import Footer from "@/components/footer/footer";
 
 export interface TipoItem {
   tipoItemID: string
   nomeTipoItem: string
 }
+
+
 
 export interface TipoMedida {
   tipoMedidaID: string
@@ -100,6 +104,7 @@ const CadastroItem = () => {
 
   return (
     <>
+      <Header/>
       <main className={styles.main}>
         <h2>Cadastro de Itens</h2>
         <form className={styles.form} onSubmit={salvaritem}>
@@ -129,7 +134,7 @@ const CadastroItem = () => {
           </div>
           <div className={styles.terceiraLinha}>
             <div className={styles.TipoMedida}>
-              <h4>Tipo da Medida</h4>
+              <h4>Tipo da Item</h4>
               <select value={tipoItemSelecionado} onChange={(e) => setTipoItemSelecionado(e.target.value)}>
                 {tipoItem.map((item) => (
                   <option key={item.tipoItemID} value={item.tipoItemID}>
@@ -141,7 +146,7 @@ const CadastroItem = () => {
               </select >
             </div>
             <div className={styles.TipoItem}>
-              <h4>Tipo de Item</h4>
+              <h4>Tipo de Medida</h4>
               <select value={tipoMedidaSelecionada} onChange={(e) => setTipoMedidaSelecionada(e.target.value)}>
                 {tipoMedida.map((medida) =>
                   <option key={medida.tipoMedidaID} value={medida.tipoMedidaID}>
@@ -179,6 +184,7 @@ const CadastroItem = () => {
           <button>Cadastrar</button>
         </form>
       </main>
+        <Footer/>
     </>
   );
 };

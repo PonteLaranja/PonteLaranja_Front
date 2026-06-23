@@ -70,7 +70,29 @@ button:hover {
 
 }
 
-.texto_layout {}
+h1 {
+  font-family: var(--font-texto-titulo);
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+h2{
+  font-size: 2rem;
+  font-family: var(--font-texto-titulo);
+}
+
+h3{
+  font-family: var(--font-texto-titulo);
+  font-size: 1.7rem;
+}
+
+
+
+p {
+  font-family: var(--font-texto-padrao);
+  text-align: justify;
+  font-size: 1rem;
+}
 
 @media (max-width: 900px) {
   .texto_tabela {
