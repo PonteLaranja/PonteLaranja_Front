@@ -7,7 +7,7 @@ import {
   listarLogs,
   listarLogs_por_Unidade,
   Transferencia,
-} from "@/src/pages/api/logHistoricov2";
+} from "@/src/pages/api/logHistorico";
 import { Item, listarItens_Id } from "@/src/pages/api/item";
 import { TransferenciaTabela } from "../lista_itens/ListaItens";
 

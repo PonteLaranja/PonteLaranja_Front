@@ -7,9 +7,12 @@ import { ChevronDown } from "lucide-react";
 import styles from "./select.module.css";
 
 // 1. Importe seus mocks e interfaces do arquivo onde eles estão
-import { logTipoItem, logUnidade } from "@/src/pages/api/logHistoricoMock"; // Ajuste o caminho se necessário
+// import { logTipoItem, logUnidade } from "@/src/pages/api/logHistoricoMock"; // Ajuste o caminho se necessário
+import { tipoItem, listar_tipoItem } from "@/src/pages/api/tipoItem";
+// import { listar_tipoItem, listarUnidade } from "@/src/pages/api/logHistorico";
 
-import { listar_tipoItem, listarUnidade } from "@/src/pages/api/logHistorico";
+import { it } from "node:test";
+import { listarUnidades, UnidadeList } from "@/src/pages/api/unidade";
 // 2. Criamos um tipo unificado para o estado interno do Select, facilitando o .map
 interface selectOpcaoInterface {
   id: string;
@@ -37,21 +40,26 @@ const SelectDemo: React.FC<select_const_Interface> = ({
       setLoading(true);
       try {
         if (tipo === "tipoItem") {
-          const dados: logTipoItem[] = await listar_tipoItem();
-          
-          const formatado = dados.map((item) => ({
-            id: item.tipoItemId,
-            label: item.tipoItemNome,
+          // const dados: logTipoItem[] = await listar_tipoItem();
+
+          const responseTipoItem = await listar_tipoItem();
+
+          const formatadoJSON = responseTipoItem.data.map((item: tipoItem) => ({
+            id: item.tipoItemID,
+            label: item.nomeTipoItem,
           }));
-          setOpcoes(formatado);
+
+          setOpcoes(formatadoJSON);
         } else if (tipo === "unidade") {
-          const dados: logUnidade[] = await listarUnidade();
-          
-          const formatado = dados.map((item) => ({
-            id: item.unidadeId,
-            label: item.unidadeNome,
+
+          const responseUnidade = await listarUnidades();
+
+          const formatadoJSON = responseUnidade.data.map((item: UnidadeList) => ({
+            id: item.unidadeDto,
+            label: item.nomeUnidadeDto,
           }));
-          setOpcoes(formatado);
+
+          setOpcoes(formatadoJSON);
         }
       } catch (error) {
         console.error("Erro ao carregar dados mockados:", error);
@@ -66,7 +74,10 @@ const SelectDemo: React.FC<select_const_Interface> = ({
   return (
     <Select.Root value={value} onValueChange={onValueChange}>
       <Select.Trigger className={styles.Trigger}>
-        <Select.Value className={styles.Value}placeholder={loading ? "Carregando..." : placeholder} />
+        <Select.Value
+          className={styles.Value}
+          placeholder={loading ? "Carregando..." : placeholder}
+        />
         <Select.Icon className={styles.Icon}>
           <ChevronDown size={28} />
         </Select.Icon>
@@ -80,6 +91,9 @@ const SelectDemo: React.FC<select_const_Interface> = ({
 
           <Select.Viewport className={styles.Viewport}>
             <Select.Group>
+              <SelectItem value="todos">
+                Todos
+              </SelectItem>
               {opcoes.map((item) => (
                 <SelectItem key={item.id} value={item.id}>
                   {item.label}

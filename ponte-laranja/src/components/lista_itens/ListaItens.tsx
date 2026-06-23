@@ -9,7 +9,7 @@ import {
   listarLogs,
   listarLogs_por_Unidade,
   Transferencia,
-} from "@/src/pages/api/logHistoricov2";
+} from "@/src/pages/api/logHistorico";
 import { listarItens } from "@/src/pages/api/item";
 
 import { listar_tipoMedida } from "@/src/pages/api/tipoMedida";
@@ -17,7 +17,8 @@ import { listar_tipoItem } from "@/src/pages/api/tipoItem";
 
 import { listarUsuario, listUsuario } from "@/src/pages/api/usuarioService";
 import { ItemZero } from "../itens/Itens";
-import SelectDemo from "../select/SelectFunciona";
+import SelectDemo from "../select/selectComponent";
+
 
 export interface TransferenciaTabela {
   transferenciaID: string;
@@ -87,7 +88,7 @@ export const Banner = () => {
           );
 
           // const usuario = listar
-  console.log(`teste em pai \n ${JSON.stringify(transferencia, null, 2)}`);
+  // console.log(`teste em pai \n ${JSON.stringify(transferencia, null, 2)}`);
           return {
             transferenciaID: transferencia.transferenciaID,
 
@@ -118,15 +119,15 @@ export const Banner = () => {
 
   const itensFiltrados = logV2.filter((item) => {
 
-      console.log({
-    itemNome: item.itemNome,
-    tipoItemID: item.tipoItemID,
-    unidadeID: item.unidadeDestinoID,
-    dataChegada: item.dataChegada,
-    filtroTipoItem,
-    filtroUnidade,
-    filtroData,
-  });
+  //     console.log({
+  //   itemNome: item.itemNome,
+  //   tipoItemID: item.tipoItemID,
+  //   unidadeID: item.unidadeDestinoID,
+  //   dataChegada: item.dataChegada,
+  //   filtroTipoItem,
+  //   filtroUnidade,
+  //   filtroData,
+  // });
 
     const matchPesquisa =
       item.itemNome?.toLowerCase().includes(pesquisa.toLowerCase().trim()) ??
@@ -157,23 +158,23 @@ export const Banner = () => {
     listarItensDeLogs();
   }, []);
 
-  useEffect(() => {
-    setPrimeiroItem(0);
-  }, [pesquisa, filtroData, filtroTipoItem, filtroUnidade]);
+//   useEffect(() => {
+//     setPrimeiroItem(0);
+//   }, [pesquisa, filtroData, filtroTipoItem, filtroUnidade]);
 
 
-  useEffect(() => {
-  console.log("Tipo selecionado:", filtroTipoItem);
-}, [filtroTipoItem]);
+//   useEffect(() => {
+//   // console.log("Tipo selecionado:", filtroTipoItem);
+// }, [filtroTipoItem]);
 
-useEffect(() => {
-  console.log("Unidade selecionada:", filtroUnidade);
-}, [filtroUnidade]);
+// useEffect(() => {
+//   // console.log("Unidade selecionada:", filtroUnidade);
+// }, [filtroUnidade]);
 
-useEffect(() => {
-  console.log("Data selecionada:", filtroData);
+// useEffect(() => {
+//   // console.log("Data selecionada:", filtroData);
   
-}, [filtroData]);
+// }, [filtroData]);
 
   return (
     <>
@@ -249,9 +250,8 @@ useEffect(() => {
                 <span>Data</span>
               </th>
 
-              {/* <th>
-                <span>Ações</span>
-              </th> */}
+
+
             </tr>
           </thead>
 

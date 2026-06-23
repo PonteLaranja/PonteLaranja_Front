@@ -1,42 +1,67 @@
+import { api } from "./api";
+import { listar_tipoItem } from "./tipoItem";
+import { listar_tipoMedida } from "./tipoMedida";
 
-import { LogDoacao, LogDoacao2, logMocksV3, logTipoItem, logUnidade,
-        logsMockItem, logsMockTipoItem, logsMockUnidade  } from "./logHistoricoMock";
+export interface Transferencia {
+  transferenciaID: string;
+  dataEnvio: string;
+  dataChegada: string | null;
 
+  unidadeOrigemID: string;
+  unidadeOrigemNome: string;
 
-export async function listarDoacao(): Promise<LogDoacao[]>{
-    return new Promise((teste) => {
-        teste(logsMockItem)
-    })
+  unidadeDestinoID: string;
+  unidadeDestinoNome: string;
+
+  estadoTransferenciaID: string;
+
+  itemID: string;
+  itemNome: string | null;
+
+  itemCategoria: string;
 }
 
-export async function listar_tipoItem(): Promise<logTipoItem[]>
+export async function listarLogs() {
+  try {
+    const response = await api.get("Transferencia");
+    // console.log(response.data)
+
+    
+    return response.data;
+  } catch (erro: any) {
+    throw new Error(erro.response.data);
+  }
+}
+
+export async function listarLogs_por_Unidade(
+  unidadeId: string,
+  tipoItemId?: string,
+  faseDoacao?: string,
+  dataFiltro?: string,
+) {
+  try {
+    const response = await api.get(
+      "Transferencia/log-doacoes" + unidadeId + 
+        (tipoItemId || faseDoacao || dataFiltro)
+    );
+    return response;
+  } catch (erro: any) {
+    throw new Error(erro.response.data);
+  }
+}
+
+export async function listarLog_itemId (id:string)
 {
-    return new Promise((teste) => teste(logsMockTipoItem))
+  try
+  {
+    const response = await api.get("Transferencia")
+    return response.data
+    
+    
+  }
+
+  catch(erro: any)
+  {
+    throw new Error(erro.response.data)
+  }
 }
-
-export async function listarUnidade(): Promise<logUnidade[]> {
-    return new Promise((teste) => teste(logsMockUnidade))
-}
-
-
-export async function listarDoacaoV2(): Promise<LogDoacao2[]>{
-    return new Promise((teste) => {
-        const resultado = logMocksV3.map(item => {
-            const unidade = logsMockUnidade.find(unidade => unidade.unidadeId === item.unidadeId)
-
-            const tipoItem = logsMockTipoItem.find(tipoItem => tipoItem.tipoItemId === item.tipoItemId)
-            console.log(unidade)
-            return {
-                ...item,
-
-                unidade: unidade?.unidadeNome ?? "Unidade not found",
-
-                tipoItem: tipoItem?.tipoItemNome ?? "Tipo não encontrado"
-            }
-        })
-
-        teste(resultado)
-        // teste(logMocksV3)
-    })
-}
-
