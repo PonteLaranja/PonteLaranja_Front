@@ -1,7 +1,7 @@
 import { useState } from "react"
 import styles from "./unidade.module.css"
 import { useRouter } from "next/router";
-import { listarUnidade } from "@/pages/api/unidade";
+import { listarUnidade } from "../../pages/api/unidade";
 
 interface unidade {
   unidadeDto: string;

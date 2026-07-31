@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import styles from './itens.module.css'
-import { listar } from '@/src/pages/api/logHistorico'
+import { listar } from '../../pages/api/logHistorico'
 import { SquarePen } from 'lucide-react'
-import { listarItens } from '@/src/pages/api/item'
+import { listarItens } from '../../pages/api/item'
 import { usePathname } from 'next/navigation'
 
 

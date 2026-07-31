@@ -13,7 +13,9 @@ export const Header = () => {
                     <Link href={""} className={styles.link}><li className={`texto_layout`}>Sobre nós</li></Link>
                 </ul>
             </nav>
-            <button className={styles.login}>Login</button>
+            <button className={styles.login}>
+                <Link href={"/login"} className={styles.login}>Login</Link>
+            </button>
         </header>
 
     )

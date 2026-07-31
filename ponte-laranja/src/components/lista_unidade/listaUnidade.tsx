@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react'
 import Unidade from '../unidade/unidade'
 import styles from './listaUnidade.module.css'
 import { Search, Calendar } from 'lucide-react'
-import { listarUnidade } from '@/pages/api/unidade';
-import { obterPorNome, obterTipoItemPeloNome } from '@/pages/api/tipoItem';
+import { listarUnidade } from '../../pages/api/unidade';
+import { obterPorNome, obterTipoItemPeloNome } from '../../pages/api/tipoItem';
 
 interface ListaUnidade {
     unidadeDto: string;

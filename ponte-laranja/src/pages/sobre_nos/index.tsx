@@ -1,5 +1,5 @@
-import Footer from "@/src/components/footer/footer";
-import { Header } from "@/src/components/header/Header";
+import Footer from "../../components/footer/footer";
+import { Header } from "../../components/header/Header";
 import styles from "./sobreNos.module.css"
 import { symlink } from "fs";
 

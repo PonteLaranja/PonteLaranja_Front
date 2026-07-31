@@ -1,6 +1,19 @@
+import { useState } from "react";
 import styles from "./login.module.css";
+import { useRouter } from "next/router";
+import { ToastContainer, toast } from 'react-toastify';
 
 const Login = () => {
+
+  const [email, SetEmail] = useState<string>("");
+  const [senha, SetSenha] = useState<string>("");
+
+  const router = useRouter();
+
+  const notificacao = (msg: string) => toast.success(msg);
+  const erro = (msg: string) => toast.error(msg);
+
+
   return (
     <main className={styles.main}>
       <div className={styles.img}>

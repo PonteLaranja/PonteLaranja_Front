@@ -1,7 +1,7 @@
-import { Header } from "@/src/components/header/Header";
+import { Header } from "../../components/Header/header";
 import styles from "./home.module.css"
-import Footer from "@/src/components/footer/footer";
-import ModalTransferencia from "@/src/components/modal_transferencia/modalTransferencia";
+import Footer from "../../components/footer/footer";
+import ModalTransferencia from "../../components/modal_transferencia/modalTransferencia";
 
 
 const Home = () => {

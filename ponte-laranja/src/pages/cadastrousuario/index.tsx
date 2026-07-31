@@ -1,7 +1,3 @@
-
-
-.
-
 import styles from "./cadastrousuario.module.css";
 
 const Login = () => {

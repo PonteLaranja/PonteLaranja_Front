@@ -4,8 +4,8 @@ import Link from 'next/link'
 import styles from './listaItens.module.css'
 import { Search } from 'lucide-react'
 import { useEffect, useState } from 'react'
-import { listar } from '@/src/pages/api/logHistorico'
-import { listarItens } from '@/src/pages/api/item'
+import { listar } from '../../pages/api/logHistorico'
+import { listarItens } from '../../pages/api/item'
 import { usePathname } from 'next/navigation'
 import { Item } from '../itens2/Itens';
 

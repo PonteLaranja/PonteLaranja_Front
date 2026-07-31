@@ -1,5 +1,5 @@
 import styles from "./cadastroitem.module.css";
-import { Header } from "@/src/components/header/header";
+import { Header } from "../../components/header/header";
 
 const CadastroItem = () => {
   return (
